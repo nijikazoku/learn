@@ -7,8 +7,6 @@ import { gameResults } from "../../src/baseball/gameResults";
 import { IoMdBaseball, IoMdArrowDropdown } from "react-icons/io";
 
 const npb = () => {
-  const [selectDate, setSelectDate] = useState("");
-
   return (
     <Layout>
       <Header />
@@ -17,13 +15,13 @@ const npb = () => {
         <div className="">
           <div className="bg-slate-700 py-1 text-lg font-bold px-4 ">野球</div>
           {/* カテゴリー */}
-          <div className="font-bold flex items-center border-b">
-            <div className="border-r bg-[#0075C2] text-xl  py-1 text-center w-1/4">
+          <div className="text-lg flex items-center border-b">
+            <div className="border-r bg-[#0075C2]  py-1 text-center w-1/4">
               NPB
             </div>
-            <div className="border-r py-1 text-xl text-center w-1/4">MLB</div>
-            <div className="border-r py-1 text-xl text-center w-1/4">WBC</div>
-            <div className="text-xl py-1 text-center w-1/4">その他</div>
+            <div className="border-r py-1 text-center w-1/4">MLB</div>
+            <div className="border-r py-1  text-center w-1/4">WBC</div>
+            <div className="py-1 text-center w-1/4">その他</div>
           </div>
           {/* 今日の試合 */}
           {/* <div className=" mx-auto rounded-lg py-1">
@@ -87,12 +85,15 @@ const npb = () => {
 
         <div className="space-y-3">
           {/* フィルターボタン */}
-          <div className="space-x-3 px-2">
-            <button className="border rounded-full p-1"> ベット受付中</button>
-            <button className="border rounded-full p-1"> ベット受付前</button>
-            <button className="border rounded-full p-1"> ベット締切済</button>
+          <div className="space-x-3 text-sm px-2">
+            <button className="border rounded-md p-1"> ベット受付中</button>
+            <button className="border rounded-md p-1"> ベット受付前</button>
+            <button className="border rounded-md p-1"> ベット締切済</button>
           </div>
-          <DateSelect />
+          <div className="w-[95%] mx-auto space-y-2">
+            <div className="text-xl">今後の試合</div>
+            <DateSelect />
+          </div>
         </div>
       </div>
     </Layout>

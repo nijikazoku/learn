@@ -1,50 +1,52 @@
 import { IoMdBaseball } from "react-icons/io";
-import { TbCircleFilled, TbCircleCheck } from "react-icons/tb";
-
+import { TbCircleFilled } from "react-icons/tb";
+import { BiMinus } from "react-icons/bi";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 const DisplayGames = ({ match, index }) => {
   return (
     <div
       key={index}
-      className="w-[95%] mx-auto border-b-4 border-slate-700 bg-opacity-40 mb-3 rounded-lg overflow-hidden space-y-2 py-2 bg-slate-700"
+      className="relative border border-gray-700 bg-opacity-40 mb-3 rounded-lg overflow-hidden shadow space-y-2 py-3 px-2 from-gray-900 to-gray-600 bg-gradient-to-r"
     >
       {/* 日付＆スタジアム&ベット状態 */}
-      <div className="flex px-2 justify-between">
-        <div className="flex space-x-2 items-end">
-          <div className="flex  items-center">
-            <IoMdBaseball size={18} />
-            <p className="">{match.category}</p>
+      <div className="flex  justify-between">
+        <div className="w-[40%]">
+          <div className="flex text-lg space-x-1 items-center">
+            <div className="flex  items-center ">
+              <IoMdBaseball size={25} />
+              <p className="">{match.category}</p>
+            </div>
+            <div>{match.type}</div>
           </div>
-          <div className="flex space-x-1">
-            <p> {match.matchTime}</p>
+          <div className="text-sm space-x-1 items-end justify-start pl-1 flex">
+            <p className=""> {match.matchTime}</p>
+            <p className="gray-600 whitespace-nowrap">{match.avenue}</p>
           </div>
-          {/* スタジアム */}
-          <p className="text-[0.75rem] gray-600 whitespace-nowrap">
-            {match.avenue}
-          </p>
         </div>
+        {/* オッズ状態 */}
         <div className="flex flex-grow pl-2 items-center whitespace-nowrap justify-end">
           {match.canBet === "now" && (
-            <div className="flex animate-pulse items-center border-green-600 space-x-1 border rounded-full font-bold p-1">
+            <div className="flex animate-pulse items-center border-green-600 space-x-1 border-2 rounded-full  py-1 px-2">
               <TbCircleFilled color="green" size={14} />{" "}
               <span className="text-[0.7rem]">ベット受付中</span>
             </div>
           )}
           {match.canBet === "before" && (
-            <div className="rounded-full border border-yellow-400 font-bold p-1 flex items-center space-x-1">
-              <TbCircleFilled color="yellow" size={14} />
+            <div className="rounded-full border border-yellow-400 py-1 px-2 flex items-center space-x-1">
+              <BiMinus color="yellow" size={14} />
               <span className="text-[0.7rem]">ベット受付前</span>
             </div>
           )}
           {match.canBet === "after" && (
-            <div className="rounded-full font-bold p-1 border border-red-600 flex space-x-1 items-center">
-              <TbCircleFilled size={14} color="red" />
+            <div className="rounded-full  py-1 px-2 border border-red-600 flex space-x-1 items-center">
+              <AiOutlineExclamationCircle size={16} color="red" />
               <span className="text-[0.7rem]">オッズ確定</span>
             </div>
           )}
         </div>
       </div>
       {/* チーム名＆オッズ */}
-      <div className="flex text-lg font-bold">
+      <div className="flex text-xl">
         {/* チーム名 */}
         <div className="w-1/2 pl-2">
           <p cla>{match.homeTeam}</p>

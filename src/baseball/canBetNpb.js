@@ -10,6 +10,7 @@ const canBetNpb = [
     oddsDraw: 7.8,
     oddsAway: 3.29,
     canBet: "after",
+    type: "セ・リーグ",
   },
   {
     matchDate: "03/29",
@@ -22,6 +23,7 @@ const canBetNpb = [
     oddsDraw: 10.82,
     oddsAway: 1.14,
     canBet: "now",
+    type: "セ・リーグ",
   },
   {
     matchDate: "03/29",
@@ -34,6 +36,7 @@ const canBetNpb = [
     oddsDraw: 5.67,
     oddsAway: 3.34,
     canBet: "now",
+    type: "セ・リーグ",
   },
   {
     matchDate: "03/29",
@@ -46,6 +49,7 @@ const canBetNpb = [
     oddsDraw: 6.78,
     oddsAway: 2.79,
     canBet: "now",
+    type: "パ・リーグ",
   },
   {
     matchDate: "03/29",
@@ -58,18 +62,20 @@ const canBetNpb = [
     oddsDraw: 6.89,
     oddsAway: 1.44,
     canBet: "now",
+    type: "パ・リーグ",
   },
   {
     matchDate: "03/29",
-    matchTime: "16:00",
+    matchTime: "18:00",
     category: "NPB",
     homeTeam: "ロッテ",
     awayTeam: "西武",
-    avenue: "ZOZOマリン",
+    avenue: "ZOZOマリンスタジアム",
     oddsHome: 3.45,
     oddsDraw: 7.98,
     oddsAway: 1.21,
     canBet: "now",
+    type: "パ・リーグ",
   },
 
   {
@@ -83,6 +89,7 @@ const canBetNpb = [
     oddsDraw: 8.4,
     oddsAway: 2.58,
     canBet: "before",
+    type: "パ・リーグ",
   },
 ];
 

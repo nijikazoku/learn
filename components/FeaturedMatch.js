@@ -8,7 +8,6 @@ const FeaturedMatch = () => {
     <div className="py-3 space-y-2">
       <div className="flex text-white items-end justify-between ">
         <p className="flex-grow text-xl px-3 font-bold">注目の試合</p>
-        <div className="px-3 text-sm">View All</div>
       </div>
       <Swiper
         loop={false}

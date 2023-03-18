@@ -23,8 +23,9 @@ const DateSelect = () => {
         <div key={date} className="">
           <div
             onClick={() => handleClick(date)}
-            className={`flex mb-2 justify-between px-2 py-1 ${
-              selectedDate === date && "bg-red-600 font-bold"
+            className={`flex mb-1  justify-between py-2 ${
+              selectedDate === date &&
+              "bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900 bg-opacity-40"
             } `}
           >
             <button className="flex space-x-2 ">
