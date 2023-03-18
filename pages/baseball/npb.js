@@ -26,12 +26,11 @@ const npb = () => {
             <div className="text-xl py-1 text-center w-1/4">その他</div>
           </div>
           {/* 今日の試合 */}
-          <div className="bg-[#064E3B] mx-auto rounded-lg py-1">
+          {/* <div className=" mx-auto rounded-lg py-1">
             <p className="text-xl text-center">
-              今日の試合 <span className="text-[1rem]">3月28日(火)</span>
+              今日の試合結果 <span className="text-[1rem]">3月28日(火)</span>
             </p>
 
-            {/* 試合結果 */}
             {gameResults.map((result, index) => {
               return (
                 <div
@@ -83,7 +82,7 @@ const npb = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
         <div className="space-y-3">
@@ -93,53 +92,7 @@ const npb = () => {
             <button className="border rounded-full p-1"> ベット受付前</button>
             <button className="border rounded-full p-1"> ベット締切済</button>
           </div>
-
           <DateSelect />
-
-          {/* ベット受付中 */}
-          {selectDate === "03/29" &&
-            canBetNpb.map((npb, index) => {
-              return (
-                <div key={index} className="py-2 border-b space-y-1">
-                  {/* 日付＆スタジアム&ベット状態 */}
-                  <div className="flex px-2 justify-between">
-                    <div className="flex space-x-2">
-                      <div className="flex  items-center">
-                        <IoMdBaseball size={18} />
-                        <p className="">{npb.category}</p>
-                      </div>
-                      <p className="">{npb.matchTime}</p>
-                    </div>
-                    <div className="flex justify-between space-x-3">
-                      <div className="text-sm animate-pulse rounded-lg bg-green-600 font-bold px-1 ">
-                        ベット受付中
-                      </div>
-                      <p className="gray-600">({npb.avenue})</p>
-                    </div>
-                  </div>
-                  {/* チーム名＆オッズ */}
-                  <div className="flex text-lg font-bold">
-                    {/* チーム名 */}
-                    <div className="w-1/2 pl-2">
-                      <p>{npb.homeTeam}</p>
-                      <p>{npb.awayTeam}</p>
-                    </div>
-                    {/* オッズ */}
-                    <div className="flex w-1/2 px-1 justify-end space-x-3 text-lg">
-                      <button className="border rounded-md w-1/3">
-                        {npb.oddsHome}
-                      </button>
-                      <button className="border w-1/3 rounded-md ">
-                        {npb.oddsDraw}
-                      </button>
-                      <button className="border w-1/3 rounded-md ">
-                        {npb.oddsAway}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
         </div>
       </div>
     </Layout>

@@ -23,7 +23,7 @@ const DateSelect = () => {
         <div key={date} className="">
           <div
             onClick={() => handleClick(date)}
-            className={`flex  justify-between px-2 py-1 ${
+            className={`flex mb-2 justify-between px-2 py-1 ${
               selectedDate === date && "bg-red-600 font-bold"
             } `}
           >
@@ -36,7 +36,7 @@ const DateSelect = () => {
 
           {/* 試合表示 */}
           {selectedDate === date && (
-            <div className={`${selectedDate === date && "bg-black"}`}>
+            <div>
               {canBetNpb
                 .filter((match) => match.matchDate === date)
                 .map((match, index) => (

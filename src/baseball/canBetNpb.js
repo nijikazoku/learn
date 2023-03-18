@@ -9,7 +9,7 @@ const canBetNpb = [
     oddsHome: 1.82,
     oddsDraw: 7.8,
     oddsAway: 3.29,
-    canBet: true,
+    canBet: "after",
   },
   {
     matchDate: "03/29",
@@ -21,7 +21,7 @@ const canBetNpb = [
     oddsHome: 2.65,
     oddsDraw: 10.82,
     oddsAway: 1.14,
-    canBet: true,
+    canBet: "now",
   },
   {
     matchDate: "03/29",
@@ -33,7 +33,7 @@ const canBetNpb = [
     oddsHome: 1.53,
     oddsDraw: 5.67,
     oddsAway: 3.34,
-    canBet: true,
+    canBet: "now",
   },
   {
     matchDate: "03/29",
@@ -45,7 +45,7 @@ const canBetNpb = [
     oddsHome: 1.24,
     oddsDraw: 6.78,
     oddsAway: 2.79,
-    canBet: true,
+    canBet: "now",
   },
   {
     matchDate: "03/29",
@@ -57,7 +57,7 @@ const canBetNpb = [
     oddsHome: 3.45,
     oddsDraw: 6.89,
     oddsAway: 1.44,
-    canBet: true,
+    canBet: "now",
   },
   {
     matchDate: "03/29",
@@ -69,7 +69,7 @@ const canBetNpb = [
     oddsHome: 3.45,
     oddsDraw: 7.98,
     oddsAway: 1.21,
-    canBet: true,
+    canBet: "now",
   },
 
   {
@@ -82,7 +82,7 @@ const canBetNpb = [
     oddsHome: 1.23,
     oddsDraw: 8.4,
     oddsAway: 2.58,
-    canBet: false,
+    canBet: "before",
   },
 ];
 
