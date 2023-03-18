@@ -10,13 +10,13 @@ const DisplayGames = ({ match, index }) => {
     >
       {/* 日付＆スタジアム&ベット状態 */}
       <div className="flex  justify-between">
-        <div className="w-[40%]">
-          <div className="flex text-lg space-x-1 items-center">
+        <div className="max-w-[40%] ">
+          <div className="flex text-lg space-x-1 items-center ">
             <div className="flex  items-center ">
               <IoMdBaseball size={25} />
               <p className="">{match.category}</p>
             </div>
-            <div>{match.type}</div>
+            <div className="whitespace-nowrap">{match.type}</div>
           </div>
           <div className="text-sm space-x-1 items-end justify-start pl-1 flex">
             <p className=""> {match.matchTime}</p>
