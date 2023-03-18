@@ -5,7 +5,7 @@ const DisplayGames = ({ match, index }) => {
   return (
     <div
       key={index}
-      className="w-[95%] mx-auto border-b-4 border-slate-800 bg-opacity-40 mb-3 rounded-lg overflow-hidden space-y-2 py-2 bg-slate-700"
+      className="w-[95%] mx-auto border-b-4 border-slate-700 bg-opacity-40 mb-3 rounded-lg overflow-hidden space-y-2 py-2 bg-slate-700"
     >
       {/* 日付＆スタジアム&ベット状態 */}
       <div className="flex px-2 justify-between">
@@ -15,7 +15,6 @@ const DisplayGames = ({ match, index }) => {
             <p className="">{match.category}</p>
           </div>
           <div className="flex space-x-1">
-            <p>{match.matchDate}</p>
             <p> {match.matchTime}</p>
           </div>
           {/* スタジアム */}
