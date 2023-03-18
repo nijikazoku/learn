@@ -2,7 +2,7 @@ import { useState } from "react";
 import DateSelect from "../../components/DateSelect";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
-import canBetNpb from "../../src/baseball/canBetNpb";
+import { canBetNpb } from "../../src/baseball/canBetNpb";
 import { gameResults } from "../../src/baseball/gameResults";
 import { IoMdBaseball, IoMdArrowDropdown } from "react-icons/io";
 
