@@ -1,0 +1,48 @@
+const pickUpMatch = [
+  {
+    sports: "野球",
+    type: "オープン戦",
+    homeTeam: "巨人",
+    awayTeam: "広島",
+    matchDate: "13:00",
+    odds1: 2.55,
+    odds2: 1.91,
+    odds3: 11.54,
+    image: "https://i.imgur.com/mUpjBkX.jpg",
+  },
+  {
+    sports: "野球",
+    type: "オープン戦",
+    homeTeam: "阪神",
+    awayTeam: "オリックス",
+    matchDate: "13:00",
+    odds1: 1.34,
+    odds2: 4.12,
+    odds3: 19.22,
+    image: "https://i.imgur.com/mUpjBkX.jpg",
+  },
+  {
+    sports: "サッカー",
+    type: "Jリーグ",
+    homeTeam: "FC東京",
+    awayTeam: "川崎フロンターレ",
+    matchDate: "14:00",
+    odds1: 2.26,
+    odds2: 1.78,
+    odds3: 4.27,
+    image: "https://i.imgur.com/ucBOc3k.jpg",
+  },
+  {
+    sports: "サッカー",
+    type: "Jリーグ",
+    homeTeam: "浦和レッズ",
+    awayTeam: "サンフレッチェ広島",
+    matchDate: "14:00",
+    odds1: 2.43,
+    odds2: 2.85,
+    odds3: 5.61,
+    image: "https://i.imgur.com/ucBOc3k.jpg",
+  },
+];
+
+export { pickUpMatch };
