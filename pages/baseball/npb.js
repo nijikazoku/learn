@@ -1,6 +1,7 @@
 import DateSelect from "../../components/DateSelect";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
+import TodaysMatch from "../../components/TodaysMatch";
 
 const npb = () => {
   return (
@@ -27,6 +28,7 @@ const npb = () => {
             <button className="border rounded-md p-1"> ベット締切済</button>
           </div>
           <div className="w-[95%] mx-auto space-y-2">
+            <TodaysMatch />
             <div className="text-xl">今後の試合</div>
             <DateSelect />
           </div>

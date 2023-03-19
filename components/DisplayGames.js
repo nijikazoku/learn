@@ -1,7 +1,7 @@
 import { IoMdBaseball } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
 import { BiMinus } from "react-icons/bi";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { AiOutlineExclamationCircle, AiFillLock } from "react-icons/ai";
 const DisplayGames = ({ match, index }) => {
   return (
     <div
@@ -32,8 +32,8 @@ const DisplayGames = ({ match, index }) => {
             </div>
           )}
           {match.canBet === "before" && (
-            <div className="rounded-full border border-yellow-400 py-1 px-2 flex items-center space-x-1">
-              <BiMinus color="yellow" size={14} />
+            <div className="rounded-full border border-[#FBBF24] py-1 px-2 flex items-center space-x-1">
+              <BiMinus color="#FBBF24" size={14} />
               <span className="text-[0.7rem]">ベット受付前</span>
             </div>
           )}
@@ -59,21 +59,27 @@ const DisplayGames = ({ match, index }) => {
               {match.oddsHome}
             </button>
           ) : (
-            <button className="border rounded-md w-1/3">ー</button>
+            <button className="border flex justify-center items-center rounded-md w-1/3">
+              <AiFillLock size={30} color="#FBBF24" />
+            </button>
           )}
           {match.canBet === "now" || match.canBet === "after" ? (
             <button className="border rounded-md w-1/3">
               {match.oddsDraw}
             </button>
           ) : (
-            <button className="border rounded-md w-1/3">ー</button>
+            <button className="border flex justify-center items-center rounded-md w-1/3">
+              <AiFillLock size={30} color="#FBBF24" />
+            </button>
           )}{" "}
           {match.canBet === "now" || match.canBet === "after" ? (
             <button className="border rounded-md w-1/3">
               {match.oddsAway}
             </button>
           ) : (
-            <button className="border rounded-md w-1/3">ー</button>
+            <button className="border flex justify-center items-center rounded-md w-1/3">
+              <AiFillLock size={30} color="#FBBF24" />
+            </button>
           )}
         </div>
       </div>
