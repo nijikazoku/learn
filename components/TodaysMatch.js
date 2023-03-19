@@ -3,7 +3,7 @@ import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { canBetNpb } from "../src/baseball/canBetNpb";
 import DisplayGames from "./DisplayGames";
-const TodaysMatch = () => {
+const TodaysMatch = ({ games }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const handleClick = (date) => {
     setSelectedDate((prevDate) => (prevDate === date ? null : date));
@@ -26,15 +26,21 @@ const TodaysMatch = () => {
           <IoMdArrowDropdown size={30} />
         </div>
         {selectedDate === "3/28" &&
-          canBetNpb
-            .filter((match) => match.matchDate === "3/28")
-            .map((match, index) => (
-              <DisplayGames
-                key={`${match.homeTeam}-${match.awayTeam}`}
-                match={match}
-                index={index}
-              />
-            ))}
+          (games.filter((match) => match.matchDate === "3/28").length > 0 ? (
+            games
+              .filter((match) => match.matchDate === "3/28")
+              .map((match, index) => (
+                <DisplayGames
+                  key={`${match.homeTeam}-${match.awayTeam}`}
+                  match={match}
+                  index={index}
+                />
+              ))
+          ) : (
+            <div className="w-[95%] mx-auto flex items-center py-1 text-slate-300">
+              <div className="text-xl">試合は予定されていません</div>
+            </div>
+          ))}
       </div>
     </>
   );

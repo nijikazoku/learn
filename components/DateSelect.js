@@ -2,9 +2,8 @@ import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineAlert } from "react-icons/ai";
-import { canBetNpb } from "../src/baseball/canBetNpb";
 import DisplayGames from "./DisplayGames";
-const DateSelect = () => {
+const DateSelect = ({ games }) => {
   const [selectedDate, setSelectedDate] = useState("");
   const sampleData = ["3/29", "3/30", "3/31", "4/01", "4/02"];
 
@@ -39,9 +38,8 @@ const DateSelect = () => {
           {/* 試合表示 */}
           {selectedDate === date && (
             <div>
-              {canBetNpb.filter((match) => match.matchDate === date).length >
-              0 ? (
-                canBetNpb
+              {games.filter((match) => match.matchDate === date).length > 0 ? (
+                games
                   .filter((match) => match.matchDate === date)
                   .map((match, index) => (
                     <DisplayGames

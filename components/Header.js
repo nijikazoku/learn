@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import { RxHamburgerMenu } from "react-icons/rx";
+import { MdClose } from "react-icons/md";
+import SideMenuContents from "./SideMenuContents";
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
   const [sideMenuFadeOut, setSideMenuFadeOut] = useState(false);
@@ -29,44 +31,17 @@ const Header = () => {
               onClick={toggleSideMenu}
               className="text-white flex flex-col justify-center items-center cursor-pointer"
             >
-              {isShow ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-9 h-9"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-9 h-9"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              )}
+              {isShow ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
             </div>
             {/* BET CHANNEL */}
-            <p className="font-bold text-xl">
-              <span className="text-[#409AD6]">BET</span>
-              <span className="text-[#E8B30F]">CHANNEL</span>
-              <span className="text-[#02CFFF]">FREE</span>
-            </p>
+            <Link href="/">
+              <p className="font-bold text-xl">
+                <span className="text-[#409AD6]">BET</span>
+                <span className="text-[#E8B30F]">CHANNEL</span>
+                <span className="text-[#02CFFF]">FREE</span>
+              </p>
+            </Link>
+
             {/* 掲示板 */}
             <Link
               href="/Board"
@@ -80,14 +55,14 @@ const Header = () => {
       {/* サイドバー */}
       {isShow && (
         <div
-          className={`absolute top-[60px] left-0 overflow-y-auto  w-full z-30 bg-slate-800 animate-scale-in-hor-left ${
+          className={`absolute top-[59px] left-0 overflow-y-auto  w-[80%] z-30 bg-slate-800 animate-scale-in-hor-left ${
             sideMenuFadeOut && "animate-scale-out-hor-left"
           }`}
           style={{ height: "calc(100vh - 60px)" }}
         >
-          {/* <div className="">
-                <SideMenuContents isShow={isShow} />
-              </div> */}
+          <div className="">
+            <SideMenuContents isShow={isShow} />
+          </div>
         </div>
       )}
     </div>

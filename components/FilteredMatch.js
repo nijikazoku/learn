@@ -1,8 +1,8 @@
 import { canBetNpb } from "../src/baseball/canBetNpb";
 import DisplayGames from "./DisplayGames";
 
-const FilteredMatch = ({ filteredMatch }) => {
-  const filteredMatches = canBetNpb.filter(
+const FilteredMatch = ({ filteredMatch, games }) => {
+  const filteredMatches = games.filter(
     (match) => match.canBet === filteredMatch
   );
 

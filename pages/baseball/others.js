@@ -7,9 +7,9 @@ import FilteredMatch from "../../components/FilteredMatch";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/TodaysMatch";
-import { canBetNpb } from "../../src/baseball/canBetNpb";
+import { canBetMlb } from "../../src/baseball/canBetMlb";
 
-const npb = () => {
+const mlb = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
   const handleFilter = (condition) => {
     if (condition === filteredMatch) {
@@ -22,7 +22,6 @@ const npb = () => {
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <BaseballGenreButton />
-
         <div className="space-y-3">
           {/* フィルターボタン */}
           <FilterButton
@@ -34,11 +33,13 @@ const npb = () => {
           <div className="w-[95%] mx-auto space-y-2">
             {/* フィルター試合 */}
             {filteredMatch && (
-              <FilteredMatch filteredMatch={filteredMatch} games={canBetNpb} />
+              <FilteredMatch filteredMatch={filteredMatch} games={canBetMlb} />
             )}
-            <TodaysMatch games={canBetNpb} />
+            {/* 今日の試合 */}
+            <TodaysMatch games={canBetMlb} />
             <div className="text-xl">今後の試合</div>
-            <DateSelect games={canBetNpb} />
+            {/* 今後の試合 */}
+            <DateSelect games={canBetMlb} />
           </div>
         </div>
       </div>
@@ -46,4 +47,4 @@ const npb = () => {
   );
 };
 
-export default npb;
+export default mlb;
