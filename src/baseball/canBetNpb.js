@@ -1,6 +1,6 @@
 const canBetNpb = [
   {
-    matchDate: "03/28",
+    matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
     homeTeam: "中日",
@@ -13,7 +13,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
-    matchDate: "03/2",
+    matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
     homeTeam: "広島",
@@ -26,7 +26,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
-    matchDate: "03/28",
+    matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
     homeTeam: "巨人",
@@ -39,7 +39,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
-    matchDate: "03/28",
+    matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
     homeTeam: "オリックス",
@@ -52,7 +52,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
-    matchDate: "03/28",
+    matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
     homeTeam: "日本ハム",
@@ -65,7 +65,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
-    matchDate: "03/28",
+    matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
     homeTeam: "西武",
@@ -78,7 +78,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
-    matchDate: "03/29",
+    matchDate: "3/29",
     matchTime: "14:00",
     category: "NPB",
     homeTeam: "巨人",
@@ -91,7 +91,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
-    matchDate: "03/29",
+    matchDate: "3/29",
     matchTime: "16:00",
     category: "NPB",
     homeTeam: "広島",
@@ -100,11 +100,11 @@ const canBetNpb = [
     oddsHome: 2.65,
     oddsDraw: 10.82,
     oddsAway: 1.14,
-    canBet: "now",
+    canBet: "accept",
     type: "セ・リーグ",
   },
   {
-    matchDate: "03/29",
+    matchDate: "3/29",
     matchTime: "16:00",
     category: "NPB",
     homeTeam: "ヤクルト",
@@ -113,11 +113,11 @@ const canBetNpb = [
     oddsHome: 1.53,
     oddsDraw: 5.67,
     oddsAway: 3.34,
-    canBet: "now",
+    canBet: "accept",
     type: "セ・リーグ",
   },
   {
-    matchDate: "03/29",
+    matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
     homeTeam: "ソフトバンク",
@@ -126,11 +126,11 @@ const canBetNpb = [
     oddsHome: 1.24,
     oddsDraw: 6.78,
     oddsAway: 2.79,
-    canBet: "now",
+    canBet: "accept",
     type: "パ・リーグ",
   },
   {
-    matchDate: "03/29",
+    matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
     homeTeam: "日本ハム",
@@ -139,11 +139,11 @@ const canBetNpb = [
     oddsHome: 3.45,
     oddsDraw: 6.89,
     oddsAway: 1.44,
-    canBet: "now",
+    canBet: "accept",
     type: "パ・リーグ",
   },
   {
-    matchDate: "03/29",
+    matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
     homeTeam: "ロッテ",
@@ -152,12 +152,12 @@ const canBetNpb = [
     oddsHome: 3.45,
     oddsDraw: 7.98,
     oddsAway: 1.21,
-    canBet: "now",
+    canBet: "accept",
     type: "パ・リーグ",
   },
 
   {
-    matchDate: "03/30",
+    matchDate: "3/30",
     matchTime: "16:00",
     category: "NPB",
     homeTeam: "オリックス",

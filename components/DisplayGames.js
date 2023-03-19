@@ -19,13 +19,14 @@ const DisplayGames = ({ match, index }) => {
             <div className="whitespace-nowrap">{match.type}</div>
           </div>
           <div className="text-sm space-x-1 items-end justify-start pl-1 flex">
-            <p className=""> {match.matchTime}</p>
+            <p className="">{match.matchDate}</p>
+            <p>{match.matchTime}</p>
             <p className="gray-600 whitespace-nowrap">{match.avenue}</p>
           </div>
         </div>
         {/* オッズ状態 */}
         <div className="flex flex-grow pl-2 items-center whitespace-nowrap justify-end">
-          {match.canBet === "now" && (
+          {match.canBet === "accept" && (
             <div className="flex animate-pulse items-center border-green-600 space-x-1 border-2 rounded-full  py-1 px-2">
               <TbCircleFilled color="green" size={14} />{" "}
               <span className="text-[0.7rem]">ベット受付中</span>
@@ -48,13 +49,13 @@ const DisplayGames = ({ match, index }) => {
       {/* チーム名＆オッズ */}
       <div className="flex text-xl">
         {/* チーム名 */}
-        <div className="w-1/2 pl-2">
+        <div className="w-[40%] pl-2">
           <p cla>{match.homeTeam}</p>
           <p>{match.awayTeam}</p>
         </div>
         {/* オッズ */}
-        <div className="flex w-1/2 px-1 justify-end space-x-1 text-lg">
-          {match.canBet === "now" || match.canBet === "after" ? (
+        <div className="flex w-[60%]  justify-end space-x-1 text-lg">
+          {match.canBet === "accept" || match.canBet === "after" ? (
             <button className="border rounded-md w-1/3">
               {match.oddsHome}
             </button>
@@ -63,7 +64,7 @@ const DisplayGames = ({ match, index }) => {
               <AiFillLock size={30} color="#FBBF24" />
             </button>
           )}
-          {match.canBet === "now" || match.canBet === "after" ? (
+          {match.canBet === "accept" || match.canBet === "after" ? (
             <button className="border rounded-md w-1/3">
               {match.oddsDraw}
             </button>
@@ -71,8 +72,8 @@ const DisplayGames = ({ match, index }) => {
             <button className="border flex justify-center items-center rounded-md w-1/3">
               <AiFillLock size={30} color="#FBBF24" />
             </button>
-          )}{" "}
-          {match.canBet === "now" || match.canBet === "after" ? (
+          )}
+          {match.canBet === "accept" || match.canBet === "after" ? (
             <button className="border rounded-md w-1/3">
               {match.oddsAway}
             </button>

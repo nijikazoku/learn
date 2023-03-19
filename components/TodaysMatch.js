@@ -13,21 +13,21 @@ const TodaysMatch = () => {
       <div className="text-xl">今日の試合</div>
       <div className="">
         <div
-          onClick={() => handleClick("03/28")}
+          onClick={() => handleClick("3/28")}
           className={`flex mb-1  justify-between py-2 ${
-            selectedDate === "03/28" &&
+            selectedDate === "3/28" &&
             "bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900 bg-opacity-40"
           } `}
         >
           <button className="flex space-x-2 ">
             <BsCalendarWeek size={30} />
-            <p className="text-xl">2023年03/28(火)</p>
+            <p className="text-xl">2023年3/28(火)</p>
           </button>
           <IoMdArrowDropdown size={30} />
         </div>
-        {selectedDate === "03/28" &&
+        {selectedDate === "3/28" &&
           canBetNpb
-            .filter((match) => match.matchDate === "03/28")
+            .filter((match) => match.matchDate === "3/28")
             .map((match, index) => (
               <DisplayGames
                 key={`${match.homeTeam}-${match.awayTeam}`}
