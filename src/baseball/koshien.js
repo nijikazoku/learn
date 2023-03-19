@@ -112,7 +112,7 @@ const koshien = [
       maximumFractionDigits: 2,
     }),
 
-    canBet: "before",
+    canBet: "accept",
     type: "第1試合(1回戦)",
   },
   {
@@ -141,7 +141,7 @@ const koshien = [
       maximumFractionDigits: 2,
     }),
 
-    canBet: "before",
+    canBet: "accept",
     type: "第2試合(1回戦)",
   },
   {
@@ -170,7 +170,7 @@ const koshien = [
       maximumFractionDigits: 2,
     }),
 
-    canBet: "before",
+    canBet: "accept",
     type: "第3試合(1回戦)",
   },
   {
