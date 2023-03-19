@@ -9,7 +9,7 @@ const DisplayGames = ({ match, index }) => {
       className="relative border border-gray-700 bg-opacity-40 mb-3 rounded-lg overflow-hidden shadow space-y-2 py-3 px-2 from-gray-900 to-gray-600 bg-gradient-to-r"
     >
       {/* 日付＆スタジアム&ベット状態 */}
-      <div className="flex   justify-between">
+      <div className="flex  relative  justify-between">
         <div className="flex-grow ">
           <div className="flex text-base space-x-1 items-center ">
             <div className="flex items-center ">
@@ -27,7 +27,7 @@ const DisplayGames = ({ match, index }) => {
           </div>
         </div>
         {/* オッズ状態 */}
-        <div className="flex flex-grow pl-2 items-center whitespace-nowrap justify-end">
+        <div className="flex absolute top-0 right-0  flex-grow pl-2 items-center whitespace-nowrap justify-end">
           {match.canBet === "accept" && (
             <div className="flex animate-pulse items-center border-green-600 space-x-1 border-2 rounded-full  py-1 px-2">
               <TbCircleFilled color="green" size={14} />{" "}
