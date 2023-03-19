@@ -11,9 +11,9 @@ const DisplayGames = ({ match, index }) => {
       {/* 日付＆スタジアム&ベット状態 */}
       <div className="flex  justify-between">
         <div className="max-w-[40%] ">
-          <div className="flex text-lg space-x-1 items-center ">
+          <div className="flex text-base space-x-1 items-center ">
             <div className="flex  items-center ">
-              <IoMdBaseball size={25} />
+              <IoMdBaseball size={20} />
               <p className="">{match.category}</p>
             </div>
             <div className="whitespace-nowrap">{match.type}</div>
@@ -47,14 +47,14 @@ const DisplayGames = ({ match, index }) => {
         </div>
       </div>
       {/* チーム名＆オッズ */}
-      <div className="flex text-xl">
+      <div className="flex text-lg">
         {/* チーム名 */}
-        <div className="w-[40%] pl-2">
+        <div className="w-[45%] pl-2">
           <p cla>{match.homeTeam}</p>
           <p>{match.awayTeam}</p>
         </div>
         {/* オッズ */}
-        <div className="flex w-[60%]  justify-end space-x-1 text-lg">
+        <div className="flex w-[55%]  justify-end space-x-1 text-lg">
           {match.canBet === "accept" || match.canBet === "after" ? (
             <button className="border rounded-md w-1/3">
               {match.oddsHome}
