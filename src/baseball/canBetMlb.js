@@ -34,7 +34,7 @@ const canBetMlb = [
     category: "MLB",
     homeTeam: "レッズ",
     awayTeam: "カブス",
-    avenue: "グレートアメリカン。パーク",
+    avenue: "グレートアメリカン・パーク",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
     ).toLocaleString(undefined, {

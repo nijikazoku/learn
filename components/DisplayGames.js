@@ -18,10 +18,12 @@ const DisplayGames = ({ match, index }) => {
             </div>
             <div className="whitespace-nowrap">{match.type}</div>
           </div>
-          <div className="text-sm space-x-1 items-end justify-start pl-1 flex">
+          <div className="text-sm space-x-1 items-center justify-start pl-1 flex">
             <p className="">{match.matchDate}</p>
             <p>{match.matchTime}</p>
-            <p className="gray-600 whitespace-nowrap">{match.avenue}</p>
+            <p className="gray-600 whitespace-nowrap text-xs truncate">
+              {match.avenue}
+            </p>
           </div>
         </div>
         {/* オッズ状態 */}
