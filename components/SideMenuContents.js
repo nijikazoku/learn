@@ -1,9 +1,8 @@
 import { MdOutlineSportsBaseball, MdSupportAgent } from "react-icons/md";
 import { CgCardSpades } from "react-icons/cg";
-import { BiFootball } from "react-icons/bi";
 import { useState } from "react";
 import Link from "next/link";
-const SideMenuContents = ({}) => {
+const SideMenuContents = ({ toggleSideMenu }) => {
   const [showSports, setShowSports] = useState(false);
   const [fadeOutSport, setFadeOutSport] = useState(false);
 
@@ -54,17 +53,17 @@ const SideMenuContents = ({}) => {
     }
   };
 
-  const handleCloseSidebar = () => {
-    handleShow(false);
-  };
+  // const handleCloseSidebar = () => {
+  //   handleShow(false);
+  // };
 
   return (
-    <div className="overflow-y-auto">
+    <div>
       <ul>
         {/* HOME */}
         <li>
           <Link
-            onClick={handleCloseSidebar}
+            onClick={toggleSideMenu}
             href="/"
             className="flex border-b border-t space-x-2 items-end border-gray-700  text-xl p-4"
           >
@@ -72,13 +71,13 @@ const SideMenuContents = ({}) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               class="w-8 h-8"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
@@ -101,13 +100,13 @@ const SideMenuContents = ({}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M18 12H6"
                 />
               </svg>
@@ -116,13 +115,13 @@ const SideMenuContents = ({}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M12 6v12m6-6H6"
                 />
               </svg>
@@ -138,7 +137,12 @@ const SideMenuContents = ({}) => {
                  `}
               >
                 <Link href="/baseball/npb">
-                  <div className="p-4 border-b border-gray-500">野球</div>
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-4 border-b border-gray-500"
+                  >
+                    野球
+                  </div>
                 </Link>
 
                 <p className="p-4 border-b border-gray-500">サッカー</p>
@@ -164,13 +168,13 @@ const SideMenuContents = ({}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M18 12H6"
                 />
               </svg>
@@ -179,13 +183,13 @@ const SideMenuContents = ({}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M12 6v12m6-6H6"
                 />
               </svg>
@@ -226,13 +230,13 @@ const SideMenuContents = ({}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M18 12H6"
                 />
               </svg>
@@ -241,13 +245,13 @@ const SideMenuContents = ({}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M12 6v12m6-6H6"
                 />
               </svg>

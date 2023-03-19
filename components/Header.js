@@ -61,7 +61,7 @@ const Header = () => {
           style={{ height: "calc(100vh - 60px)" }}
         >
           <div className="">
-            <SideMenuContents isShow={isShow} />
+            <SideMenuContents toggleSideMenu={toggleSideMenu} />
           </div>
         </div>
       )}
