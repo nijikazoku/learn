@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { AiOutlineAlert } from "react-icons/ai";
+import { TbCircleFilled } from "react-icons/tb";
 import DisplayGames from "./DisplayGames";
 const DateSelect = ({ games }) => {
   const [selectedDate, setSelectedDate] = useState("");
+  const [displayBetText, setDisplayBetText] = useState(true);
   const sampleData = ["3/29", "3/30", "3/31", "4/01", "4/02"];
 
   const getWeekday = (dateString) => {
@@ -23,7 +24,7 @@ const DateSelect = ({ games }) => {
         <div key={date} className="">
           <div
             onClick={() => handleClick(date)}
-            className={`flex mb-1  justify-between py-2 ${
+            className={`flex mb-1  relative justify-between py-2 ${
               selectedDate === date &&
               "bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900 bg-opacity-40"
             } `}
@@ -32,6 +33,17 @@ const DateSelect = ({ games }) => {
               <BsCalendarWeek size={30} />
               <p className="text-xl">{`2023年${date}(${getWeekday(date)})`}</p>
             </button>
+            {displayBetText &&
+              games
+                .filter((match) => match.matchDate === date)
+                .some((match) => match.canBet === "accept") && (
+                <div className="absolute top-[37%] right-[12%] ">
+                  <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                    <span class="inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                  </span>
+                </div>
+              )}
             <IoMdArrowDropdown size={30} />
           </div>
 
