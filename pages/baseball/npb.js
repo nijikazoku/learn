@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState } from "react";
 import BaseballGenreButton from "../../components/BaseballGenreButton";
 import DateSelect from "../../components/DateSelect";
@@ -16,6 +15,7 @@ const npb = () => {
       setFilteredMatch("");
     } else setFilteredMatch(condition);
   };
+
   return (
     <Layout>
       <Header />

@@ -9,10 +9,10 @@ const DisplayGames = ({ match, index }) => {
       className="relative border border-gray-700 bg-opacity-40 mb-3 rounded-lg overflow-hidden shadow space-y-2 py-3 px-2 from-gray-900 to-gray-600 bg-gradient-to-r"
     >
       {/* 日付＆スタジアム&ベット状態 */}
-      <div className="flex  justify-between">
-        <div className="max-w-[40%] ">
+      <div className="flex   justify-between">
+        <div className="flex-grow ">
           <div className="flex text-base space-x-1 items-center ">
-            <div className="flex  items-center ">
+            <div className="flex items-center ">
               <IoMdBaseball size={20} />
               <p className="">{match.category}</p>
             </div>
@@ -50,8 +50,8 @@ const DisplayGames = ({ match, index }) => {
       <div className="flex text-lg">
         {/* チーム名 */}
         <div className="w-[45%] pl-2">
-          <p cla>{match.homeTeam}</p>
-          <p>{match.awayTeam}</p>
+          <p className="truncate">{match.homeTeam}</p>
+          <p className="truncate">{match.awayTeam}</p>
         </div>
         {/* オッズ */}
         <div className="flex w-[55%]  justify-end space-x-1 text-lg">

@@ -6,3 +6,36 @@ body {
   color: white;
   background-color: #111827;
 }
+
+@layer utilities {
+  .box-register::before {
+    @apply content-['']  absolute bg-[conic-gradient(#dd6b20_120deg,transparent_120deg)] w-[110px] h-[90px] top-[-25%] left-[-20%] animate-fullSpin;
+  }
+  .box-register::after {
+    @apply content-[""] rounded-lg text-white w-[94%] h-[94%] bg-[#1b2d58] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
+  }
+}
+@layer utilities {
+  .box-sports::before {
+    @apply content-['']  absolute bg-[conic-gradient(#b0c4de_120deg,transparent_120deg)] w-[110px] h-[90px] top-[-25%] left-[-20%] animate-fullSpin;
+  }
+  .box-sports::after {
+    @apply content-[""] rounded-lg text-white w-[94%] h-[94%] bg-[#1b2d58] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
+  }
+}
+@layer utilities {
+  .box-casino::before {
+    @apply content-['']  absolute bg-[conic-gradient(#dda0dd_120deg,transparent_120deg)] w-[110px] h-[90px] top-[-25%] left-[-20%] animate-fullSpin;
+  }
+  .box-casino::after {
+    @apply content-[""] rounded-lg text-[#dda0dd] w-[94%] h-[94%] bg-[#1b2d58] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
+  }
+}
+@layer utilities {
+  .box-promo::before {
+    @apply content-['']  absolute bg-[conic-gradient(#ffff00_120deg,transparent_120deg)] w-[110px] h-[90px] top-[-25%] left-[-20%] animate-fullSpin;
+  }
+  .box-promo::after {
+    @apply content-[""] rounded-lg text-[#ffff00] w-[94%] h-[94%] bg-[#1b2d58] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
+  }
+}
