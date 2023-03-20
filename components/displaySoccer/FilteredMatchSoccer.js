@@ -1,6 +1,6 @@
-import DisplayGames from "./DisplayGames";
+import DisplayGamesSoccer from "./DisplayGamesSoccer";
 
-const FilteredMatch = ({ filteredMatch, games }) => {
+const FilteredMatchSoccer = ({ filteredMatch, games }) => {
   const filteredMatches = games.filter(
     (match) => match.canBet === filteredMatch
   );
@@ -8,8 +8,8 @@ const FilteredMatch = ({ filteredMatch, games }) => {
   return filteredMatches.length > 0 ? (
     <>
       {filteredMatches.map((match, index) => (
-        <DisplayGames
-          key={`${match.homeTeam}-${match.awayTeam}`}
+        <DisplayGamesSoccer
+          key={`${match.homeTeam.name}-${match.awayTeam.name}`}
           match={match}
           index={index}
         />
@@ -20,4 +20,4 @@ const FilteredMatch = ({ filteredMatch, games }) => {
   );
 };
 
-export default FilteredMatch;
+export default FilteredMatchSoccer;

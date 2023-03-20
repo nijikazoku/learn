@@ -1,6 +1,5 @@
 import { useState } from "react";
 import FilterButton from "../../components/FilterButton";
-import FilteredMatch from "../../components/FilteredMatch";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SelectSoccerLeague from "../../components/SelectSoccerLeague";
@@ -14,6 +13,8 @@ import { canBetItaly } from "../../src/soccer/overseas/canBetItaly";
 import { canBetNetherlands } from "../../src/soccer/overseas/canBetNetherlands";
 import { canBetPortgal } from "../../src/soccer/overseas/canBetPortgal";
 import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
+import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
+import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 
 const overseas = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -73,9 +74,12 @@ const overseas = () => {
           <div className="w-[95%] mx-auto space-y-2">
             {/* フィルター試合 */}
             {filteredMatch && (
-              <FilteredMatch filteredMatch={filteredMatch} games={games} />
+              <FilteredMatchSoccer
+                filteredMatch={filteredMatch}
+                games={games}
+              />
             )}
-            <TodaysMatch games={games} />
+            <TodaysMatchSoccer games={games} />
             <div className="text-xl">今後の試合</div>
             <DateSelectSoccer games={games} />
           </div>

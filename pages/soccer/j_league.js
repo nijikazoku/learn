@@ -1,8 +1,9 @@
 import { useState } from "react";
 import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
+import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
 import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 import FilterButton from "../../components/FilterButton";
-import FilteredMatch from "../../components/FilteredMatch";
+
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SoccerGenreButton from "../../components/SoccerGenreButton";
@@ -34,7 +35,7 @@ const j_league = () => {
           <div className="w-[95%] mx-auto space-y-2">
             {/* フィルター試合 */}
             {filteredMatch && (
-              <FilteredMatch
+              <FilteredMatchSoccer
                 filteredMatch={filteredMatch}
                 games={canBetJleague}
               />
