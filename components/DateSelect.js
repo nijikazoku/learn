@@ -29,9 +29,21 @@ const DateSelect = ({ games }) => {
               "bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900 bg-opacity-40"
             } `}
           >
-            <button className="flex space-x-2 ">
+            <button className="flex space-x-2 items-center">
               <BsCalendarWeek size={30} />
               <p className="text-xl">{`2023年${date}(${getWeekday(date)})`}</p>
+              {displayBetText &&
+                games.filter(
+                  (match) => match.matchDate === date && match.isJapan
+                ).length > 0 && (
+                  <div className="absolute top-[25%] right-[43%] ">
+                    <img
+                      className="w-6"
+                      src="https://www.svgrepo.com/show/405519/flag-for-flag-japan.svg"
+                      alt=""
+                    />
+                  </div>
+                )}
             </button>
             {displayBetText &&
               games
@@ -44,18 +56,6 @@ const DateSelect = ({ games }) => {
                   </span>
                 </div>
               )}
-            {displayBetText &&
-              games.filter((match) => match.matchDate === date && match.isJapan)
-                .length > 0 && (
-                <div className="absolute top-[25%] right-[43%] ">
-                  <img
-                    className="w-6"
-                    src="https://www.svgrepo.com/show/405519/flag-for-flag-japan.svg"
-                    alt=""
-                  />
-                </div>
-              )}
-
             <IoMdArrowDropdown size={30} />
           </div>
 
