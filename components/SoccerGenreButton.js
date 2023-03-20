@@ -1,43 +1,43 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const BaseballGenreButton = () => {
+const SoccerGenreButton = () => {
   const router = useRouter();
 
   return (
     <div className="">
       <div className="bg-gradient-to-l from-blue-700 via-blue-800 py-2 to-gray-900 text-lg font-bold px-4 ">
-        野球
+        サッカー
       </div>
       <div className="text-lg flex items-center border-b">
         <Link
-          href="/baseball/npb"
+          href="/soccer/j_league"
           className={`w-1/4 border-r py-1 text-center ${
-            router.pathname === "/baseball/npb" && "bg-[#0075C2]"
+            router.pathname === "/soccer/j_league" && "bg-[#0075C2]"
           }`}
         >
-          NPB
+          国内
         </Link>
         <Link
-          href="/baseball/mlb"
+          href="/soccer/overseas"
           className={`w-1/4 border-r py-1 text-center ${
-            router.pathname === "/baseball/mlb" && "bg-[#0075C2]"
+            router.pathname === "/soccer/overseas" && "bg-[#0075C2]"
           }`}
         >
-          MLB
+          海外
         </Link>
         <Link
-          href="/baseball/wbc"
+          href="/soccer/worldcup"
           className={`w-1/4 border-r py-1 text-center ${
-            router.pathname === "/baseball/wbc" && "bg-[#0075C2]"
+            router.pathname === "/soccer/worldcup" && "bg-[#0075C2]"
           }`}
         >
-          WBC
+          W杯
         </Link>
         <Link
-          href="/baseball/others"
+          href="/soccer/others"
           className={`w-1/4 border-r py-1 text-center ${
-            router.pathname === "/baseball/others" && "bg-[#0075C2]"
+            router.pathname === "/soccer/others" && "bg-[#0075C2]"
           }`}
         >
           その他
@@ -47,4 +47,4 @@ const BaseballGenreButton = () => {
   );
 };
 
-export default BaseballGenreButton;
+export default SoccerGenreButton;

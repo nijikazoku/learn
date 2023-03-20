@@ -1,5 +1,6 @@
 const canBetNpb = [
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
@@ -13,6 +14,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
@@ -26,6 +28,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
@@ -39,6 +42,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
@@ -52,6 +56,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
@@ -65,6 +70,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
@@ -78,6 +84,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "14:00",
     category: "NPB",
@@ -91,6 +98,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "16:00",
     category: "NPB",
@@ -104,6 +112,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "16:00",
     category: "NPB",
@@ -117,6 +126,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
@@ -130,6 +140,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
@@ -143,6 +154,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
@@ -156,6 +168,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "13:00",
     category: "NPB",
@@ -169,6 +182,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "13:00",
     category: "NPB",
@@ -182,6 +196,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "13:00",
     category: "NPB",
@@ -195,6 +210,7 @@ const canBetNpb = [
     type: "セ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "16:00",
     category: "NPB",
@@ -208,6 +224,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "16:00",
     category: "NPB",
@@ -221,6 +238,7 @@ const canBetNpb = [
     type: "パ・リーグ",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "16:00",
     category: "NPB",

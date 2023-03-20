@@ -1,5 +1,6 @@
 const koshien = [
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "12:00",
     category: "高校野球",
@@ -29,6 +30,7 @@ const koshien = [
     type: "第1試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "15:00",
     category: "高校野球",
@@ -58,6 +60,7 @@ const koshien = [
     type: "第2試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "17:00",
     category: "高校野球",
@@ -87,6 +90,7 @@ const koshien = [
     type: "第3試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "09:00",
     category: "高校野球",
@@ -116,6 +120,7 @@ const koshien = [
     type: "第1試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "12:00",
     category: "高校野球",
@@ -145,6 +150,7 @@ const koshien = [
     type: "第2試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "15:00",
     category: "高校野球",
@@ -174,6 +180,7 @@ const koshien = [
     type: "第3試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "09:00",
     category: "高校野球",
@@ -203,6 +210,7 @@ const koshien = [
     type: "第3試合(1回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "12:00",
     category: "高校野球",
@@ -232,6 +240,7 @@ const koshien = [
     type: "第2試合(2回戦)",
   },
   {
+    sports: "baseball",
     matchDate: "3/30",
     matchTime: "14:00",
     category: "高校野球",

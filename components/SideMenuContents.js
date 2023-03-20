@@ -53,23 +53,20 @@ const SideMenuContents = ({ toggleSideMenu }) => {
     }
   };
 
-  // const handleCloseSidebar = () => {
-  //   handleShow(false);
-  // };
-
   return (
     <div
       style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
-      className="py-3 h-screen bg-black bg-opacity-80 "
+      className="py-3 h-screen bg-black bg-opacity-80 w-[75%]"
     >
       <div className="flex flex-col space-y-2">
+        {/* 登録ボタン */}
         <Link
           href="/register"
           className="text-center bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-yellow-400 via-yellow-300 to-yellow-300 font-bold text-black w-[90%] mx-auto rounded-md p-1 border-b-4 border-yellow-700"
         >
           15秒で簡単登録
         </Link>
-
+        {/* ログインボタン */}
         <Link
           href="/"
           className="text-center bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-blue-500 via-blue-700 to-blue-700 font-bold text-white w-[90%] mx-auto rounded-md p-1 border-b-4 border-blue-900"
@@ -157,7 +154,7 @@ const SideMenuContents = ({ toggleSideMenu }) => {
                     野球
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/soccer/j_league">
                   <div
                     onClick={toggleSideMenu}
                     className="p-2 text-lg border-b border-red-500"

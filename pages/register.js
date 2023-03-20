@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <Layout>
       <Header />
-      <div className={`min-h-screen  py-3  w-full h-full bg-slate-800 `}>
+      <div className={`py-3  w-full h-full`}>
         <div className="py-5">
           <h1 className="w-[80%] text-4xl mx-auto">会員登録</h1>
           <div className="flex w-[80%] mx-auto py-2">

@@ -1,5 +1,6 @@
 const canBetWbc = [
   {
+    sports: "baseball",
     matchDate: "3/29",
     matchTime: "13:00",
     category: "WBC",

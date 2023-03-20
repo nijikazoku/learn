@@ -21,6 +21,13 @@ const Header = () => {
       }, 600);
     }
   };
+
+  const handleOverlayClick = (event) => {
+    // クリックした要素がサイドメニューの外側の場合、サイドメニューを閉じる
+    if (event.target.classList.contains("side-menu-overlay")) {
+      toggleSideMenu();
+    }
+  };
   return (
     <div className="relative">
       <header class=" bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2">
@@ -55,14 +62,17 @@ const Header = () => {
       {/* サイドバー */}
       {isShow && (
         <div
-          className={`absolute top-[59px] left-0  w-[85%] z-10 animate-scale-in-hor-left ${
+          className={`absolute top-[59px] left-0  z-10 w-full animate-scale-in-hor-left ${
             sideMenuFadeOut && "animate-scale-out-hor-left"
           }`}
           // style={{ height: "90vh", overflowY: "auto" }}
         >
-          <div className="">
-            <SideMenuContents toggleSideMenu={toggleSideMenu} />
-          </div>
+          <div
+            className="absolute top-0 bottom-0 right-0 w-[25%] side-menu-overlay "
+            onClick={handleOverlayClick}
+          ></div>
+
+          <SideMenuContents toggleSideMenu={toggleSideMenu} />
         </div>
       )}
     </div>

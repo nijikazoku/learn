@@ -1,5 +1,6 @@
 const canBetMlb = [
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "13:00",
     category: "MLB",
@@ -29,6 +30,7 @@ const canBetMlb = [
     type: "ナ・リーグ 東地区",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "13:00",
     category: "MLB",
@@ -58,6 +60,7 @@ const canBetMlb = [
     type: "ナ・リーグ 中地区",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "13:00",
     category: "MLB",
@@ -87,6 +90,7 @@ const canBetMlb = [
     type: "ナ・リーグ 西地区",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "15:00",
     category: "MLB",
@@ -116,6 +120,7 @@ const canBetMlb = [
     type: "ア・リーグ 東地区",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "15:00",
     category: "MLB",
@@ -145,6 +150,7 @@ const canBetMlb = [
     type: "ア・リーグ 中地区",
   },
   {
+    sports: "baseball",
     matchDate: "3/28",
     matchTime: "15:00",
     category: "MLB",
@@ -174,6 +180,7 @@ const canBetMlb = [
     type: "ア・リーグ 西地区",
   },
   {
+    sports: "baseball",
     matchDate: "4/01",
     matchTime: "19:00",
     category: "MLB",
@@ -203,6 +210,7 @@ const canBetMlb = [
     type: "ナ・リーグ 東地区",
   },
   {
+    sports: "baseball",
     matchDate: "4/01",
     matchTime: "19:00",
     category: "MLB",
@@ -232,6 +240,7 @@ const canBetMlb = [
     type: "ナ・リーグ 中地区",
   },
   {
+    sports: "baseball",
     matchDate: "4/01",
     matchTime: "19:00",
     category: "MLB",
@@ -261,6 +270,7 @@ const canBetMlb = [
     type: "ナ・リーグ 西地区",
   },
   {
+    sports: "baseball",
     matchDate: "4/02",
     matchTime: "12:00",
     category: "MLB",
@@ -290,6 +300,7 @@ const canBetMlb = [
     type: "ア・リーグ 東地区",
   },
   {
+    sports: "baseball",
     matchDate: "4/02",
     matchTime: "12:00",
     category: "MLB",
@@ -319,6 +330,7 @@ const canBetMlb = [
     type: "ア・リーグ 中地区",
   },
   {
+    sports: "baseball",
     matchDate: "4/02",
     matchTime: "12:00",
     category: "MLB",

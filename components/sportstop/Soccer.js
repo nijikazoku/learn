@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FadeInEffect from "../FadeInEffect";
 const Soccer = () => {
   return (
@@ -8,7 +9,8 @@ const Soccer = () => {
           <div className="px-3 text-sm">View All</div>
         </div>
         <div className="flex flex-col h-[16rem] space-y-1 w-[97%] mx-auto">
-          <div class="w-full relative h-1/2">
+          {/* Jリーグ */}
+          <Link href="/soccer/j_league" class="w-full relative h-1/2">
             <div class="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden">
               <img
                 src="https://i.imgur.com/Oli8knO.jpg"
@@ -22,7 +24,7 @@ const Soccer = () => {
                 Jリーグ
               </div>
             </div>
-          </div>
+          </Link>
 
           <div className="h-1/2 flex space-x-1 ">
             <div class="w-1/2 relative">
