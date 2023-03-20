@@ -112,7 +112,7 @@ const DisplayGamesSoccer = ({ match, index }) => {
           )}
           {match.canBet === "accept" || match.canBet === "after" ? (
             <div className="py-2 bg-opacity-80 bg-red-700 text-center text-xl rounded-md w-1/3">
-              {match.oddsHome}
+              {match.oddsAway}
             </div>
           ) : (
             <button className="border flex justify-center items-center rounded-md w-1/3">
