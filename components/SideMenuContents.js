@@ -58,41 +58,54 @@ const SideMenuContents = ({ toggleSideMenu }) => {
   // };
 
   return (
-    <div>
+    <div
+      style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
+      className="py-3 h-screen bg-black bg-opacity-80 "
+    >
+      <div className="flex flex-col space-y-2">
+        <Link
+          href="/register"
+          className="text-center bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-yellow-400 via-yellow-300 to-yellow-300 font-bold text-black w-[90%] mx-auto rounded-md p-1 border-b-4 border-yellow-700"
+        >
+          15秒で簡単登録
+        </Link>
+
+        <Link
+          href="/"
+          className="text-center bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-blue-500 via-blue-700 to-blue-700 font-bold text-white w-[90%] mx-auto rounded-md p-1 border-b-4 border-blue-900"
+        >
+          ログイン
+        </Link>
+      </div>
       <ul>
         {/* HOME */}
         <li>
           <Link
             onClick={toggleSideMenu}
             href="/"
-            className="flex border-b border-t space-x-2 items-end border-gray-700  text-xl p-4"
+            className="flex border-b space-x-2 items-center  text-xl p-2 "
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              class="w-8 h-8"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-              />
-            </svg>
-            <p>HOME</p>
+            <img
+              className="w-6"
+              src="https://www.svgrepo.com/show/474867/home.svg"
+              alt=""
+            />
+            <p className="text-xl">ホーム</p>
           </Link>
         </li>
         {/* SPORTS */}
-        <li className="border-b border-gray-700 text-xl ">
+        <li className={`border-b  text-xl ${showSports && "border-none"}`}>
           <div
             onClick={handleSports}
-            className="flex justify-between  w-full p-4"
+            className="flex justify-between  w-full p-2"
           >
-            <div className="flex items-end space-x-2">
-              <MdOutlineSportsBaseball size={30} />
-              <p>SPORTS</p>
+            <div className="flex items-center space-x-2">
+              <img
+                className="w-6"
+                src="https://www.svgrepo.com/show/395857/baseball.svg"
+                alt=""
+              />
+              <p className="text-lg">無料スポーツ</p>
             </div>
 
             {showSports ? (
@@ -130,7 +143,7 @@ const SideMenuContents = ({ toggleSideMenu }) => {
           {showSports && (
             <div className={` ${fadeOutSport && "animate-scale-out-ver-top"} `}>
               <div
-                className={`bg-slate-600  w-full                 ${
+                className={`  w-full                 ${
                   showSports && "animate-scale-up-ver-top"
                 }
   
@@ -139,28 +152,52 @@ const SideMenuContents = ({ toggleSideMenu }) => {
                 <Link href="/baseball/npb">
                   <div
                     onClick={toggleSideMenu}
-                    className="p-4 border-b border-gray-500"
+                    className="pb-2 px-2 text-lg border-b border-red-500"
                   >
                     野球
                   </div>
                 </Link>
-
-                <p className="p-4 border-b border-gray-500">サッカー</p>
-                <p className="p-4 border-b border-gray-500">バスケットボール</p>
-                <p className="p-4">格闘技</p>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg border-b border-red-500"
+                  >
+                    サッカー
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    バスケットボール
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg border-b border-red-500 "
+                  >
+                    格闘技
+                  </div>
+                </Link>
               </div>
             </div>
           )}
         </li>
         {/* FREE GAMES */}
-        <li className="border-b border-gray-700 text-xl ">
+        <li className={`border-b text-xl ${showGames && "border-none"}`}>
           <div
             onClick={handleGames}
-            className="flex justify-between  w-full p-4"
+            className="flex justify-between  w-full p-2"
           >
-            <div className="flex items-end space-x-2">
-              <CgCardSpades size={30} />
-              <p>FREE GAMES</p>
+            <div className="flex items-center space-x-2">
+              <img
+                className="w-6"
+                src="https://www.svgrepo.com/show/485024/casino-coin-part-2.svg"
+                alt=""
+              />
+              <p className="text-lg">無料ゲーム</p>
             </div>
 
             {showGames ? (
@@ -198,31 +235,77 @@ const SideMenuContents = ({ toggleSideMenu }) => {
           {showGames && (
             <div className={` ${fadeOutGames && "animate-scale-out-ver-top"} `}>
               <div
-                className={`bg-slate-600 w-full                 ${
+                className={`w-full                 ${
                   showGames && "animate-scale-up-ver-top"
                 }
   
                  `}
               >
-                <p className="p-4 border-b border-gray-500">スロット</p>
-                <p className="p-4 border-b border-gray-500">バカラ</p>
-                <p className="p-4 border-b border-gray-500">ブラックジャック</p>
-                <p className="p-4 border-b border-gray-500">ルーレット</p>
-                <p className="p-4 border-b border-gray-500">ポーカー</p>
-                <p className="p-4 border-b border-gray-500">その他</p>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="px-2 pb-2 text-lg  border-b border-red-500"
+                  >
+                    スロット
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg border-b border-red-500"
+                  >
+                    バカラ
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    ブラックジャック
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    ルーレット
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    ポーカー
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    その他
+                  </div>
+                </Link>
               </div>
             </div>
           )}
         </li>
         {/* SUPPORT */}
-        <li className="border-b overflow-y-auto border-gray-700 text-xl ">
+        <li className={`border-b text-xl ${showSupport && "border-none"}`}>
           <div
             onClick={handleSupport}
-            className="flex justify-between  w-full p-4"
+            className="flex justify-between  w-full p-2"
           >
             <div className="flex items-end space-x-2">
-              <MdSupportAgent size={30} />
-              <p>SUPPORT</p>
+              <img
+                className="w-6"
+                src="https://www.svgrepo.com/show/429965/customer-service-support.svg"
+                alt=""
+              />
+              <p className="text-lg">サポート</p>
             </div>
 
             {showSupport ? (
@@ -262,26 +345,58 @@ const SideMenuContents = ({ toggleSideMenu }) => {
               className={` ${fadeOutSupport && "animate-scale-out-ver-top"} `}
             >
               <div
-                className={`bg-slate-600 w-full                 ${
-                  showSupport && "animate-scale-up-ver-top"
-                }
+                className={`w-full ${showSupport && "animate-scale-up-ver-top"}
   
                  `}
               >
-                <p className="p-4 border-b border-gray-500">遊び方ガイド</p>
-                <p className="p-4 border-b border-gray-500">よくある質問</p>
-                <p className="p-4 border-b border-gray-500">
-                  カスタマーサポート
-                </p>
-                <p className="p-4 border-b border-gray-500">利用規約</p>
-                <p className="p-4 border-b border-gray-500">
-                  プライバシーポリシー
-                </p>
-                <p className="p-4 border-b border-gray-500">運営会社</p>
-                <p className="p-4 border-b border-gray-500">
-                  プライバシーポリシー
-                </p>
-                <p className="p-4 border-b border-gray-500">運営会社</p>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="px-2 pb-2 text-lg  border-b border-red-500"
+                  >
+                    遊び方ガイド
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    よくある質問
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    カスタマーサポート
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    利用規約
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    プライバシーポリシー
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    運営会社
+                  </div>
+                </Link>
               </div>
             </div>
           )}

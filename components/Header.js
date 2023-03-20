@@ -55,10 +55,10 @@ const Header = () => {
       {/* サイドバー */}
       {isShow && (
         <div
-          className={`absolute top-[59px] left-0 overflow-y-auto  w-[80%] z-30 bg-slate-800 animate-scale-in-hor-left ${
+          className={`absolute top-[59px] left-0  w-[85%] z-10 animate-scale-in-hor-left ${
             sideMenuFadeOut && "animate-scale-out-hor-left"
           }`}
-          style={{ height: "calc(100vh - 60px)" }}
+          // style={{ height: "90vh", overflowY: "auto" }}
         >
           <div className="">
             <SideMenuContents toggleSideMenu={toggleSideMenu} />

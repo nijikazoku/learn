@@ -7,7 +7,7 @@ body {
   background-color: #111827;
 }
 
-@layer utilities {
+/* @layer utilities {
   .box-register::before {
     @apply content-['']  absolute bg-[conic-gradient(#dd6b20_120deg,transparent_120deg)] w-[110px] h-[90px] top-[-25%] left-[-20%] animate-fullSpin;
   }
@@ -38,4 +38,4 @@ body {
   .box-promo::after {
     @apply content-[""] rounded-lg text-[#ffff00] w-[94%] h-[94%] bg-[#1b2d58] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
   }
-}
+} */
