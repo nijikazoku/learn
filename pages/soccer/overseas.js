@@ -3,7 +3,7 @@ import FilterButton from "../../components/FilterButton";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SelectSoccerLeague from "../../components/SelectSoccerLeague";
-import SoccerGenreButton from "../../components/SoccerGenreButton";
+import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
 import TodaysMatch from "../../components/TodaysMatch";
 import { canBetEngland } from "../../src/soccer/overseas/canBetEngland";
 import { canBetSpain } from "../../src/soccer/overseas/canBetSpain";

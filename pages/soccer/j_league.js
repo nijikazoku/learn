@@ -3,10 +3,9 @@ import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
 import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
 import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 import FilterButton from "../../components/FilterButton";
-
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
-import SoccerGenreButton from "../../components/SoccerGenreButton";
+import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
 import { canBetJleague } from "../../src/soccer/canBetJleague";
 
 const j_league = () => {

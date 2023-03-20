@@ -97,17 +97,17 @@ const DisplayGamesSoccer = ({ match, index }) => {
               {match.oddsHome}
             </div>
           ) : (
-            <button className="border flex justify-center items-center rounded-md w-1/3">
-              <AiFillLock size={30} color="#FBBF24" />
+            <button className="border flex justify-center items-center rounded-md w-1/3 py-2">
+              <AiFillLock size={25} color="#FBBF24" />
             </button>
           )}
           {match.canBet === "accept" || match.canBet === "after" ? (
-            <button className="border rounded-md w-1/3">
+            <button className="border py-2 rounded-md  w-1/3">
               {match.oddsDraw}
             </button>
           ) : (
-            <button className="border flex justify-center items-center rounded-md w-1/3">
-              <AiFillLock size={30} color="#FBBF24" />
+            <button className="border py-2 flex justify-center items-center rounded-md w-1/3">
+              <AiFillLock size={25} color="#FBBF24" />
             </button>
           )}
           {match.canBet === "accept" || match.canBet === "after" ? (
@@ -115,8 +115,8 @@ const DisplayGamesSoccer = ({ match, index }) => {
               {match.oddsAway}
             </div>
           ) : (
-            <button className="border flex justify-center items-center rounded-md w-1/3">
-              <AiFillLock size={30} color="#FBBF24" />
+            <button className="border flex py-2 justify-center items-center rounded-md w-1/3">
+              <AiFillLock size={25} color="#FBBF24" />
             </button>
           )}
         </div>
