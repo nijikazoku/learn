@@ -56,7 +56,7 @@ const SideMenuContents = ({ toggleSideMenu }) => {
   return (
     <div
       style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
-      className="py-3 h-screen bg-black bg-opacity-80 w-[75%]"
+      className="py-3 h-screen bg-black bg-opacity-80 w-[80%]"
     >
       <div className="flex flex-col space-y-2">
         {/* 登録ボタン */}

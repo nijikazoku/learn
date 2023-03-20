@@ -69,6 +69,7 @@ const DisplayGames = ({ match, index }) => {
           <p className="truncate">{match.homeTeam}</p>
           <p className="truncate">{match.awayTeam}</p>
         </div>
+
         {/* オッズ */}
         <div className="flex w-[55%]  justify-end space-x-1 text-lg">
           {match.canBet === "accept" || match.canBet === "after" ? (
