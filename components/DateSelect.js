@@ -36,7 +36,7 @@ const DateSelect = ({ games }) => {
                 games.filter(
                   (match) => match.matchDate === date && match.isJapan
                 ).length > 0 && (
-                  <div className="absolute top-[25%] right-[43%] ">
+                  <div className=" ">
                     <img
                       className="w-6"
                       src="https://www.svgrepo.com/show/405519/flag-for-flag-japan.svg"
