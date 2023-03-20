@@ -1,6 +1,4 @@
 import { useState } from "react";
-
-import DateSelect from "../../components/DateSelect";
 import FilterButton from "../../components/FilterButton";
 import FilteredMatch from "../../components/FilteredMatch";
 import Header from "../../components/Header";
@@ -15,6 +13,7 @@ import { canBetFrance } from "../../src/soccer/overseas/canBetFrance";
 import { canBetItaly } from "../../src/soccer/overseas/canBetItaly";
 import { canBetNetherlands } from "../../src/soccer/overseas/canBetNetherlands";
 import { canBetPortgal } from "../../src/soccer/overseas/canBetPortgal";
+import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
 
 const overseas = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -78,7 +77,7 @@ const overseas = () => {
             )}
             <TodaysMatch games={games} />
             <div className="text-xl">今後の試合</div>
-            <DateSelect games={games} />
+            <DateSelectSoccer games={games} />
           </div>
         </div>
       </div>

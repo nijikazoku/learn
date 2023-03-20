@@ -2,7 +2,7 @@ import { IoMdBaseball } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
 import { BiMinus } from "react-icons/bi";
 import { AiOutlineExclamationCircle, AiFillLock } from "react-icons/ai";
-const DisplayGames = ({ match, index }) => {
+const DisplayGamesSoccer = ({ match, index }) => {
   return (
     <div
       key={index}
@@ -67,17 +67,33 @@ const DisplayGames = ({ match, index }) => {
         {/* チーム名 */}
         <div className=" pl-2 ">
           <div className="flex items-center space-x-2">
-            <p>{match.homeTeam}</p>
+            <p className="text-blue-600 text-[0.7rem] ">HOME</p>
+            <p>{match.homeTeam.name}</p>
+            {match.homeTeam.inJapan && (
+              <img
+                className="w-6"
+                src="https://www.svgrepo.com/show/405519/flag-for-flag-japan.svg"
+                alt=""
+              />
+            )}
           </div>
           <div className="flex items-end space-x-2">
-            <p>{match.awayTeam}</p>
+            <p className="text-red-600 text-[0.7rem] ">AWAY</p>
+            <p>{match.awayTeam.name}</p>
+            {match.awayTeam.inJapan && (
+              <img
+                className="w-6"
+                src="https://www.svgrepo.com/show/405519/flag-for-flag-japan.svg"
+                alt=""
+              />
+            )}
           </div>
         </div>
 
         {/* オッズ */}
         <div className="flex justify-around space-x-3 text-lg">
           {match.canBet === "accept" || match.canBet === "after" ? (
-            <div className="py-2 border  text-center text-xl rounded-md w-1/3">
+            <div className="py-2 bg-opacity-80  bg-blue-700 text-center text-xl rounded-md w-1/3">
               {match.oddsHome}
             </div>
           ) : (
@@ -95,8 +111,8 @@ const DisplayGames = ({ match, index }) => {
             </button>
           )}
           {match.canBet === "accept" || match.canBet === "after" ? (
-            <div className="py-2 border  text-center text-xl rounded-md w-1/3">
-              {match.oddsAway}
+            <div className="py-2 bg-opacity-80 bg-red-700 text-center text-xl rounded-md w-1/3">
+              {match.oddsHome}
             </div>
           ) : (
             <button className="border flex justify-center items-center rounded-md w-1/3">
@@ -109,4 +125,4 @@ const DisplayGames = ({ match, index }) => {
   );
 };
 
-export default DisplayGames;
+export default DisplayGamesSoccer;

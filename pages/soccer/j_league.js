@@ -1,12 +1,11 @@
 import { useState } from "react";
-
-import DateSelect from "../../components/DateSelect";
+import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
+import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 import FilterButton from "../../components/FilterButton";
 import FilteredMatch from "../../components/FilteredMatch";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SoccerGenreButton from "../../components/SoccerGenreButton";
-import TodaysMatch from "../../components/TodaysMatch";
 import { canBetJleague } from "../../src/soccer/canBetJleague";
 
 const j_league = () => {
@@ -40,9 +39,9 @@ const j_league = () => {
                 games={canBetJleague}
               />
             )}
-            <TodaysMatch games={canBetJleague} />
+            <TodaysMatchSoccer games={canBetJleague} />
             <div className="text-xl">今後の試合</div>
-            <DateSelect games={canBetJleague} />
+            <DateSelectSoccer games={canBetJleague} />
           </div>
         </div>
       </div>

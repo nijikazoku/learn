@@ -4,8 +4,14 @@ const canBetEngland = [
     matchDate: "3/29",
     matchTime: "18:00",
     category: "プレミアリーグ",
-    homeTeam: "アーセナル",
-    awayTeam: "マンチェスター・C",
+    homeTeam: {
+      name: "アーセナル",
+      inJapan: true,
+    },
+    awayTeam: {
+      name: "マンチェスター・シティ",
+      inJapan: false,
+    },
     avenue: "エミレーツ・スタジアム",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)

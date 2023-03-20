@@ -4,8 +4,8 @@ const canBetJleague = [
     matchDate: "3/28",
     matchTime: "13:00",
     category: "J1リーグ",
-    homeTeam: "浦和レッズ",
-    awayTeam: "ヴィッセル神戸",
+    homeTeam: { name: "浦和レッズ", inJapan: false },
+    awayTeam: { name: "ヴィッセル神戸", inJapan: false },
     avenue: "埼玉スタジアム2002",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
@@ -33,8 +33,8 @@ const canBetJleague = [
     matchDate: "3/28",
     matchTime: "16:00",
     category: "J1リーグ",
-    homeTeam: "FC東京",
-    awayTeam: "川崎フロンターレ",
+    homeTeam: { name: "FC東京", inJapan: false },
+    awayTeam: { name: "川崎フロンターレ", inJapan: false },
     avenue: "味の素スタジアム",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
@@ -62,8 +62,8 @@ const canBetJleague = [
     matchDate: "3/28",
     matchTime: "16:00",
     category: "J1リーグ",
-    homeTeam: "横浜・F・マリノス",
-    awayTeam: "湘南ベルマーレ",
+    homeTeam: { name: "横浜・F・マリノス", inJapan: false },
+    awayTeam: { name: "湘南ベルマーレ", inJapan: false },
     avenue: "日産スタジアム",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
@@ -91,8 +91,8 @@ const canBetJleague = [
     matchDate: "3/29",
     matchTime: "18:00",
     category: "J1リーグ",
-    homeTeam: "柏レイソル",
-    awayTeam: "コンサドーレ札幌",
+    homeTeam: { name: "柏レイソル", inJapan: false },
+    awayTeam: { name: "コンサドーレ札幌", inJapan: false },
     avenue: "日立台",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
@@ -120,8 +120,8 @@ const canBetJleague = [
     matchDate: "3/29",
     matchTime: "18:00",
     category: "J1リーグ",
-    homeTeam: "名古屋グランパス",
-    awayTeam: "京都サンガ",
+    homeTeam: { name: "名古屋グランパス", inJapan: false },
+    awayTeam: { name: "京都サンガ", inJapan: false },
     avenue: "豊田スタジアム",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
@@ -149,8 +149,8 @@ const canBetJleague = [
     matchDate: "3/29",
     matchTime: "18:00",
     category: "J1リーグ",
-    homeTeam: "ガンバ大阪",
-    awayTeam: "アビスパ福岡",
+    homeTeam: { name: "ガンバ大阪", inJapan: false },
+    awayTeam: { name: "アビスパ福岡", inJapan: false },
     avenue: "パナソニックスタジアム吹田",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
