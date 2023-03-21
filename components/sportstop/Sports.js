@@ -5,7 +5,7 @@ import Soccer from "./Soccer";
 
 const Sports = () => {
   return (
-    <div>
+    <div className="pb-[70px]">
       <Baseball />
       <Soccer />
       <Fighting />
