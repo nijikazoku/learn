@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetMlb } from "../../src/baseball/canBetMlb";
+import SelectSports from "../../components/displayBaseball/SelectSports";
 import TestHeader from "../../components/TestHeader";
 
 const mlb = () => {
@@ -20,6 +21,7 @@ const mlb = () => {
   return (
     <Layout>
       <TestHeader />
+      <SelectSports />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <BaseballGenreButton />
