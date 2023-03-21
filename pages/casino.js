@@ -59,10 +59,7 @@ const casino = () => {
     }
     return genres.some((genre) => game.genre.includes(genre));
   });
-  const itemsToShow =
-    genres.length === 0 && !favoriteFilter
-      ? filteredGames.slice(0, showCount)
-      : filteredGames;
+  const itemsToShow = filteredGames.slice(0, showCount);
 
   const handleClick = (genre) => {
     if (genres.includes(genre)) {
@@ -104,12 +101,20 @@ const casino = () => {
   };
 
   const handleShowMore = () => {
-    setShowCount(showCount + 4);
+    const newShowCount = showCount + 6;
+    if (newShowCount <= filteredGames.length) {
+      setShowCount(newShowCount);
+    } else {
+      setShowCount(filteredGames.length);
+    }
   };
 
   return (
     <Layout>
       <Header
+        genres={genres}
+        setGenres={setGenres}
+        setFavoriteFilter={setFavoriteFilter}
         handleClick={handleClick}
         setSelectedGenre={setSelectedGenre}
         selectedGenre={selectedGenre}
@@ -158,7 +163,7 @@ const casino = () => {
             ))}
           </div>
           {/* もっと見るボタン */}
-          {filteredGames.length > 0 && showCount < filteredGames.length && (
+          {showCount < filteredGames.length && (
             <div className="flex items-center mt-5 animate-bounce py-2 text-blue-600 justify-center space-x-2">
               <ImArrowDown2 size={20} />
               <button

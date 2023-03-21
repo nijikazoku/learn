@@ -4,7 +4,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import SideMenuContents from "./SideMenuContents";
 import { useRouter } from "next/router";
-const Header = ({ selectedGenre, handleClick }) => {
+const Header = ({
+  selectedGenre,
+  handleClick,
+  genres,
+  setGenres,
+  setFavoriteFilter,
+}) => {
   const [isShow, setIsShow] = useState(false);
   const [sideMenuFadeOut, setSideMenuFadeOut] = useState(false);
   const router = useRouter();
@@ -23,6 +29,12 @@ const Header = ({ selectedGenre, handleClick }) => {
       }, 600);
     }
   };
+  const handleSideCasinoClick = (genre) => {
+    // ジャンルを上書きする
+    setGenres([genre]);
+    // お気に入りフィルターを解除する
+    setFavoriteFilter(false);
+  };
 
   const toggleCasinoMenu = (genre) => {
     if (!isShow) {
@@ -35,11 +47,14 @@ const Header = ({ selectedGenre, handleClick }) => {
         setSideMenuFadeOut(false);
         setIsShow(false);
         document.body.style.overflow = "auto";
-        router.push({
-          pathname: "/casino",
-          query: { genre: genre },
-        });
-        handleClick(genre);
+        const queryGenre = router.query.genre;
+        if (genre !== queryGenre) {
+          router.push({
+            pathname: "/casino",
+            query: { genre: genre },
+          });
+          handleSideCasinoClick(genre);
+        }
       }, 600);
     }
   };
