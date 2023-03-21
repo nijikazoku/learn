@@ -69,9 +69,9 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
       let moving = window.pageYOffset;
       let headerHeight = headerRef.current.offsetHeight;
 
-      if (position > moving || moving <= 60) {
-        setVisible(moving <= 60 ? "initial" : "scrollIn");
-      } else if (moving > 60 + headerHeight) {
+      if (position > moving || moving <= 30) {
+        setVisible(moving <= 30 ? "initial" : "scrollIn");
+      } else if (moving > 30 + headerHeight) {
         setVisible("scrollOut");
       }
 

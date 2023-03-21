@@ -1,0 +1,3 @@
+const canBetNba = [{}];
+
+export { canBetNba };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilterButton from "../../components/displayBaseball/FilterButton";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
@@ -16,10 +16,16 @@ import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoc
 import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 import SelectSportsSoccer from "../../components/displaySoccer/SelectSportsSoccer";
 import TestHeader from "../../components/TestHeader";
+import { useRouter } from "next/router";
 
 const overseas = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
   const [selectCountry, setSelectCountry] = useState("england");
+  const router = useRouter();
+  useEffect(() => {
+    const { country } = router.query;
+    setSelectCountry(country || "");
+  }, [router]);
   const handleFilter = (condition) => {
     if (condition === filteredMatch) {
       setFilteredMatch("");
@@ -57,7 +63,7 @@ const overseas = () => {
       <TestHeader />
       <SelectSportsSoccer />
       <div className="space-y-3">
-        {/* NPB MLB WBC その他 */}
+        {/* 国内　海外 その他 */}
         <SoccerGenreButton />
         {/* リーグ選択 */}
         <SelectSoccerLeague

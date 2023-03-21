@@ -163,7 +163,7 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
                     サッカー
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/basketball/nba">
                   <div
                     onClick={toggleSideMenu}
                     className="p-2 text-lg  border-b border-red-500"

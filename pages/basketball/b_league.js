@@ -1,15 +1,15 @@
 import { useState } from "react";
-import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
-import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
-import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 import FilterButton from "../../components/displayBaseball/FilterButton";
 import Layout from "../../components/Layout";
-import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
-import { canBetWorldcup } from "../../src/soccer/canBetWorldcup";
-import SelectSportsSoccer from "../../components/displaySoccer/SelectSportsSoccer";
 import TestHeader from "../../components/TestHeader";
+import SelectSportsBasketball from "../../components/displayBasketball/SelectSportsBasketball";
+import BasketballGenreButton from "../../components/displayBasketball/BasketballGenreButton";
+import TodaysMatchBasketball from "../../components/displayBasketball/TodaysMatchBasketball";
+import DateSelectBasketball from "../../components/displayBasketball/DateSelectBasketball";
+import FilteredMatchBasketball from "../../components/displayBasketball/FilteredMatchBasketball";
+import { canBetBleague } from "../../src/basketball/canBetBleague";
 
-const worldcup = () => {
+const b_league = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
   const handleFilter = (condition) => {
     if (condition === filteredMatch) {
@@ -20,10 +20,10 @@ const worldcup = () => {
   return (
     <Layout>
       <TestHeader />
-      <SelectSportsSoccer />
+      <SelectSportsBasketball />
       <div className="space-y-3">
-        {/* 国内　海外 その他 */}
-        <SoccerGenreButton />
+        {/* NPB MLB WBC その他 */}
+        <BasketballGenreButton />
 
         <div className="space-y-3">
           {/* フィルターボタン */}
@@ -36,14 +36,14 @@ const worldcup = () => {
           <div className="w-[95%] mx-auto space-y-2">
             {/* フィルター試合 */}
             {filteredMatch && (
-              <FilteredMatchSoccer
+              <FilteredMatchBasketball
                 filteredMatch={filteredMatch}
-                games={canBetWorldcup}
+                games={canBetBleague}
               />
             )}
-            <TodaysMatchSoccer games={canBetWorldcup} />
+            <TodaysMatchBasketball games={canBetBleague} />
             <div className="text-xl">今後の試合</div>
-            <DateSelectSoccer games={canBetWorldcup} />
+            <DateSelectBasketball games={canBetBleague} />
           </div>
         </div>
       </div>
@@ -51,4 +51,4 @@ const worldcup = () => {
   );
 };
 
-export default worldcup;
+export default b_league;

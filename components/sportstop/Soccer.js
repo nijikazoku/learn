@@ -28,7 +28,13 @@ const Soccer = () => {
 
           <div className="h-1/2 flex space-x-1 ">
             {/* プレミアリーグ */}
-            <Link href="/soccer/overseas" class="w-1/2 relative">
+            <Link
+              href={{
+                pathname: "/soccer/overseas",
+                query: { country: "england" },
+              }}
+              class="w-1/2 relative"
+            >
               <img
                 src="https://i.imgur.com/R39LS9v.jpg"
                 alt=""
@@ -42,7 +48,13 @@ const Soccer = () => {
               </div>
             </Link>
             {/* ラ・リーガ */}
-            <div class="w-1/2 relative">
+            <Link
+              href={{
+                pathname: "/soccer/overseas",
+                query: { country: "spain" },
+              }}
+              class="w-1/2 relative"
+            >
               <img
                 src="https://i.imgur.com/E09a9cm.jpg"
                 alt=""
@@ -54,7 +66,7 @@ const Soccer = () => {
                   ラ・リーガ
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

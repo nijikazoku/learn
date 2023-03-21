@@ -20,13 +20,13 @@ const SelectSportsSoccer = () => {
             alt=""
           />
         </Link>
-        <div>
+        <Link href="/basketball/nba">
           <img
             className="w-6"
             src="https://www.svgrepo.com/show/395860/basketball.svg"
             alt=""
           />
-        </div>
+        </Link>
         <div>
           <img
             className="w-6"
