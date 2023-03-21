@@ -8,7 +8,7 @@ import SideMenuContents from "./SideMenuContents";
 
 function TestHeader({ setGenres, setFavoriteFilter }) {
   const [position, setPosition] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState("initial");
   const [headerHeight, setHeaderHeight] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const [sideMenuFadeOut, setSideMenuFadeOut] = useState(false);
@@ -67,19 +67,25 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
   useEffect(() => {
     const handleScroll = () => {
       let moving = window.pageYOffset;
+      let headerHeight = headerRef.current.offsetHeight;
 
-      setVisible(position > moving || moving <= 60);
+      if (position > moving || moving <= 60) {
+        setVisible(moving <= 60 ? "initial" : "scrollIn");
+      } else if (moving > 60 + headerHeight) {
+        setVisible("scrollOut");
+      }
+
       setPosition(moving);
     };
     window.addEventListener("scroll", handleScroll);
 
     // ヘッダーの高さを取得
-    setHeaderHeight(document.querySelector("header").offsetHeight);
+    setHeaderHeight(headerRef.current.offsetHeight);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [position]);
+  }, [headerRef, position]);
 
   return (
     <div className="relative pt-[60px]">
@@ -87,9 +93,11 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
       <header
         ref={headerRef}
         className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2 z-40 ${
-          visible
-            ? " h-[60px] w-full fixed top-0 animate-slide-in-top"
-            : " fixed -top-[60px] animate-slide-in-top"
+          visible === "initial"
+            ? "top-0 fixed"
+            : visible === "scrollIn"
+            ? "h-[60px] w-full fixed top-0 animate-slide-in-top"
+            : "fixed -top-[60px] animate-scale-out-ver-topn"
         }`}
       >
         <div className="space-y-2 ">
