@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="">
-      <main className="pb-[80px]">{children}</main>
+      <main className="">{children}</main>
       <Footer setShowRegister={setShowRegister} />
     </div>
   );

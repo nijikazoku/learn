@@ -6,7 +6,7 @@ import { MdClose } from "react-icons/md";
 import Link from "next/link";
 import SideMenuContents from "./SideMenuContents";
 
-function TestHeader() {
+function TestHeader({ setGenres, setFavoriteFilter }) {
   const [position, setPosition] = useState(0);
   const [visible, setVisible] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -87,7 +87,7 @@ function TestHeader() {
       {/* ヘッダー */}
       <header
         ref={headerRef}
-        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2 fixed top-0 z-40 ${
+        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2  z-40 ${
           visible
             ? " h-[60px] w-full animate-slide-in-top"
             : "animate-scale-out-ver-top"

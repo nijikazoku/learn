@@ -20,28 +20,33 @@ const npb = () => {
 
   return (
     <Layout>
-      <TestHeader />
-      <SelectSports />
-      <div className="space-y-3">
-        {/* NPB MLB WBC その他 */}
-        <BaseballGenreButton />
-
+      <div className="">
+        <TestHeader />
+        <SelectSports />
         <div className="space-y-3">
-          {/* フィルターボタン */}
-          <FilterButton
-            handleFilter={handleFilter}
-            filteredMatch={filteredMatch}
-            setFilteredMatch={setFilteredMatch}
-          />
+          {/* NPB MLB WBC その他 */}
+          <BaseballGenreButton />
 
-          <div className="w-[95%] mx-auto space-y-2">
-            {/* フィルター試合 */}
-            {filteredMatch && (
-              <FilteredMatch filteredMatch={filteredMatch} games={canBetNpb} />
-            )}
-            <TodaysMatch games={canBetNpb} />
-            <div className="text-xl">今後の試合</div>
-            <DateSelect games={canBetNpb} />
+          <div className="space-y-3">
+            {/* フィルターボタン */}
+            <FilterButton
+              handleFilter={handleFilter}
+              filteredMatch={filteredMatch}
+              setFilteredMatch={setFilteredMatch}
+            />
+
+            <div className="w-[95%] mx-auto space-y-2">
+              {/* フィルター試合 */}
+              {filteredMatch && (
+                <FilteredMatch
+                  filteredMatch={filteredMatch}
+                  games={canBetNpb}
+                />
+              )}
+              <TodaysMatch games={canBetNpb} />
+              <div className="text-xl">今後の試合</div>
+              <DateSelect games={canBetNpb} />
+            </div>
           </div>
         </div>
       </div>

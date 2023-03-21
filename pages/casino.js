@@ -7,6 +7,7 @@ import GenreButton from "../components/casino/GenreButton";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import { useRouter } from "next/router";
+import TestHeader from "../components/TestHeader";
 
 const casino = () => {
   const [genres, setGenres] = useState([]);
@@ -111,7 +112,7 @@ const casino = () => {
 
   return (
     <Layout>
-      <Header
+      <TestHeader
         setGenres={setGenres}
         setFavoriteFilter={setFavoriteFilter}
         setSelectedGenre={setSelectedGenre}

@@ -10,7 +10,7 @@ const index = () => {
     <Layout>
       <TestHeader />
       {/* <Header /> */}
-      <div className="mt-[60px]">
+      <div className="">
         <SlideBanner />
         <div className="relative">
           <FeaturedMatch />
