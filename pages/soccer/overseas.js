@@ -1,10 +1,10 @@
 import { useState } from "react";
-import FilterButton from "../../components/FilterButton";
+import FilterButton from "../../components/displayBaseball/FilterButton";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SelectSoccerLeague from "../../components/SelectSoccerLeague";
 import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
-import TodaysMatch from "../../components/TodaysMatch";
+import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetEngland } from "../../src/soccer/overseas/canBetEngland";
 import { canBetSpain } from "../../src/soccer/overseas/canBetSpain";
 import { canBetGermany } from "../../src/soccer/overseas/canBetGermany";

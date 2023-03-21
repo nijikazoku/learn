@@ -27,7 +27,8 @@ const Soccer = () => {
           </Link>
 
           <div className="h-1/2 flex space-x-1 ">
-            <div class="w-1/2 relative">
+            {/* プレミアリーグ */}
+            <Link href="/soccer/overseas" class="w-1/2 relative">
               <img
                 src="https://i.imgur.com/R39LS9v.jpg"
                 alt=""
@@ -39,7 +40,8 @@ const Soccer = () => {
                   プレミアリーグ
                 </div>
               </div>
-            </div>
+            </Link>
+            {/* ラ・リーガ */}
             <div class="w-1/2 relative">
               <img
                 src="https://i.imgur.com/E09a9cm.jpg"

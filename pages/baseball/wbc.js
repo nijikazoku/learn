@@ -1,11 +1,11 @@
 import { useState } from "react";
-import BaseballGenreButton from "../../components/BaseballGenreButton";
-import DateSelect from "../../components/DateSelect";
-import FilterButton from "../../components/FilterButton";
+import BaseballGenreButton from "../../components/displayBaseball/BaseballGenreButton";
+import DateSelect from "../../components/displayBaseball/DateSelect";
+import FilterButton from "../../components/displayBaseball/FilterButton";
 import FilteredMatch from "../../components/FilteredMatch";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
-import TodaysMatch from "../../components/TodaysMatch";
+import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetWbc } from "../../src/baseball/canBetWbc";
 
 const wbc = () => {
