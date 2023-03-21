@@ -39,3 +39,9 @@ body {
     @apply content-[""] rounded-lg text-[#ffff00] w-[94%] h-[94%] bg-[#1b2d58] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
   }
 } */
+
+.hidden {
+  /* display: none; */
+  top: -80px;
+  transition: top 0.4s ease-out;
+}

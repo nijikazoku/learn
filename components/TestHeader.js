@@ -1,14 +1,19 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import React, { useState, useEffect, useRef } from "react";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
+import Link from "next/link";
 import SideMenuContents from "./SideMenuContents";
-import { useRouter } from "next/router";
 
-const Header = ({ setGenres, setFavoriteFilter }) => {
+function TestHeader() {
+  const [position, setPosition] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const [sideMenuFadeOut, setSideMenuFadeOut] = useState(false);
   const router = useRouter();
+  const headerRef = useRef(null);
 
   const toggleSideMenu = (genre) => {
     if (!isShow) {
@@ -60,9 +65,34 @@ const Header = ({ setGenres, setFavoriteFilter }) => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      let moving = window.pageYOffset;
+
+      setVisible(position > moving);
+      setPosition(moving);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    // ヘッダーの高さを取得
+    setHeaderHeight(document.querySelector("header").offsetHeight);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [position]);
+
   return (
     <div className="relative">
-      <header class=" bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2">
+      {/* ヘッダー */}
+      <header
+        ref={headerRef}
+        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2 fixed top-0 z-40 ${
+          visible
+            ? " h-[60px] w-full animate-slide-in-top"
+            : "animate-scale-out-ver-top"
+        }`}
+      >
         <div className="space-y-2 ">
           {/* 開く閉じる */}
           <div className="flex items-center justify-between space-x-1">
@@ -94,7 +124,7 @@ const Header = ({ setGenres, setFavoriteFilter }) => {
       {/* サイドバー */}
       {isShow && (
         <div
-          className={`absolute top-[59px] left-0  z-10 w-full animate-scale-in-hor-left ${
+          className={`fixed top-[60px] left-0  z-10 w-full animate-scale-in-hor-left ${
             sideMenuFadeOut && "animate-scale-out-hor-left"
           }`}
           // style={{ height: "90vh", overflowY: "auto" }}
@@ -112,6 +142,6 @@ const Header = ({ setGenres, setFavoriteFilter }) => {
       )}
     </div>
   );
-};
+}
 
-export default Header;
+export default TestHeader;

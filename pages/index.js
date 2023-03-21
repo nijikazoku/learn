@@ -3,12 +3,14 @@ import Header from "../components/Header";
 import Layout from "../components/Layout";
 import SlideBanner from "../components/SlideBanner";
 import Sports from "../components/sportstop/Sports";
+import TestHeader from "../components/TestHeader";
 
 const index = () => {
   return (
     <Layout>
-      <Header />
-      <div>
+      <TestHeader />
+      {/* <Header /> */}
+      <div className="mt-[60px]">
         <SlideBanner />
         <div className="relative">
           <FeaturedMatch />
