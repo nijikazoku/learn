@@ -25,15 +25,13 @@ const casino = () => {
   const [selectedGenre, setSelectedGenre] = useState("");
 
   useEffect(() => {
-    // URLパラメーターからselectedMenuの状態を取得する
     const query = router.query;
     if (query.genre) {
       setSelectedGenre(query.genre);
     }
-  }, []);
+  }, [router.query]);
 
   useEffect(() => {
-    // 選択されたメニューボタンに応じて、スロットを選択状態にする
     if (selectedGenre === "slot") {
       handleClick("slot");
     }
@@ -41,6 +39,17 @@ const casino = () => {
       handleClick("tableGame");
     }
   }, [selectedGenre]);
+
+  useEffect(() => {
+    const query = {};
+    if (genres.length > 0) {
+      query.genres = genres.join(",");
+    }
+    if (favoriteFilter) {
+      query.favoriteFilter = true;
+    }
+    router.push({ pathname: "/casino", query: query });
+  }, [genres, favoriteFilter]);
   const filteredGames = allGamesWithFavorite.filter((game) => {
     if (favoriteFilter && !game.favorite) {
       return false;
@@ -57,10 +66,13 @@ const casino = () => {
 
   const handleClick = (genre) => {
     if (genres.includes(genre)) {
+      // ジャンルが選択されている場合、選択を解除する
       setGenres(genres.filter((g) => g !== genre));
     } else {
-      setGenres([...genres, genre]);
+      // ジャンルが選択されていない場合、選択する
+      setGenres([genre]);
     }
+    // お気に入りフィルターを解除する
     setFavoriteFilter(false);
   };
 
@@ -97,7 +109,11 @@ const casino = () => {
 
   return (
     <Layout>
-      <Header />
+      <Header
+        handleClick={handleClick}
+        setSelectedGenre={setSelectedGenre}
+        selectedGenre={selectedGenre}
+      />
       <div className="space-y-1 mb-[70px]">
         <div>
           {/* ジャンル */}

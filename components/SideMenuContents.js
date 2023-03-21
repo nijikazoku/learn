@@ -2,8 +2,8 @@ import { MdOutlineSportsBaseball, MdSupportAgent } from "react-icons/md";
 import { CgCardSpades } from "react-icons/cg";
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-const SideMenuContents = ({ toggleSideMenu }) => {
+
+const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
   const [showSports, setShowSports] = useState(false);
   const [fadeOutSport, setFadeOutSport] = useState(false);
 
@@ -53,8 +53,6 @@ const SideMenuContents = ({ toggleSideMenu }) => {
       }, 400);
     }
   };
-
-  const router = useRouter();
 
   return (
     <div
@@ -243,7 +241,7 @@ const SideMenuContents = ({ toggleSideMenu }) => {
               >
                 <Link href={{ pathname: "/casino", query: { genre: "slot" } }}>
                   <div
-                    onClick={toggleSideMenu}
+                    onClick={() => toggleCasinoMenu("slot")}
                     className="px-2 pb-2 text-lg  border-b 
                    border-red-500"
                   >
@@ -255,7 +253,7 @@ const SideMenuContents = ({ toggleSideMenu }) => {
                   href={{ pathname: "/casino", query: { genre: "tableGame" } }}
                 >
                   <div
-                    onClick={toggleSideMenu}
+                    onClick={() => toggleCasinoMenu("tableGame")}
                     className="p-2 text-lg  border-b 
                      border-red-500"
                   >

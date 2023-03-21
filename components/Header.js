@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import SideMenuContents from "./SideMenuContents";
-const Header = () => {
+import { useRouter } from "next/router";
+const Header = ({ selectedGenre, handleClick }) => {
   const [isShow, setIsShow] = useState(false);
   const [sideMenuFadeOut, setSideMenuFadeOut] = useState(false);
+  const router = useRouter();
 
-  const toggleSideMenu = () => {
+  const toggleSideMenu = (genre) => {
     if (!isShow) {
       setIsShow(true);
       document.body.style.overflow = "hidden";
@@ -18,6 +20,26 @@ const Header = () => {
         setSideMenuFadeOut(false);
         setIsShow(false);
         document.body.style.overflow = "auto";
+      }, 600);
+    }
+  };
+
+  const toggleCasinoMenu = (genre) => {
+    if (!isShow) {
+      setIsShow(true);
+      document.body.style.overflow = "hidden";
+    } else {
+      setSideMenuFadeOut(true);
+
+      setTimeout(() => {
+        setSideMenuFadeOut(false);
+        setIsShow(false);
+        document.body.style.overflow = "auto";
+        router.push({
+          pathname: "/casino",
+          query: { genre: genre },
+        });
+        handleClick(genre);
       }, 600);
     }
   };
@@ -72,7 +94,10 @@ const Header = () => {
             onClick={handleOverlayClick}
           ></div>
 
-          <SideMenuContents toggleSideMenu={toggleSideMenu} />
+          <SideMenuContents
+            toggleSideMenu={toggleSideMenu}
+            toggleCasinoMenu={toggleCasinoMenu}
+          />
         </div>
       )}
     </div>
