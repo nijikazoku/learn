@@ -23,9 +23,9 @@ const FeaturedMatch = () => {
         {pickUpMatch.slice(0, 4).map((match, index) => {
           return (
             <SwiperSlide key={index} className="relative  text-white">
-              <div className="h-[14rem] w-full">
+              <div className=" w-full">
                 <img
-                  className=" opacity-30  object-contain"
+                  className="h-[14rem] opacity-30  object-cover content-center"
                   src={match.image}
                   alt=""
                 />
