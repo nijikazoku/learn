@@ -8,6 +8,7 @@ import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { koshien } from "../../src/baseball/koshien";
 import { canBetCollege } from "../../src/baseball/canBetCollege";
+import TestHeader from "../../components/TestHeader";
 
 const others = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -20,7 +21,7 @@ const others = () => {
 
   return (
     <Layout>
-      <Header />
+      <TestHeader />
       <div className="space-y-3">
         <div>
           {/* NPB MLB WBC その他 */}

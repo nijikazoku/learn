@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import TestHeader from "../components/TestHeader";
 
 const Register = () => {
   return (
     <Layout>
-      <Header />
+      <TestHeader />
       <div className={`py-3  w-full h-full`}>
         <div className="py-5">
           <h1 className="w-[80%] text-4xl mx-auto">会員登録</h1>

@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetWbc } from "../../src/baseball/canBetWbc";
+import TestHeader from "../../components/TestHeader";
 
 const wbc = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -17,7 +18,7 @@ const wbc = () => {
   };
   return (
     <Layout>
-      <Header />
+      <TestHeader />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <BaseballGenreButton />

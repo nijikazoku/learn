@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetMlb } from "../../src/baseball/canBetMlb";
+import TestHeader from "../../components/TestHeader";
 
 const mlb = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -18,7 +19,7 @@ const mlb = () => {
   };
   return (
     <Layout>
-      <Header />
+      <TestHeader />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <BaseballGenreButton />

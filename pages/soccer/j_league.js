@@ -8,6 +8,7 @@ import Layout from "../../components/Layout";
 import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
 import { canBetJleague } from "../../src/soccer/canBetJleague";
 import SelectSportsSoccer from "../../components/displaySoccer/SelectSportsSoccer";
+import TestHeader from "../../components/TestHeader";
 
 const j_league = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -19,7 +20,7 @@ const j_league = () => {
 
   return (
     <Layout>
-      <Header />
+      <TestHeader />
       <SelectSportsSoccer />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
