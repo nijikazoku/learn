@@ -112,12 +112,9 @@ const casino = () => {
   return (
     <Layout>
       <Header
-        genres={genres}
         setGenres={setGenres}
         setFavoriteFilter={setFavoriteFilter}
-        handleClick={handleClick}
         setSelectedGenre={setSelectedGenre}
-        selectedGenre={selectedGenre}
       />
       <div className="space-y-1 mb-[70px]">
         <div>

@@ -4,13 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import SideMenuContents from "./SideMenuContents";
 import { useRouter } from "next/router";
-const Header = ({
-  selectedGenre,
-  handleClick,
-  genres,
-  setGenres,
-  setFavoriteFilter,
-}) => {
+const Header = ({ setGenres, setFavoriteFilter }) => {
   const [isShow, setIsShow] = useState(false);
   const [sideMenuFadeOut, setSideMenuFadeOut] = useState(false);
   const router = useRouter();
@@ -21,7 +15,6 @@ const Header = ({
       document.body.style.overflow = "hidden";
     } else {
       setSideMenuFadeOut(true);
-
       setTimeout(() => {
         setSideMenuFadeOut(false);
         setIsShow(false);
