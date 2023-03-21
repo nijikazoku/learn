@@ -70,7 +70,7 @@ const DisplayGamesSoccer = ({ match, index }) => {
               />
             )}
           </div>
-          <div className="flex items-end space-x-2">
+          <div className="flex items-center space-x-2">
             <p className="text-red-600 text-[0.7rem] ">AWAY</p>
             <p>{match.awayTeam.name}</p>
             {match.awayTeam.inJapan && (
