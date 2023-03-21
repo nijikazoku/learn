@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   const [showRegister, setShowRegister] = useState(false);
 
   return (
-    <div className="">
+    <div className="pb-[75px]">
       <main className="">{children}</main>
       <Footer setShowRegister={setShowRegister} />
     </div>

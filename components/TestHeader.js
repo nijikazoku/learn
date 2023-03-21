@@ -68,7 +68,7 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
     const handleScroll = () => {
       let moving = window.pageYOffset;
 
-      setVisible(position > moving);
+      setVisible(position > moving || moving <= 60);
       setPosition(moving);
     };
     window.addEventListener("scroll", handleScroll);

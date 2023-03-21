@@ -117,7 +117,7 @@ const casino = () => {
         setFavoriteFilter={setFavoriteFilter}
         setSelectedGenre={setSelectedGenre}
       />
-      <div className="space-y-1 mb-[70px]">
+      <div className="space-y-1">
         <div>
           {/* ジャンル */}
           <div className="p-2">
