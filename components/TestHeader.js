@@ -83,11 +83,11 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
   }, [position]);
 
   return (
-    <div className="relative">
+    <div className="relative pt-[60px]">
       {/* ヘッダー */}
       <header
         ref={headerRef}
-        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2  z-40 ${
+        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2 absolute top-0 z-40 ${
           visible
             ? " h-[60px] w-full animate-slide-in-top"
             : "animate-scale-out-ver-top"
