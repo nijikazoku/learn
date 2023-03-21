@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
 import { canBetJleague } from "../../src/soccer/canBetJleague";
+import SelectSportsSoccer from "../../components/displaySoccer/SelectSportsSoccer";
 
 const j_league = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -19,6 +20,7 @@ const j_league = () => {
   return (
     <Layout>
       <Header />
+      <SelectSportsSoccer />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <SoccerGenreButton />

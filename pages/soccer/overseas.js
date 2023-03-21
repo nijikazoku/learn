@@ -4,7 +4,6 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import SelectSoccerLeague from "../../components/SelectSoccerLeague";
 import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
-import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetEngland } from "../../src/soccer/overseas/canBetEngland";
 import { canBetSpain } from "../../src/soccer/overseas/canBetSpain";
 import { canBetGermany } from "../../src/soccer/overseas/canBetGermany";
@@ -15,6 +14,7 @@ import { canBetPortgal } from "../../src/soccer/overseas/canBetPortgal";
 import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
 import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
 import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
+import SelectSportsSoccer from "../../components/displaySoccer/SelectSportsSoccer";
 
 const overseas = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -54,6 +54,7 @@ const overseas = () => {
   return (
     <Layout>
       <Header />
+      <SelectSportsSoccer />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <SoccerGenreButton />

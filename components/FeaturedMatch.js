@@ -6,7 +6,7 @@ import { pickUpMatch } from "../src/pickUpMatch";
 const FeaturedMatch = () => {
   return (
     <div className="py-3 space-y-2">
-      <div className="flex items-end justify-between md:text-green-300 sm:text-red-500">
+      <div className="flex items-end justify-between">
         <p className="flex-grow text-xl px-3 font-bold ">注目の試合</p>
       </div>
       <Swiper

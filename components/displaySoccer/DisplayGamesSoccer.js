@@ -13,13 +13,6 @@ const DisplayGamesSoccer = ({ match, index }) => {
         <div className="flex-grow ">
           <div className="flex text-base space-x-1 items-center ">
             <div className="flex space-x-1 items-center ">
-              {match.sports === "baseball" && (
-                <img
-                  className="w-5"
-                  src="https://www.svgrepo.com/show/395857/baseball.svg"
-                  alt=""
-                />
-              )}
               {match.sports === "soccer" && (
                 <img
                   className="w-5"

@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { canBetNpb } from "../../src/baseball/canBetNpb";
+import SelectSports from "../../components/displayBaseball/SelectSports";
 
 const npb = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -19,6 +20,7 @@ const npb = () => {
   return (
     <Layout>
       <Header />
+      <SelectSports />
       <div className="space-y-3">
         {/* NPB MLB WBC その他 */}
         <BaseballGenreButton />

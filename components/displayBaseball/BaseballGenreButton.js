@@ -6,9 +6,6 @@ const BaseballGenreButton = () => {
 
   return (
     <div className="">
-      <div className="bg-gradient-to-l from-blue-700 via-blue-800 py-2 to-gray-900 text-lg font-bold px-4 ">
-        野球
-      </div>
       <div className="text-lg flex items-center border-b">
         <Link
           href="/baseball/npb"

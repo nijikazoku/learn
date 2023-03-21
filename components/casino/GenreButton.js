@@ -10,18 +10,18 @@ const GenreButton = ({
         {/* スロット */}
         <button
           className={`border py-1 px-2 text-sm rounded-full  ${
-            !genres.includes("スロット") && "opacity-40"
+            !genres.includes("slot") && "opacity-40"
           }`}
-          onClick={() => handleClick("スロット")}
+          onClick={() => handleClick("slot")}
         >
           スロット
         </button>
         {/* テーブルゲーム */}
         <button
           className={`border py-1 px-2 text-sm rounded-full  ${
-            !genres.includes("テーブルゲーム") && "opacity-40"
+            !genres.includes("tableGame") && "opacity-40"
           }`}
-          onClick={() => handleClick("テーブルゲーム")}
+          onClick={() => handleClick("tableGame")}
         >
           テーブルゲーム
         </button>

@@ -20,14 +20,6 @@ const DisplayGames = ({ match, index }) => {
                   alt=""
                 />
               )}
-              {match.sports === "soccer" && (
-                <img
-                  className="w-5"
-                  src="https://www.svgrepo.com/show/484370/soccer-ball-illustration.svg"
-                  alt=""
-                />
-              )}
-
               <p className="">{match.category}</p>
             </div>
             <div className="whitespace-nowrap">{match.type}</div>

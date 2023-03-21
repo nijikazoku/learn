@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsPlayCircle, BsBookmarkCheck } from "react-icons/bs";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { ImArrowDown2 } from "react-icons/im";
@@ -6,6 +6,7 @@ import { allGames } from "../src/casino/allGames";
 import GenreButton from "../components/casino/GenreButton";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
 
 const casino = () => {
   const [genres, setGenres] = useState([]);
@@ -20,7 +21,26 @@ const casino = () => {
   const [favoriteMessageTimerId, setFavoriteMessageTimerId] = useState(null);
 
   const [showCount, setShowCount] = useState(4);
+  const router = useRouter();
+  const [selectedGenre, setSelectedGenre] = useState("");
 
+  useEffect(() => {
+    // URLパラメーターからselectedMenuの状態を取得する
+    const query = router.query;
+    if (query.genre) {
+      setSelectedGenre(query.genre);
+    }
+  }, []);
+
+  useEffect(() => {
+    // 選択されたメニューボタンに応じて、スロットを選択状態にする
+    if (selectedGenre === "slot") {
+      handleClick("slot");
+    }
+    if (selectedGenre === "tableGame") {
+      handleClick("tableGame");
+    }
+  }, [selectedGenre]);
   const filteredGames = allGamesWithFavorite.filter((game) => {
     if (favoriteFilter && !game.favorite) {
       return false;
@@ -34,6 +54,7 @@ const casino = () => {
     genres.length === 0 && !favoriteFilter
       ? filteredGames.slice(0, showCount)
       : filteredGames;
+
   const handleClick = (genre) => {
     if (genres.includes(genre)) {
       setGenres(genres.filter((g) => g !== genre));
@@ -87,6 +108,7 @@ const casino = () => {
               handleClick={handleClick}
               setFavoriteFilter={setFavoriteFilter}
               favoriteFilter={favoriteFilter}
+              selectedGenre={selectedGenre}
             />
           </div>
           <div className="flex space-x-1 w-[95%] justify-between items-center py-1 mx-auto px-2">
