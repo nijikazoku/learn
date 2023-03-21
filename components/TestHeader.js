@@ -64,7 +64,6 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
       toggleSideMenu();
     }
   };
-
   useEffect(() => {
     const handleScroll = () => {
       let moving = window.pageYOffset;
@@ -87,10 +86,10 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
       {/* ヘッダー */}
       <header
         ref={headerRef}
-        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2 absolute top-0 z-40 ${
+        className={`bg-gradient-to-b h-[60px] w-full flex flex-col justify-center from-[#2C58CF] via-[#2244A0] to-[#193173] p-2 z-40 ${
           visible
-            ? " h-[60px] w-full animate-slide-in-top"
-            : "animate-scale-out-ver-top"
+            ? " h-[60px] w-full fixed top-0 animate-slide-in-top"
+            : " fixed -top-[60px] animate-slide-in-top"
         }`}
       >
         <div className="space-y-2 ">
