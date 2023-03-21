@@ -16,7 +16,10 @@ const SoccerGenreButton = () => {
           国内
         </Link>
         <Link
-          href="/soccer/overseas"
+          href={{
+            pathname: "/soccer/overseas",
+            query: { country: "england" },
+          }}
           className={`w-1/4 border-r py-1 text-center ${
             router.pathname === "/soccer/overseas" && "bg-[#0075C2]"
           }`}
