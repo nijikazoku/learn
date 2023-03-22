@@ -1,5 +1,4 @@
 import Desc from "../components/Desc";
-import Description from "../components/description";
 import FeaturedMatch from "../components/FeaturedMatch";
 import Layout from "../components/Layout";
 import SlideBanner from "../components/SlideBanner";
