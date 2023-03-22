@@ -37,6 +37,10 @@ module.exports = {
           "slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both",
         "slide-in-top":
           "slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
+        "slide-in-left":
+          "slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
+        "tracking-in-expand":
+          "tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000)   both",
       },
       keyframes: {
         fadeIn: {
@@ -178,6 +182,28 @@ module.exports = {
           },
           to: {
             transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        "slide-in-left": {
+          "0%": {
+            transform: "translateX(-1000px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+        "tracking-in-expand": {
+          "0%": {
+            "letter-spacing": "-.5em",
+            opacity: "0",
+          },
+          "40%": {
+            opacity: ".6",
+          },
+          to: {
             opacity: "1",
           },
         },
