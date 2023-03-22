@@ -96,7 +96,7 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
           visible === "initial"
             ? "top-0 fixed"
             : visible === "scrollIn"
-            ? "h-[60px] w-full fixed top-0 animate-slide-in-top"
+            ? "h-[60px] w-full fixed -top-[1px] animate-slide-in-top"
             : "fixed -top-[60px] animate-scale-out-ver-topn"
         }`}
       >
@@ -112,9 +112,11 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
             {/* BET CHANNEL */}
             <Link href="/">
               <p className="font-bold text-xl">
-                <span className="text-[#409AD6]">BET</span>
-                <span className="text-[#E8B30F]">CHANNEL</span>
-                <span className="text-[#02CFFF]">FREE</span>
+                <img
+                  className="w-[12rem]"
+                  src="https://betchannel-free.com/betchannel-free.com/img/common/logo2.png?1675828435"
+                  alt=""
+                />
               </p>
             </Link>
 

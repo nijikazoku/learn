@@ -33,7 +33,7 @@ const Footer = () => {
         </Link>
         {/* スポーツ */}
         <Link
-          href="/"
+          href="/sports"
           // onClick={() => setSelected(!selected)}
           className="box-sports relative rounded-lg m-1 w-1/5 h-[60px] overflow-hidden text-white flex items-center justify-center "
         >

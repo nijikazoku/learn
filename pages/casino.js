@@ -5,7 +5,6 @@ import { ImArrowDown2 } from "react-icons/im";
 import { allGames } from "../src/casino/allGames";
 import GenreButton from "../components/casino/GenreButton";
 import Layout from "../components/Layout";
-import Header from "../components/Header";
 import { useRouter } from "next/router";
 import TestHeader from "../components/TestHeader";
 
