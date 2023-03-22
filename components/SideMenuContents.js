@@ -56,8 +56,8 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
 
   return (
     <div
-      // style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
-      className="pb-[138px] py-4 bg-black h-screen bg-opacity-80 w-[80%] overflow-y-auto"
+      style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
+      className=" py-4 pb-[200px] bg-black h-screen bg-opacity-80 w-[80%] overflow-y-auto"
     >
       <div className="flex flex-col space-y-2">
         {/* 登録ボタン */}
