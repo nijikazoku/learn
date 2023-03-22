@@ -56,8 +56,8 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
 
   return (
     <div
-      style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
-      className="py-5 h-screen bg-black  bg-opacity-80 w-[80%]"
+      // style={{ height: "calc(100vh-[70px])", overflowY: "auto" }}
+      className="pb-[138px] py-4 bg-black h-screen bg-opacity-80 w-[80%] overflow-y-auto"
     >
       <div className="flex flex-col space-y-2">
         {/* 登録ボタン */}
@@ -390,6 +390,14 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
                     className="p-2 text-lg  border-b border-red-500"
                   >
                     プライバシーポリシー
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div
+                    onClick={toggleSideMenu}
+                    className="p-2 text-lg  border-b border-red-500"
+                  >
+                    運営会社
                   </div>
                 </Link>
                 <Link href="/">
