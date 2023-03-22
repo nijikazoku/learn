@@ -146,6 +146,8 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
           <SideMenuContents
             toggleSideMenu={toggleSideMenu}
             toggleCasinoMenu={toggleCasinoMenu}
+            isShow={isShow}
+            setIsShow={setIsShow}
           />
         </div>
       )}

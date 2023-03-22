@@ -62,6 +62,7 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
       <div className="flex flex-col space-y-2">
         {/* 登録ボタン */}
         <Link
+          onClick={() => setIsShow(false)}
           href="/register"
           className="text-center bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-yellow-400 via-yellow-300 to-yellow-300 font-bold text-black w-[90%] mx-auto rounded-md p-1 border-b-4 border-yellow-700"
         >
