@@ -400,14 +400,6 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
                     運営会社
                   </div>
                 </Link>
-                <Link href="/">
-                  <div
-                    onClick={toggleSideMenu}
-                    className="p-2 text-lg  border-b border-red-500"
-                  >
-                    運営会社
-                  </div>
-                </Link>
               </div>
             </div>
           )}
