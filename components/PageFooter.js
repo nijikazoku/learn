@@ -29,7 +29,7 @@ const PageFooter = () => {
             href="/casino"
             className="flex justify-center items-center space-x-2 rounded-lg border-blue-700 border p-2 shadow-xl"
           >
-            <p className="text-xl">無料ゲームで遊ぶ</p>
+            <p className="text-xl font-bold">無料ゲームで遊ぶ</p>
             <img
               className="w-10"
               src="https://www.svgrepo.com/show/210403/slot-machine-casino.svg"

@@ -4,7 +4,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
 import DisplayGamesBasketball from "./DisplayGameBasketball";
 
-const DateSelectBasketball = ({ games }) => {
+const DateSelectBasketball = ({ games, placeBet, betList }) => {
   const [selectedDate, setSelectedDate] = useState("");
   const [displayBetText, setDisplayBetText] = useState(true);
   const sampleData = ["3/29", "3/30", "3/31", "4/01", "4/02"];
@@ -71,6 +71,8 @@ const DateSelectBasketball = ({ games }) => {
                       key={`${match.homeTeam}-${match.awayTeam}`}
                       match={match}
                       index={index}
+                      placeBet={placeBet}
+                      betList={betList}
                     />
                   ))
               ) : (
