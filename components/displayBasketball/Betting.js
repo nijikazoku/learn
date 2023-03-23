@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FcPlus, FcMinus } from "react-icons/fc";
-const Betting = ({ betList, setBetList }) => {
+import { GrClose } from "react-icons/gr";
+const Betting = ({ betList, setBetList, handleBet }) => {
   const [betNums, setBetNums] = useState(
     betList.reduce((acc, bet) => {
       acc[bet.matchId] = acc[bet.matchId] || 1;
@@ -57,7 +58,15 @@ const Betting = ({ betList, setBetList }) => {
   }, 0);
 
   return (
-    <div className=" fixed w-full top-[60px] bg-opacity-90 bg-slate-700 overflow-y-auto">
+    <div className="pb-4 fixed w-full top-[60px] h-[34rem] bg-opacity-90 bg-slate-700 overflow-y-auto">
+      <div onClick={handleBet} className="flex justify-end py-2 pr-5 space-x-3">
+        <p>CLOSE</p>
+        <img
+          className="w-5"
+          src="https://www.svgrepo.com/show/151290/close.svg"
+          alt=""
+        />
+      </div>
       <div className="space-y-5">
         {betList.map((bet, index) => {
           const rewards = Math.floor(bet.odds * bet.betNum);
