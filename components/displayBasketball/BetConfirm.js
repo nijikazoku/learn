@@ -1,12 +1,12 @@
-import Link from "next/link";
-
 const BetConfirm = ({ betList, handleBet }) => {
   return (
     <button
       onClick={handleBet}
-      className="fixed w-[35%]whitespace-nowrap bottom-20 right-10 border p-3 text-xl rounded-md text-center animate-bounce bg-yellow-300 text-blue-600 font-bold"
+      className={`fixed w-[35%] whitespace-nowrap  justify-center bottom-20 right-10 p-2 text-lg rounded-md text-center animate-pulse font-bold  bg-gradient-to-r from-blue-500 to-blue-600 ${
+        betList.length !== 0 ? "animate-slide-in-br" : "animate-slide-out-br"
+      }`}
     >
-      ベット数:{betList.length}
+      <span className="text-xl text-yellow-400">BET数:{betList.length}</span>
     </button>
   );
 };

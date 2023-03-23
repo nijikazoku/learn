@@ -41,6 +41,10 @@ module.exports = {
           "slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
         "tracking-in-expand":
           "tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000)   both",
+        "slide-in-br":
+          "slide-in-br 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
+        "slide-out-br":
+          "slide-out-br 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both",
       },
       keyframes: {
         fadeIn: {
@@ -205,6 +209,26 @@ module.exports = {
           },
           to: {
             opacity: "1",
+          },
+        },
+        "slide-in-br": {
+          "0%": {
+            transform: "translateY(1000px) translateX(1000px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0) translateX(0)",
+            opacity: "1",
+          },
+        },
+        "slide-out-br": {
+          "0%": {
+            transform: "translateY(0) translateX(0)",
+            opacity: "1",
+          },
+          to: {
+            transform: "translateY(1000px) translateX(1000px)",
+            opacity: "0",
           },
         },
       },

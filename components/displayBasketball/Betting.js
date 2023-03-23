@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { FcPlus, FcMinus } from "react-icons/fc";
 const Betting = ({ betList, setBetList }) => {
   const [betNums, setBetNums] = useState(
     betList.reduce((acc, bet) => {
@@ -57,18 +57,17 @@ const Betting = ({ betList, setBetList }) => {
   }, 0);
 
   return (
-    <div className=" fixed w-full top-[60px] bg-opacity-90 bg-slate-700">
-      <div>
+    <div className=" fixed w-full top-[60px] bg-opacity-90 bg-slate-700 overflow-y-auto">
+      <div className="space-y-5">
         {betList.map((bet, index) => {
           const rewards = Math.floor(bet.odds * bet.betNum);
-
           return (
             <div
               key={index}
-              className="relative border flex flex-col justify-center items-center rounded-lg overflow-hidden shadow space-y-2 py-3 px-2"
+              className="relative border flex flex-col justify-center items-center rounded-lg  shadow"
             >
               {/* 上のボックス */}
-              <div className="flex flex-col w-full items-center">
+              <div className="flex flex-col w-full items-center py-2 rounded-lg  from-gray-900 to-gray-600 bg-gradient-to-r">
                 {/* カテゴリ＆日付 */}
                 <div className="flex space-x-2">
                   <div className="flex text-base space-x-1 items-center ">
@@ -92,23 +91,23 @@ const Betting = ({ betList, setBetList }) => {
 
                       <div className="flex"></div>
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-3 items-center">
                       <p> {bet.winTeam}</p>
                       <span className="text-red-600 font-bold">WIN</span>
+                      <div className="font-bold text-lg text-green-500">
+                        {bet.odds}倍
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* 下のボックス */}
-              <div className="flex flex-col justify-between items-center">
-                <div className="flex items-end space-x-5">
-                  <div>当たると:{rewards}</div>
-                  <div className="font-bold text-2xl text-green-500">
-                    {bet.odds}
-                  </div>
+              <div className="flex w-full  flex-col rounded-lg  from-gray-900 to-gray-600 bg-gradient-to-l justify-between items-center py-2">
+                <div className="">
+                  <div>当たると:{rewards}pt</div>
                 </div>
-                <div className="flex flex-col justify-between items-center">
+                <div className="flex flex-col space-y-2 justify-between items-center">
                   <div className="space-x-2">
                     <button
                       onClick={() => changeIncrementValue(bet.matchId, 1)}
@@ -156,26 +155,30 @@ const Betting = ({ betList, setBetList }) => {
                       onClick={() =>
                         changeBetNum(-incrementValue, bet.matchId, betList)
                       }
-                      className="border-1 bg-blue-600 px-2"
+                      className="border-1 px-2"
                     >
-                      -
+                      <FcMinus size={23} />
                     </button>
-                    <div>{bet.betNum}</div>
+                    <div className="text-xl text-center border w-[5rem]">
+                      {bet.betNum}
+                    </div>
                     <button
                       onClick={() =>
                         changeBetNum(+incrementValue, bet.matchId, betList)
                       }
-                      className="border-1 bg-blue-600 px-2"
+                      className="border-1 px-2"
                     >
-                      +
+                      <FcPlus size={23} />
                     </button>
                   </div>
                 </div>
               </div>
-              <div>{bet.matchId}</div>
             </div>
           );
         })}
+      </div>
+      <div>
+        <div className="text-xl font-bold mt-3">ベット数：{betList.length}</div>
         <div className="text-xl font-bold mt-3">
           合計ベット：{totalBetNums}pt
         </div>

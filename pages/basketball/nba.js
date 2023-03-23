@@ -22,45 +22,6 @@ const nba = () => {
   const [matchList, setMatchList] = useState(canBetNba);
   const [betList, setBetList] = useState([]);
 
-  // const placeBet = (matchId, oddsType, homeTeam, awayTeam) => {
-  //   const existingIndex = betList.findIndex((bet) => bet.matchId === matchId);
-
-  //   const winTeam =
-  //     oddsType === "oddsHome"
-  //       ? homeTeam
-  //       : oddsType === "oddsAway"
-  //       ? awayTeam
-  //       : "";
-
-  //   const loseTeam =
-  //     oddsType === "oddsHome"
-  //       ? awayTeam
-  //       : oddsType === "oddsAway"
-  //       ? homeTeam
-  //       : "";
-
-  //   if (existingIndex !== -1 && betList[existingIndex].oddsType === oddsType) {
-  //     const updatedBetList = [...betList];
-  //     updatedBetList.splice(existingIndex, 1);
-  //     setBetList(updatedBetList);
-  //   } else {
-  //     const newBet = {
-  //       matchId: matchId,
-  //       oddsType: oddsType,
-  //       odds: matchList.find((match) => match.id === matchId)[oddsType],
-  //       winTeam: winTeam,
-  //       loseTeam: loseTeam,
-  //     };
-  //     if (existingIndex !== -1) {
-  //       const updatedBetList = [...betList];
-  //       updatedBetList[existingIndex] = newBet;
-  //       setBetList(updatedBetList);
-  //     } else {
-  //       setBetList([...betList, newBet]);
-  //     }
-  //   }
-  // };
-
   const placeBet = (
     matchId,
     oddsType,
@@ -157,11 +118,15 @@ const nba = () => {
           </div>
         </div>
       </div>
-      <BetConfirm
-        betList={betList}
-        handleBet={handleBet}
-        setShowBet={setShowBet}
-      />
+      {betList.length !== 0 ? (
+        <BetConfirm
+          betList={betList}
+          handleBet={handleBet}
+          setShowBet={setShowBet}
+        />
+      ) : (
+        ""
+      )}
 
       {showBet && <Betting betList={betList} setBetList={setBetList} />}
     </Layout>
