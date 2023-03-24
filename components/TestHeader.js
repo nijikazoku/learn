@@ -122,7 +122,7 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
 
             {/* 掲示板 */}
             <Link
-              href="/Board"
+              href="/board"
               className="font-bold animate-color-change-5x p-2 rounded-lg"
             >
               LIVE掲示板
