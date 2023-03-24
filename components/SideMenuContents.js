@@ -70,7 +70,8 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
         </Link>
         {/* ログインボタン */}
         <Link
-          href="/"
+          href="/login"
+          onClick={() => setIsShow(false)}
           className="text-center bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-blue-500 via-blue-700 to-blue-700 font-bold text-white w-[90%] mx-auto rounded-md p-1 border-b-4 border-blue-900"
         >
           ログイン
