@@ -108,12 +108,14 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
                   )
                 }
                 className={`border py-2 rounded-md w-1/3 ${
+                  betList &&
+                  betList.length > 0 &&
                   betList.some(
                     (bet) =>
                       bet.matchId === match.matchId &&
                       bet.oddsType === "oddsHome"
                   )
-                    ? "bg-red-500"
+                    ? "bg-blue-700 border-none"
                     : ""
                 }`}
               >
@@ -142,12 +144,14 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
                   )
                 }
                 className={`border py-2 rounded-md w-1/3 ${
+                  betList &&
+                  betList.length > 0 &&
                   betList.some(
                     (bet) =>
                       bet.matchId === match.matchId &&
                       bet.oddsType === "oddsDraw"
                   )
-                    ? "bg-red-500"
+                    ? "bg-slate-400 border-none"
                     : ""
                 }`}
               >
@@ -176,12 +180,14 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
                   )
                 }
                 className={`border py-2 rounded-md w-1/3 ${
+                  betList &&
+                  betList.length > 0 &&
                   betList.some(
                     (bet) =>
                       bet.matchId === match.matchId &&
                       bet.oddsType === "oddsAway"
                   )
-                    ? "bg-red-500"
+                    ? "bg-red-500 border-none"
                     : ""
                 }`}
               >

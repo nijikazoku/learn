@@ -4,7 +4,7 @@ const canBetNba = [
   {
     matchId: uuidv4(),
     betNum: 0,
-    sports: "baseball",
+    sports: "basketball",
     matchDate: "3/29",
     matchTime: "12:00",
     category: "MLB",
@@ -37,7 +37,7 @@ const canBetNba = [
   {
     matchId: uuidv4(),
     betNum: 0,
-    sports: "baseball",
+    sports: "basketball",
     matchDate: "3/29",
     matchTime: "12:00",
     category: "MLB",
@@ -68,7 +68,7 @@ const canBetNba = [
     incrementValue: 1,
   },
   {
-    sports: "baseball",
+    sports: "basketball",
     matchDate: "3/29",
     matchTime: "19:00",
     category: "MLB",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FcPlus, FcMinus } from "react-icons/fc";
-import { GrClose } from "react-icons/gr";
+import { BsTrash3 } from "react-icons/bs";
+import { GrFormClose } from "react-icons/gr";
 const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
   const [betNums, setBetNums] = useState(
     betList.reduce((acc, bet) => {
@@ -106,9 +107,17 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
 
   const abelBet = totalBetNums > 0;
 
+  const deleteFromBetList = (matchId, oddsType) => {
+    setBetList((prevBetList) =>
+      prevBetList.filter(
+        (bet) => bet.matchId !== matchId || bet.oddsType !== oddsType
+      )
+    );
+  };
+
   return (
     <div
-      className={`fixed w-full top-0 h-full pb-[80px] bg-opacity-90 bg-slate-700 space-y-2 overflow-y-auto  animate-slide-in-right ${
+      className={`fixed w-full top-0 z-40 h-full pb-[80px] bg-opacity-90  bg-slate-700 space-y-2 overflow-y-auto  animate-slide-in-right ${
         closeBetting && "animate-slide-out-right"
       }`}
     >
@@ -133,7 +142,14 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
               {/* 上のボックス */}
               <div className="flex flex-col w-full items-center py-2 rounded-t-lg  from-gray-900 to-gray-600 bg-gradient-to-r">
                 {/* カテゴリ＆日付 */}
-                <div className="flex space-x-2">
+                <div className="flex justify-center space-x-2 relative w-full">
+                  <BsTrash3
+                    size={22}
+                    onClick={() => deleteFromBetList(bet.matchId, bet.oddsType)}
+                    className="absolute top-0 right-2"
+                  />
+
+                  <button className="absolute top-0 right-5"></button>
                   <div className="flex text-base space-x-1 items-center ">
                     <div className="flex space-x-1 items-center ">
                       <p className="">{bet.category}</p>
@@ -162,7 +178,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                         <span
                           className={`${
                             bet.oddsType === "oddsAway" &&
-                            "text-red-600 font-bold text-lg"
+                            "text-blue-600 font-bold text-lg"
                           }`}
                         >
                           {bet.awayTeam}
@@ -232,7 +248,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     {/* リセットボタン */}
                     <button
                       onClick={() => resetBetNum(bet.matchId, betList)}
-                      className="border-1 px-2"
+                      className="bg-red-600 rounded-lg px-2"
                     >
                       RESET
                     </button>
@@ -265,7 +281,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     {/* マックスボタン */}
                     <button
                       onClick={() => maxBetNum(bet.matchId, betList)}
-                      className="border-1 px-2"
+                      className="bg-green-700 px-2 rounded-lg"
                     >
                       MAX
                     </button>
