@@ -117,7 +117,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
 
   return (
     <div
-      className={`fixed w-full top-0 z-40 h-full pb-[80px] bg-opacity-90  bg-slate-700 space-y-2 overflow-y-auto  animate-slide-in-right ${
+      className={`fixed w-full top-0 z-40 h-full pb-[10px] bg-opacity-90  bg-slate-700 space-y-2 overflow-y-auto  animate-slide-in-right ${
         closeBetting && "animate-slide-out-right"
       }`}
     >
@@ -294,7 +294,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
       </div>
       {/* ベット確認 */}
       <div className="space-y-2">
-        <div className="text-center rounded-lg  w-[90%] flex flex-col justify-center items-center mx-auto border border-blue-900 bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900">
+        <div className="text-center rounded-lg  w-[90%] flex flex-col justify-center items-center mx-auto bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900">
           <div className="text-xl font-bold py-1 w-full border-b">
             ベット数：{betList.length}
           </div>
