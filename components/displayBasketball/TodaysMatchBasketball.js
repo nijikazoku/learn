@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
-import DisplayGamesBasketball from "./DisplayGameBasketball";
-const TodaysMatchBasketball = ({ games }) => {
+import DisplayGamesBasketball from "./DisplayGamesBasketball";
+const TodaysMatchBasketball = ({ games, placeBet, betList }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const handleClick = (date) => {
     setSelectedDate((prevDate) => (prevDate === date ? null : date));
@@ -45,6 +45,8 @@ const TodaysMatchBasketball = ({ games }) => {
                   key={`${match.homeTeam}-${match.awayTeam}`}
                   match={match}
                   index={index}
+                  placeBet={placeBet}
+                  betList={betList}
                 />
               ))
           ) : (

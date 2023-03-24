@@ -115,6 +115,12 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
     );
   };
 
+  const doneBet = () => {
+    alert("ベットが完了しました");
+    handleBet();
+    setBetList([]);
+  };
+
   return (
     <div
       className={`fixed w-full top-0 z-40 h-full pb-[10px] bg-opacity-90  bg-slate-700 space-y-2 overflow-y-auto  animate-slide-in-right ${
@@ -308,7 +314,9 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
         {showValidation ? (
           <div className="mx-auto rounded-lg flex w-[90%] bg-red-600 text-yellow-300 to-gray-900 py-2 justify-around items-center text-xl font-bold ">
             <p className="text-sm">ベットを確定させます</p>
-            <button className="border-2 text-white px-3">はい</button>
+            <button onClick={doneBet} className="border-2 text-white px-3">
+              はい
+            </button>
             <button
               onClick={betValidation}
               className="text-gray-700 border-2 border-gray-700 px-3"

@@ -120,7 +120,11 @@ const nba = () => {
                 games={canBetNba}
               />
             )}
-            <TodaysMatchBasketball games={canBetNba} />
+            <TodaysMatchBasketball
+              games={canBetNba}
+              placeBet={placeBet}
+              betList={betList}
+            />
             <div className="text-xl">今後の試合</div>
             <DateSelectBasketball
               games={canBetNba}

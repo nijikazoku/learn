@@ -1,4 +1,4 @@
-import DisplayGamesBasketball from "./DisplayGameBasketball";
+import DisplayGamesBasketball from "./DisplayGamesBasketball";
 
 const FilteredMatchBasketball = ({ filteredMatch, games }) => {
   const filteredMatches = games.filter(
