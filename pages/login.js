@@ -9,8 +9,8 @@ const login = () => {
       <div className="py-3  w-full h-full ">
         <div className="py-5">
           <h1 className="w-[80%] text-4xl mx-auto">ログイン</h1>
-          <div className="flex w-[80%] mx-auto py-2">
-            <div> アカウントをお持ちでない場合</div>
+          <div className="flex w-[80%] mx-auto py-2 whitespace-nowrap space-x-2">
+            <div className="text-base"> アカウントをお持ちでない場合</div>
             <Link href="/register" className="underline text-red-600">
               新規登録
             </Link>
