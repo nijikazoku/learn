@@ -175,7 +175,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                         <span
                           className={`${
                             bet.oddsType === "oddsHome" &&
-                            "text-red-600 font-bold text-lg"
+                            "text-blue-600 font-bold text-lg"
                           }`}
                         >
                           {bet.homeTeam}
@@ -184,7 +184,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                         <span
                           className={`${
                             bet.oddsType === "oddsAway" &&
-                            "text-blue-600 font-bold text-lg"
+                            "text-red-600 font-bold text-lg"
                           }`}
                         >
                           {bet.awayTeam}
