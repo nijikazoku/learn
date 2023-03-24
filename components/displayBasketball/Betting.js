@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FcPlus, FcMinus } from "react-icons/fc";
 import { GrClose } from "react-icons/gr";
-const Betting = ({ betList, setBetList, handleBet }) => {
+const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
   const [betNums, setBetNums] = useState(
     betList.reduce((acc, bet) => {
       acc[bet.matchId] = acc[bet.matchId] || 1;
@@ -99,10 +99,21 @@ const Betting = ({ betList, setBetList, handleBet }) => {
     return acc + rewards;
   }, 0);
 
+  const [showValidation, setShowValidation] = useState(false);
+  const betValidation = () => {
+    setShowValidation(!showValidation);
+  };
+
+  const abelBet = totalBetNums > 0;
+
   return (
-    <div className="fixed w-full top-0 h-full pb-[80px] bg-opacity-90 bg-slate-700 space-y-2 overflow-y-auto">
+    <div
+      className={`fixed w-full top-0 h-full pb-[80px] bg-opacity-90 bg-slate-700 space-y-2 overflow-y-auto  animate-slide-in-right ${
+        closeBetting && "animate-slide-out-right"
+      }`}
+    >
       {/* CLOSEボタン */}
-      <div onClick={handleBet} className="flex justify-end py-2 pr-5 space-x-3">
+      <div onClick={handleBet} className="flex justify-end pt-2 pr-5 space-x-3">
         <p>CLOSE</p>
         <img
           className="w-5"
@@ -111,7 +122,7 @@ const Betting = ({ betList, setBetList, handleBet }) => {
         />
       </div>
       {/* 試合情報 */}
-      <div className="space-y-5">
+      <div className="space-y-2">
         {betList.map((bet, index) => {
           const rewards = Math.floor(bet.odds * bet.betNum);
           return (
@@ -120,7 +131,7 @@ const Betting = ({ betList, setBetList, handleBet }) => {
               className="relative border flex flex-col justify-center items-center rounded-lg  shadow"
             >
               {/* 上のボックス */}
-              <div className="flex flex-col w-full items-center py-2 rounded-lg  from-gray-900 to-gray-600 bg-gradient-to-r">
+              <div className="flex flex-col w-full items-center py-2 rounded-t-lg  from-gray-900 to-gray-600 bg-gradient-to-r">
                 {/* カテゴリ＆日付 */}
                 <div className="flex space-x-2">
                   <div className="flex text-base space-x-1 items-center ">
@@ -165,7 +176,7 @@ const Betting = ({ betList, setBetList, handleBet }) => {
               </div>
 
               {/* 下のボックス */}
-              <div className="flex w-full  flex-col rounded-lg  px-4 from-gray-900 to-gray-600 bg-gradient-to-l justify-between items-center py-2">
+              <div className="flex w-full  flex-col rounded-b-lg  px-4 from-gray-900 to-gray-600 bg-gradient-to-l justify-between items-center py-2">
                 <div className="">
                   <div className="space-x-3 w-full flex justify-center">
                     <span>当たると:{rewards}pt</span>
@@ -238,8 +249,9 @@ const Betting = ({ betList, setBetList, handleBet }) => {
                         alt=""
                       />
                     </button>
-                    <div className="text-xl text-center border shadow-lg py-1 w-[7rem]">
-                      {bet.betNum}pt
+                    <div className="text-sm text-center border shadow-lg py-1 w-[7rem]">
+                      <span className="font-bold text-xl">{bet.betNum}</span>
+                      pt
                     </div>
                     {/* プラスボタン */}
                     <button
@@ -277,9 +289,30 @@ const Betting = ({ betList, setBetList, handleBet }) => {
             合計払い戻し: {totalRewards}pt
           </div>
         </div>
-        <button className="mx-auto rounded-lg flex w-[90%] bg-red-600 py-2 justify-center items-center text-xl font-bold text-yellow-300">
-          ベットする
-        </button>
+        {showValidation ? (
+          <div className="mx-auto rounded-lg flex w-[90%] bg-red-600 text-yellow-300 to-gray-900 py-2 justify-around items-center text-xl font-bold ">
+            <p className="text-sm">ベットを確定させます</p>
+            <button className="border-2 text-white px-3">はい</button>
+            <button
+              onClick={betValidation}
+              className="text-gray-700 border-2 border-gray-700 px-3"
+            >
+              いいえ
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={betValidation}
+            disabled={!abelBet}
+            className={`mx-auto rounded-lg flex w-[90%]  py-2 justify-center items-center text-xl font-bold ${
+              abelBet
+                ? "border-blue-900 bg-gradient-to-l from-yellow-400 to-yellow-200 text-red-600"
+                : "border bg-slate-700 bg-opacity-60"
+            }`}
+          >
+            ベットする
+          </button>
+        )}
       </div>
     </div>
   );

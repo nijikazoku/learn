@@ -80,16 +80,19 @@ const nba = () => {
   };
 
   const [showBet, setShowBet] = useState(false);
+  const [closeBetting, setCloseBetting] = useState(false);
   const handleBet = () => {
     if (!showBet) {
       setShowBet(true);
+      setCloseBetting(false);
       document.body.style.overflow = "hidden";
     } else {
       // setSideMenuFadeOut(true);
+      setCloseBetting(true);
       setTimeout(() => {
         setShowBet(false);
         document.body.style.overflow = "auto";
-      }, 600);
+      }, 700);
     }
   };
 
@@ -139,6 +142,7 @@ const nba = () => {
 
       {showBet && (
         <Betting
+          closeBetting={closeBetting}
           handleBet={handleBet}
           setShowBet={setShowBet}
           betList={betList}

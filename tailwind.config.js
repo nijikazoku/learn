@@ -45,6 +45,8 @@ module.exports = {
           "slide-in-br 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
         "slide-out-br":
           "slide-out-br 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both",
+        "slide-out-right":
+          "slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both",
       },
       keyframes: {
         fadeIn: {
@@ -228,6 +230,16 @@ module.exports = {
           },
           to: {
             transform: "translateY(1000px) translateX(1000px)",
+            opacity: "0",
+          },
+        },
+        "slide-out-right": {
+          "0%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+          to: {
+            transform: "translateX(1000px)",
             opacity: "0",
           },
         },
