@@ -17,7 +17,7 @@ const GenreButtonFighting = () => {
         </Link>
         <Link
           href="/fighting/boxing"
-          className={`border-b border-r py-1 text-center ${
+          className={`border-b flex items-center justify-center border-r py-1 text-center ${
             router.pathname === "/fighting/boxing" && "bg-[#0075C2]"
           }`}
         >
@@ -25,7 +25,7 @@ const GenreButtonFighting = () => {
         </Link>
         <Link
           href="/fighting/ufc"
-          className={`border-b border-r py-1 text-center ${
+          className={`border-b flex items-center justify-center  border-r py-1 text-center ${
             router.pathname === "/fighting/ufc" && "bg-[#0075C2]"
           }`}
         >
