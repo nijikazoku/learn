@@ -17,11 +17,11 @@ const GenreButtonFighting = () => {
   }, [selectedGenre, router]);
 
   return (
-    <div className="flex py-2 space-x-5 px-2 justify-end">
+    <div className="flex items-center py-2 space-x-3 px-2 justify-end">
       <div>カテゴリ選択</div>
       <select
         onChange={handleSelect}
-        className="bg-slate-700 w-[40%] outline-none text-center rounded-lg py-1"
+        className="bg-slate-700 w-[45%] outline-none text-center rounded-lg py-1"
       >
         <option className="" value="breakingdown">
           Breaking Down

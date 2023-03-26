@@ -1,15 +1,15 @@
 import { useState } from "react";
-import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
-import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
-import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
 import FilterButton from "../../components/displayBaseball/FilterButton";
 import BetConfirm from "../../components/BetConfirm";
 import Betting from "../../components/Betting";
 import Layout from "../../components/Layout";
-import { canBetJleague } from "../../src/soccer/canBetJleague";
 import TestHeader from "../../components/TestHeader";
 import SelectSportsFighting from "../../components/displayFighting/SelectSportsFighting";
-import GenreButtonFighting from "./GenreButtonFighting";
+import { canBetBreakingdown } from "../../src/fighting/canBetBreakingdown";
+import DateSelectFighting from "../../components/displayFighting/DateSlectFighting";
+import GenreButtonFighting from "../../components/displayFighting/GenreButtonFighting";
+import FilteredMatchFighting from "../../components/displayFighting/FilteredMatchFighting";
+import TodaysMatchFighting from "../../components/displayFighting/TodaysMatchFighting";
 
 const breakingdown = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -19,7 +19,7 @@ const breakingdown = () => {
     } else setFilteredMatch(condition);
   };
 
-  const [matchList, setMatchList] = useState(canBetJleague);
+  const [matchList, setMatchList] = useState(canBetBreakingdown);
   const [betList, setBetList] = useState([]);
 
   const placeBet = (
@@ -111,23 +111,23 @@ const breakingdown = () => {
           <div className="w-[95%] mx-auto space-y-2">
             {/* フィルター試合 */}
             {filteredMatch && (
-              <FilteredMatchSoccer
+              <FilteredMatchFighting
                 filteredMatch={filteredMatch}
-                games={canBetJleague}
+                games={canBetBreakingdown}
                 placeBet={placeBet}
                 betList={betList}
               />
             )}
             {/* 今日の試合 */}
-            <TodaysMatchSoccer
-              games={canBetJleague}
+            <TodaysMatchFighting
+              games={canBetBreakingdown}
               placeBet={placeBet}
               betList={betList}
             />
             <div className="text-xl">今後の試合</div>
             {/* 今後の試合 */}
-            <DateSelectSoccer
-              games={canBetJleague}
+            <DateSelectFighting
+              games={canBetBreakingdown}
               placeBet={placeBet}
               betList={betList}
             />

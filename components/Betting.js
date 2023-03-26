@@ -168,31 +168,23 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                   </div>
                 </div>
                 {/* チーム名 */}
-                <div className="flex justify-between">
-                  <div className="text-xl flex flex-col items-center space-x-2">
-                    <div className="flex text-base">
-                      <p className="text-gray-400">
-                        <span
-                          className={`${
-                            bet.oddsType === "oddsHome" &&
-                            "text-blue-600 font-bold text-lg"
-                          }`}
-                        >
-                          {bet.homeTeam}
-                        </span>
-                        <span className="px-1">vs</span>
-                        <span
-                          className={`${
-                            bet.oddsType === "oddsAway" &&
-                            "text-red-600 font-bold text-lg"
-                          }`}
-                        >
-                          {bet.awayTeam}
-                        </span>
-                      </p>
-
-                      <div className="flex"></div>
-                    </div>
+                <div className="flex justify-center items-center text-gray-500 w-full ">
+                  <div
+                    className={`w-[45%] text-right ${
+                      bet.oddsType === "oddsHome" &&
+                      "text-blue-600 font-bold text-lg"
+                    }`}
+                  >
+                    {bet.homeTeam}
+                  </div>
+                  <div className="w-[7%] text-center">vs</div>
+                  <div
+                    className={`text-left w-[45%] ${
+                      bet.oddsType === "oddsAway" &&
+                      "text-red-600 font-bold text-lg"
+                    }`}
+                  >
+                    {bet.awayTeam}
                   </div>
                 </div>
               </div>
