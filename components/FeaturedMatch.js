@@ -34,12 +34,14 @@ const FeaturedMatch = () => {
               {/* 内容 */}
               {/* スポーツ名 */}
               <div className="absolute top-4 px-3 flex items-end space-x-3">
-                <p className="text-xl ">{match.sports}</p>
+                {match.sports === "baseball" && (
+                  <p className="text-xl ">野球</p>
+                )}
               </div>
               {/* 時刻 */}
               <div className="absolute top-2 bg-opacity-70 py-2 px-4 right-2 rounded-lg bg-slate-900 flex flex-col items-end">
-                <div className="font-thin text-md">MAR 17 FRI</div>
-                <div className="font-bold text-xl ">{match.matchDate}</div>
+                <div className="font-thin text-md">MAR 28 Tue</div>
+                <div className="font-bold text-xl ">{match.matchTime}</div>
               </div>
               {/* 対戦チーム名 */}
               <div className="absolute top-[70px] px-3 text-3xl font-bold text-white ">
@@ -56,15 +58,15 @@ const FeaturedMatch = () => {
               <div className="absolute space-x-1 bottom-0 w-full flex justify-evenly text-lg whitespace-nowrap">
                 <div className="flex w-1/3 p-1 bg-opacity-70 bg-slate-900  justify-between">
                   <p>W1</p>
-                  <p className="text-[#F59E0B]">{match.odds1}</p>
+                  <p className="text-[#F59E0B]">{match.oddsHome}</p>
                 </div>
                 <div className="flex w-1/3 p-1 bg-opacity-70 bg-slate-900  justify-between">
                   <p>W2</p>
-                  <p className="text-[#F59E0B]">{match.odds2}</p>
+                  <p className="text-[#F59E0B]">{match.oddsAway}</p>
                 </div>
                 <div className="flex w-1/3 p-1 bg-opacity-70 bg-slate-900  justify-between">
                   <p>DRAW</p>
-                  <p className="text-[#F59E0B]">{match.odds3}</p>
+                  <p className="text-[#F59E0B]">{match.oddsDraw}</p>
                 </div>
               </div>
             </SwiperSlide>

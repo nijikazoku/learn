@@ -1,6 +1,6 @@
-import DisplayGames from "./displayBaseball/DisplayGames";
+import DisplayGamesBaseball from "./displayBaseball/DisplayGamesBaseball";
 
-const FilteredMatch = ({ filteredMatch, games }) => {
+const FilteredMatch = ({ filteredMatch, games, placeBet, betList }) => {
   const filteredMatches = games.filter(
     (match) => match.canBet === filteredMatch
   );
@@ -8,10 +8,12 @@ const FilteredMatch = ({ filteredMatch, games }) => {
   return filteredMatches.length > 0 ? (
     <>
       {filteredMatches.map((match, index) => (
-        <DisplayGames
+        <DisplayGamesBaseball
           key={`${match.homeTeam}-${match.awayTeam}`}
           match={match}
           index={index}
+          placeBet={placeBet}
+          betList={betList}
         />
       ))}
     </>

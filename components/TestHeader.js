@@ -15,6 +15,7 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
   const router = useRouter();
   const headerRef = useRef(null);
 
+  // サイドメニュー開閉
   const toggleSideMenu = (genre) => {
     if (!isShow) {
       setIsShow(true);
@@ -100,34 +101,24 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
             : "fixed -top-[60px] animate-scale-out-ver-topn"
         }`}
       >
-        <div className="space-y-2 ">
-          {/* 開く閉じる */}
-          <div className="flex items-center justify-between space-x-1">
-            <div
-              onClick={toggleSideMenu}
-              className="text-white flex flex-col justify-center items-center cursor-pointer"
-            >
-              {isShow ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
-            </div>
-            {/* BET CHANNEL */}
-            <Link href="/">
-              <p className="font-bold text-xl">
-                <img
-                  className="w-[12rem]"
-                  src="https://betchannel-free.com/betchannel-free.com/img/common/logo2.png?1675828435"
-                  alt=""
-                />
-              </p>
-            </Link>
-
-            {/* 掲示板 */}
-            <Link
-              href="/board"
-              className="font-bold animate-color-change-5x p-2 rounded-lg"
-            >
-              LIVE掲示板
-            </Link>
+        {/* 開く閉じるボタン */}
+        <div className="flex items-center justify-start space-x-4">
+          <div
+            onClick={toggleSideMenu}
+            className="text-white flex flex-col justify-center items-center cursor-pointer"
+          >
+            {isShow ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
           </div>
+          {/* BET CHANNEL */}
+          <Link href="/">
+            <p className="font-bold text-xl">
+              <img
+                className="w-[12rem]"
+                src="https://betchannel-free.com/betchannel-free.com/img/common/logo2.png?1675828435"
+                alt=""
+              />
+            </p>
+          </Link>
         </div>
       </header>
       {/* サイドバー */}

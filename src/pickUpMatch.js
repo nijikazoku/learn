@@ -1,24 +1,69 @@
+import { v4 as uuidv4 } from "uuid";
 const pickUpMatch = [
   {
-    sports: "野球",
-    type: "オープン戦",
+    matchId: uuidv4(),
+    sports: "baseball",
+    matchDate: "3/28",
+    matchTime: "19:00",
+    category: "NPB",
     homeTeam: "巨人",
     awayTeam: "広島",
-    matchDate: "13:00",
-    odds1: 2.55,
-    odds2: 1.91,
-    odds3: 11.54,
+    avenue: "東京ドーム",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
     image: "https://i.imgur.com/mUpjBkX.jpg",
   },
   {
-    sports: "野球",
+    matchId: uuidv4(),
+    sports: "baseball",
+    matchDate: "3/28",
+    matchTime: "19:00",
+    category: "NPB",
+    homeTeam: "中日",
+    awayTeam: "阪神",
+    avenue: "ナゴヤドーム",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
     type: "オープン戦",
-    homeTeam: "阪神",
-    awayTeam: "オリックス",
-    matchDate: "13:00",
-    odds1: 1.34,
-    odds2: 4.12,
-    odds3: 19.22,
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
     image: "https://i.imgur.com/mUpjBkX.jpg",
   },
   {

@@ -1,6 +1,11 @@
 import DisplayGamesBasketball from "./DisplayGamesBasketball";
 
-const FilteredMatchBasketball = ({ filteredMatch, games }) => {
+const FilteredMatchBasketball = ({
+  filteredMatch,
+  games,
+  betList,
+  placeBet,
+}) => {
   const filteredMatches = games.filter(
     (match) => match.canBet === filteredMatch
   );
@@ -12,6 +17,8 @@ const FilteredMatchBasketball = ({ filteredMatch, games }) => {
           key={`${match.homeTeam.name}-${match.awayTeam.name}`}
           match={match}
           index={index}
+          betList={betList}
+          placeBet={placeBet}
         />
       ))}
     </>

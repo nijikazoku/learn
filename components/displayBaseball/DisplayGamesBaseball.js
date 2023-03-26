@@ -4,7 +4,7 @@ import { BiMinus } from "react-icons/bi";
 import { AiOutlineExclamationCircle, AiFillLock } from "react-icons/ai";
 import { useState } from "react";
 import { canBetNba } from "../../src/basketball/canBetNba";
-const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
+const DisplayGamesBaseball = ({ match, index, betList, placeBet }) => {
   const [matchList, setMatchList] = useState(canBetNba);
 
   return (
@@ -21,7 +21,7 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
                 {match.sports === "baseball" && (
                   <img
                     className="w-5"
-                    src="https://www.svgrepo.com/show/484370/soccer-ball-illustration.svg"
+                    src="https://www.svgrepo.com/show/395857/baseball.svg"
                     alt=""
                   />
                 )}
@@ -63,10 +63,13 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
         {/* チーム名＆オッズ */}
         <div className="flex flex-col text-lg space-y-2">
           {/* チーム名 */}
-          <div className=" pl-2 ">
-            <div className="flex items-center space-x-2">
-              <p className="text-blue-600 text-[0.7rem] ">HOME</p>
-              <p>{match.homeTeam}</p>
+          <div className="px-2">
+            {/* ホームチーム */}
+            <div className="flex items-center justify-start space-x-2">
+              <p className="text-blue-600 w-[3rem] text-center text-[0.7rem] ">
+                HOME
+              </p>
+              <p className="flex-grow">{match.homeTeam}</p>
               {match.homeTeam.inJapan && (
                 <img
                   className="w-6"
@@ -75,9 +78,12 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
                 />
               )}
             </div>
-            <div className="flex items-center space-x-2">
-              <p className="text-red-600 text-[0.7rem] ">AWAY</p>
-              <p>{match.awayTeam}</p>
+            {/* アウェイチーム */}
+            <div className="flex items-center justify-start space-x-2">
+              <p className="text-red-600 w-[3rem] text-center text-[0.7rem]">
+                AWAY
+              </p>
+              <p className="flex-grow">{match.awayTeam}</p>
               {match.awayTeam.inJapan && (
                 <img
                   className="w-6"
@@ -226,4 +232,4 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
   );
 };
 
-export default DisplayGamesBasketball;
+export default DisplayGamesBaseball;

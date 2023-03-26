@@ -2,8 +2,8 @@ import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
-import DisplayGames from "./DisplayGames";
-const DateSelect = ({ games }) => {
+import DisplayGamesBaseball from "./DisplayGamesBaseball";
+const DateSelect = ({ games, placeBet, betList }) => {
   const [selectedDate, setSelectedDate] = useState("");
   const [displayBetText, setDisplayBetText] = useState(true);
   const sampleData = ["3/29", "3/30", "3/31", "4/01", "4/02"];
@@ -66,10 +66,12 @@ const DateSelect = ({ games }) => {
                 games
                   .filter((match) => match.matchDate === date)
                   .map((match, index) => (
-                    <DisplayGames
+                    <DisplayGamesBaseball
                       key={`${match.homeTeam}-${match.awayTeam}`}
                       match={match}
                       index={index}
+                      betList={betList}
+                      placeBet={placeBet}
                     />
                   ))
               ) : (

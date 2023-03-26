@@ -1,47 +1,104 @@
+import { v4 as uuidv4 } from "uuid";
+
 const canBetNpb = [
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
-    matchTime: "19:00",
+    matchTime: "13:00",
+    category: "NPB",
+    homeTeam: "巨人",
+    awayTeam: "広島",
+    avenue: "東京ドーム",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
+  },
+  {
+    matchId: uuidv4(),
+    sports: "baseball",
+    matchDate: "3/28",
+    matchTime: "13:00",
     category: "NPB",
     homeTeam: "中日",
     awayTeam: "阪神",
     avenue: "ナゴヤドーム",
-    oddsHome: 2.76,
-    oddsDraw: 9.42,
-    oddsAway: 1.97,
-    canBet: "after",
-    type: "セ・リーグ",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
-    matchTime: "19:00",
+    matchTime: "13:00",
     category: "NPB",
-    homeTeam: "広島",
-    awayTeam: "ヤクルト",
-    avenue: "マツダスタジアム",
-    oddsHome: 4.23,
-    oddsDraw: 5.98,
-    oddsAway: 2.56,
-    canBet: "after",
-    type: "セ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/28",
-    matchTime: "19:00",
-    category: "NPB",
-    homeTeam: "巨人",
+    homeTeam: "ヤクルト",
     awayTeam: "横浜",
-    avenue: "東京ドーム",
-    oddsHome: 1.45,
-    oddsDraw: 7.34,
-    oddsAway: 2.73,
-    canBet: "after",
-    type: "セ・リーグ",
+    avenue: "神宮球場",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
@@ -49,27 +106,63 @@ const canBetNpb = [
     homeTeam: "オリックス",
     awayTeam: "ソフトバンク",
     avenue: "京セラドーム",
-    oddsHome: 2.37,
-    oddsDraw: 9.5,
-    oddsAway: 2.19,
-    canBet: "after",
-    type: "パ・リーグ",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
     category: "NPB",
-    homeTeam: "日本ハム",
+    homeTeam: "日ハム",
     awayTeam: "楽天",
     avenue: "札幌ドーム",
-    oddsHome: 2.39,
-    oddsDraw: 6.75,
-    oddsAway: 1.89,
-    canBet: "after",
-    type: "パ・リーグ",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
     matchTime: "19:00",
@@ -77,179 +170,92 @@ const canBetNpb = [
     homeTeam: "西武",
     awayTeam: "ロッテ",
     avenue: "西武ドーム",
-    oddsHome: 3.46,
-    oddsDraw: 5.52,
-    oddsAway: 2.37,
-    canBet: "after",
-    type: "パ・リーグ",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/29",
-    matchTime: "14:00",
+    matchTime: "18:00",
     category: "NPB",
-    homeTeam: "巨人",
-    awayTeam: "阪神",
-    avenue: "東京ドーム",
-    oddsHome: 1.82,
-    oddsDraw: 7.8,
-    oddsAway: 3.29,
-    canBet: "accept",
-    type: "セ・リーグ",
+    homeTeam: "阪神",
+    awayTeam: "巨人",
+    avenue: "甲子園",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
+    canBet: "before",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
-    sports: "baseball",
-    matchDate: "3/29",
-    matchTime: "16:00",
-    category: "NPB",
-    homeTeam: "広島",
-    awayTeam: "横浜",
-    avenue: "マツダスタジアム",
-    oddsHome: 2.65,
-    oddsDraw: 10.82,
-    oddsAway: 1.14,
-    canBet: "accept",
-    type: "セ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/29",
-    matchTime: "16:00",
-    category: "NPB",
-    homeTeam: "ヤクルト",
-    awayTeam: "中日",
-    avenue: "神宮球場",
-    oddsHome: 1.53,
-    oddsDraw: 5.67,
-    oddsAway: 3.34,
-    canBet: "accept",
-    type: "セ・リーグ",
-  },
-  {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/29",
     matchTime: "18:00",
     category: "NPB",
     homeTeam: "ソフトバンク",
-    awayTeam: "オリックス",
-    avenue: "PayPayドーム",
-    oddsHome: 1.24,
-    oddsDraw: 6.78,
-    oddsAway: 2.79,
-    canBet: "accept",
-    type: "パ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/29",
-    matchTime: "18:00",
-    category: "NPB",
-    homeTeam: "日本ハム",
     awayTeam: "楽天",
-    avenue: "札幌ドーム",
-    oddsHome: 3.45,
-    oddsDraw: 6.89,
-    oddsAway: 1.44,
-    canBet: "accept",
-    type: "パ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/29",
-    matchTime: "18:00",
-    category: "NPB",
-    homeTeam: "ロッテ",
-    awayTeam: "西武",
-    avenue: "ZOZOマリンスタジアム",
-    oddsHome: 3.45,
-    oddsDraw: 7.98,
-    oddsAway: 1.21,
-    canBet: "accept",
-    type: "パ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "13:00",
-    category: "NPB",
-    homeTeam: "阪神",
-    awayTeam: "ヤクルト",
-    avenue: "甲子園",
-    oddsHome: 2.86,
-    oddsDraw: 5.34,
-    oddsAway: 1.74,
+    avenue: "paypayドーム",
+    oddsHome: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsDraw: parseFloat(
+      (Math.random() * 2.89 + 7.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    oddsAway: parseFloat(
+      (Math.random() * 1.89 + 1.1).toFixed(2)
+    ).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+    type: "オープン戦",
     canBet: "before",
-    type: "セ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "13:00",
-    category: "NPB",
-    homeTeam: "巨人",
-    awayTeam: "中日",
-    avenue: "東京ドーム",
-    oddsHome: 2.73,
-    oddsDraw: 8.63,
-    oddsAway: 1.77,
-    canBet: "before",
-    type: "セ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "13:00",
-    category: "NPB",
-    homeTeam: "横浜",
-    awayTeam: "広島",
-    avenue: "横浜スタジアム",
-    oddsHome: 1.53,
-    oddsDraw: 8.73,
-    oddsAway: 1.85,
-    canBet: "before",
-    type: "セ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "16:00",
-    category: "NPB",
-    homeTeam: "オリックス",
-    awayTeam: "ソフトバンク",
-    avenue: "京セラドーム",
-    oddsHome: 1.23,
-    oddsDraw: 8.4,
-    oddsAway: 2.58,
-    canBet: "before",
-    type: "パ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "16:00",
-    category: "NPB",
-    homeTeam: "楽天",
-    awayTeam: "ロッテ",
-    avenue: "楽天モバイルパーク",
-    oddsHome: 2.46,
-    oddsDraw: 4.67,
-    oddsAway: 1.34,
-    canBet: "before",
-    type: "パ・リーグ",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "16:00",
-    category: "NPB",
-    homeTeam: "日本ハム",
-    awayTeam: "西武",
-    avenue: "札幌ドーム",
-    oddsHome: 2.45,
-    oddsDraw: 6.53,
-    oddsAway: 1.48,
-    canBet: "before",
-    type: "パ・リーグ",
+    betNum: 0,
+    incrementValue: 1,
   },
 ];
 

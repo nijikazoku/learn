@@ -8,8 +8,8 @@ import { canBetNba } from "../../src/basketball/canBetNba";
 import TodaysMatchBasketball from "../../components/displayBasketball/TodaysMatchBasketball";
 import DateSelectBasketball from "../../components/displayBasketball/DateSelectBasketball";
 import FilteredMatchBasketball from "../../components/displayBasketball/FilteredMatchBasketball";
-import BetConfirm from "../../components/displayBasketball/BetConfirm";
-import Betting from "../../components/displayBasketball/Betting";
+import BetConfirm from "../../components/BetConfirm";
+import Betting from "../../components/Betting";
 
 const nba = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -118,6 +118,8 @@ const nba = () => {
               <FilteredMatchBasketball
                 filteredMatch={filteredMatch}
                 games={canBetNba}
+                betList={betList}
+                placeBet={placeBet}
               />
             )}
             <TodaysMatchBasketball

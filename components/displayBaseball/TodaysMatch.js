@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
-
-import DisplayGames from "./DisplayGames";
-const TodaysMatch = ({ games }) => {
+import DisplayGamesBaseball from "./DisplayGamesBaseball";
+const TodaysMatch = ({ games, placeBet, betList }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const handleClick = (date) => {
     setSelectedDate((prevDate) => (prevDate === date ? null : date));
@@ -42,10 +41,12 @@ const TodaysMatch = ({ games }) => {
             games
               .filter((match) => match.matchDate === "3/28")
               .map((match, index) => (
-                <DisplayGames
+                <DisplayGamesBaseball
                   key={`${match.homeTeam}-${match.awayTeam}`}
                   match={match}
                   index={index}
+                  placeBet={placeBet}
+                  betList={betList}
                 />
               ))
           ) : (
