@@ -1,5 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 const canBetSpain = [
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "4/01",
     matchTime: "12:00",
@@ -34,6 +37,8 @@ const canBetSpain = [
     canBet: "before",
     isJapan: true,
     type: "第16節",
+    betNum: 0,
+    incrementValue: 1,
   },
 ];
 

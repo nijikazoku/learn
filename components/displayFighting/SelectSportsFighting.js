@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-const SelectSportsSoccer = () => {
+const SelectSportsFighting = () => {
   return (
     <div className="flex justify-between items-center bg-gradient-to-l from-blue-700 via-blue-800 py-2 to-gray-900 px-4">
       <div className="flex space-x-2 items-center">
         <img
           className="w-5"
-          src="https://www.svgrepo.com/show/484370/soccer-ball-illustration.svg"
+          src="https://www.svgrepo.com/show/401223/boxing-glove.svg"
           alt=""
         />
-        <div className="text-[1.1rem]">サッカー</div>
+        <div className="text-[1.1rem]">格闘技</div>
       </div>
 
       <div className="flex space-x-4 items-center">
@@ -27,10 +27,10 @@ const SelectSportsSoccer = () => {
             alt=""
           />
         </Link>
-        <Link href="/fighting/breakingdown">
+        <Link href="/soccer/j_league">
           <img
             className="w-6"
-            src="https://www.svgrepo.com/show/401223/boxing-glove.svg"
+            src="https://www.svgrepo.com/show/484370/soccer-ball-illustration.svg"
             alt=""
           />
         </Link>
@@ -39,4 +39,4 @@ const SelectSportsSoccer = () => {
   );
 };
 
-export default SelectSportsSoccer;
+export default SelectSportsFighting;

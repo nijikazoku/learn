@@ -27,13 +27,13 @@ const SelectSportsBasketball = () => {
             alt=""
           />
         </Link>
-        <div>
+        <Link href="/fighting/breakingdown">
           <img
             className="w-6"
             src="https://www.svgrepo.com/show/401223/boxing-glove.svg"
             alt=""
           />
-        </div>
+        </Link>
       </div>
     </div>
   );
