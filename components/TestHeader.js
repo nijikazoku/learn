@@ -111,7 +111,7 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
           </div>
           {/* BET CHANNEL */}
           <Link href="/">
-            <p className="font-bold text-xl">
+            <p className="font-bold text-xl animate-bounce">
               <img
                 className="w-[12rem]"
                 src="https://betchannel-free.com/betchannel-free.com/img/common/logo2.png?1675828435"

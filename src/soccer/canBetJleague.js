@@ -1,11 +1,21 @@
+import { v4 as uuidv4 } from "uuid";
+
 const canBetJleague = [
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "3/28",
     matchTime: "13:00",
-    category: "J1リーグ",
-    homeTeam: { name: "浦和レッズ", inJapan: false },
-    awayTeam: { name: "ヴィッセル神戸", inJapan: false },
+    category: "Jリーグ",
+    homeTeam: {
+      name: "浦和レッズ",
+      inJapan: false,
+    },
+    awayTeam: {
+      name: "ヴィッセル神戸",
+      inJapan: false,
+    },
+    isJapan: false,
     avenue: "埼玉スタジアム2002",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
@@ -25,10 +35,13 @@ const canBetJleague = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-    canBet: "accept",
     type: "第10節",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "3/28",
     matchTime: "16:00",
@@ -56,8 +69,11 @@ const canBetJleague = [
     }),
     canBet: "accept",
     type: "第10節",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "3/28",
     matchTime: "16:00",
@@ -85,8 +101,11 @@ const canBetJleague = [
     }),
     canBet: "accept",
     type: "第10節",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "3/29",
     matchTime: "18:00",
@@ -114,8 +133,11 @@ const canBetJleague = [
     }),
     canBet: "before",
     type: "第10節",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "3/29",
     matchTime: "18:00",
@@ -143,8 +165,11 @@ const canBetJleague = [
     }),
     canBet: "before",
     type: "第10節",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "soccer",
     matchDate: "3/29",
     matchTime: "18:00",
@@ -172,6 +197,8 @@ const canBetJleague = [
     }),
     canBet: "accept",
     type: "第10節",
+    betNum: 0,
+    incrementValue: 1,
   },
 ];
 

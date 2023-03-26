@@ -1,5 +1,7 @@
+import { v4 as uuidv4 } from "uuid";
 const koshien = [
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
     matchTime: "12:00",
@@ -25,11 +27,13 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "accept",
     type: "第1試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
     matchTime: "15:00",
@@ -55,11 +59,13 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "accept",
     type: "第2試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/28",
     matchTime: "17:00",
@@ -85,11 +91,13 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "accept",
     type: "第3試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/29",
     matchTime: "09:00",
@@ -115,11 +123,13 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "accept",
     type: "第1試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/29",
     matchTime: "12:00",
@@ -145,44 +155,17 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "accept",
     type: "第2試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
+
   {
+    matchId: uuidv4(),
     sports: "baseball",
     matchDate: "3/29",
     matchTime: "15:00",
-    category: "高校野球",
-    homeTeam: "英明(香川)",
-    awayTeam: "智辯和歌山(和歌山)",
-    avenue: "甲子園球場",
-    oddsHome: parseFloat(
-      (Math.random() * 1.89 + 1.1).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-    oddsDraw: parseFloat(
-      (Math.random() * 2.89 + 7.1).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-    oddsAway: parseFloat(
-      (Math.random() * 1.89 + 1.1).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-
-    canBet: "accept",
-    type: "第3試合(1回戦)",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "09:00",
     category: "高校野球",
     homeTeam: "敦賀気比(福井)",
     awayTeam: "広陵(広島)",
@@ -205,14 +188,16 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "before",
     type: "第3試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
   {
+    matchId: uuidv4(),
     sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "12:00",
+    matchDate: "3/29",
+    matchTime: "18:00",
     category: "高校野球",
     homeTeam: "二松学舎大付(東京)",
     awayTeam: "社(兵庫)",
@@ -235,39 +220,10 @@ const koshien = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-
-    canBet: "before",
-    type: "第2試合(2回戦)",
-  },
-  {
-    sports: "baseball",
-    matchDate: "3/30",
-    matchTime: "14:00",
-    category: "高校野球",
-    homeTeam: "海星(長崎)",
-    awayTeam: "大阪桐蔭(大阪)",
-    avenue: "甲子園球場",
-    oddsHome: parseFloat(
-      (Math.random() * 1.89 + 1.1).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-    oddsDraw: parseFloat(
-      (Math.random() * 2.89 + 7.1).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-    oddsAway: parseFloat(
-      (Math.random() * 1.89 + 1.1).toFixed(2)
-    ).toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-
-    canBet: "before",
-    type: "第3試合(2回戦)",
+    type: "第4試合(1回戦)",
+    canBet: "accept",
+    betNum: 0,
+    incrementValue: 1,
   },
 ];
 export { koshien };

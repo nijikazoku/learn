@@ -3,13 +3,14 @@ import BaseballGenreButton from "../../components/displayBaseball/BaseballGenreB
 import DateSelect from "../../components/displayBaseball/DateSelect";
 import FilterButton from "../../components/displayBaseball/FilterButton";
 import FilteredMatch from "../../components/FilteredMatch";
-import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import TodaysMatch from "../../components/displayBaseball/TodaysMatch";
 import { koshien } from "../../src/baseball/koshien";
 import { canBetCollege } from "../../src/baseball/canBetCollege";
 import TestHeader from "../../components/TestHeader";
 import SelectSports from "../../components/displayBaseball/SelectSports";
+import BetConfirm from "../../components/BetConfirm";
+import Betting from "../../components/Betting";
 
 const others = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
@@ -20,6 +21,80 @@ const others = () => {
     } else setFilteredMatch(condition);
   };
 
+  const [matchList, setMatchList] = useState(koshien);
+  const [betList, setBetList] = useState([]);
+  const placeBet = (
+    matchId,
+    oddsType,
+    homeTeam,
+    awayTeam,
+    matchCategory,
+    matchType,
+    matchDate,
+    matchTime,
+    matchAvenue,
+    betNum,
+    incrementValue
+  ) => {
+    const existingIndex = betList.findIndex((bet) => bet.matchId === matchId);
+
+    const winTeam =
+      oddsType === "oddsHome"
+        ? homeTeam
+        : oddsType === "oddsAway"
+        ? awayTeam
+        : "";
+
+    // const betHomeTeam = oddsType === "oddsDraw" ? homeTeam : winTeam;
+    // const betAwayTeam = oddsType === "oddsDraw" ? awayTeam : loseTeam;
+
+    if (existingIndex !== -1 && betList[existingIndex].oddsType === oddsType) {
+      const updatedBetList = [...betList];
+      updatedBetList.splice(existingIndex, 1);
+      setBetList(updatedBetList);
+    } else {
+      const newBet = {
+        matchId: matchId,
+        oddsType: oddsType,
+        odds: matchList.find((match) => match.matchId === matchId)[oddsType],
+        winTeam: winTeam,
+        // homeTeam: betHomeTeam,
+        // awayTeam: betAwayTeam,
+        homeTeam: homeTeam,
+        awayTeam: awayTeam,
+        category: matchCategory,
+        type: matchType,
+        matchDate: matchDate,
+        matchTime: matchTime,
+        avenue: matchAvenue,
+        betNum: betNum,
+        incrementValue: incrementValue,
+      };
+      if (existingIndex !== -1) {
+        const updatedBetList = [...betList];
+        updatedBetList[existingIndex] = newBet;
+        setBetList(updatedBetList);
+      } else {
+        setBetList([...betList, newBet]);
+      }
+    }
+  };
+  const [showBet, setShowBet] = useState(false);
+  const [closeBetting, setCloseBetting] = useState(false);
+  const handleBet = () => {
+    if (!showBet) {
+      setShowBet(true);
+      setCloseBetting(false);
+      document.body.style.overflow = "hidden";
+    } else {
+      // setSideMenuFadeOut(true);
+      setCloseBetting(true);
+      setTimeout(() => {
+        setShowBet(false);
+        document.body.style.overflow = "auto";
+      }, 700);
+    }
+  };
   return (
     <Layout>
       <TestHeader />
@@ -52,7 +127,6 @@ const others = () => {
             </div>
           </div>
         </div>
-
         <div className="space-y-3">
           {/* フィルターボタン */}
           <FilterButton
@@ -64,13 +138,26 @@ const others = () => {
             <div className="w-[95%] mx-auto space-y-2">
               {/* フィルター試合 */}
               {filteredMatch && (
-                <FilteredMatch filteredMatch={filteredMatch} games={koshien} />
+                <FilteredMatch
+                  filteredMatch={filteredMatch}
+                  games={koshien}
+                  placeBet={placeBet}
+                  betList={betList}
+                />
               )}
               {/* 今日の試合 */}
-              <TodaysMatch games={koshien} />
+              <TodaysMatch
+                games={koshien}
+                placeBet={placeBet}
+                betList={betList}
+              />
               <div className="text-xl">今後の試合</div>
               {/* 今後の試合 */}
-              <DateSelect games={koshien} />
+              <DateSelect
+                games={koshien}
+                placeBet={placeBet}
+                betList={betList}
+              />
             </div>
           )}
           {selectSchool === "college" && (
@@ -91,6 +178,24 @@ const others = () => {
           )}
         </div>
       </div>
+      {betList.length !== 0 ? (
+        <BetConfirm
+          betList={betList}
+          handleBet={handleBet}
+          setShowBet={setShowBet}
+        />
+      ) : (
+        ""
+      )}
+      {showBet && (
+        <Betting
+          closeBetting={closeBetting}
+          handleBet={handleBet}
+          setShowBet={setShowBet}
+          betList={betList}
+          setBetList={setBetList}
+        />
+      )}
     </Layout>
   );
 };

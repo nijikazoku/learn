@@ -1,12 +1,7 @@
-import { IoMdBaseball } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
 import { BiMinus } from "react-icons/bi";
 import { AiOutlineExclamationCircle, AiFillLock } from "react-icons/ai";
-import { useState } from "react";
-import { canBetNba } from "../../src/basketball/canBetNba";
 const DisplayGamesBaseball = ({ match, index, betList, placeBet }) => {
-  const [matchList, setMatchList] = useState(canBetNba);
-
   return (
     <>
       <div

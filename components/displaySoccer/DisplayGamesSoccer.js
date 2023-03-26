@@ -2,7 +2,7 @@ import { IoMdBaseball } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
 import { BiMinus } from "react-icons/bi";
 import { AiOutlineExclamationCircle, AiFillLock } from "react-icons/ai";
-const DisplayGamesSoccer = ({ match, index }) => {
+const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
   return (
     <div
       key={index}
@@ -85,32 +85,132 @@ const DisplayGamesSoccer = ({ match, index }) => {
 
         {/* オッズ */}
         <div className="flex justify-around space-x-3 text-lg">
-          {match.canBet === "accept" || match.canBet === "after" ? (
-            <div className="py-2 bg-opacity-80  bg-blue-700 text-center text-xl rounded-md w-1/3">
+          {/* ホームオッズ */}
+          {match.canBet === "accept" && (
+            <button
+              onClick={() =>
+                placeBet(
+                  match.matchId,
+                  "oddsHome",
+                  match.homeTeam.name,
+                  match.awayTeam.name,
+                  match.category,
+                  match.type,
+                  match.matchDate,
+                  match.matchTime,
+                  match.avenue,
+                  match.betNum,
+                  match.incrementValue
+                )
+              }
+              className={`border py-2 rounded-md w-1/3 border-green-600 ${
+                betList &&
+                betList.length > 0 &&
+                betList.some(
+                  (bet) =>
+                    bet.matchId === match.matchId && bet.oddsType === "oddsHome"
+                )
+                  ? "bg-blue-700 border-none"
+                  : ""
+              }`}
+            >
+              {match.oddsHome}
+            </button>
+          )}
+          {match.canBet === "after" && (
+            <div className="border  text-center border-none bg-red-700 py-2 rounded-md w-1/3 ">
               {match.oddsHome}
             </div>
-          ) : (
-            <button className="border flex justify-center items-center rounded-md w-1/3 py-2">
-              <AiFillLock size={25} color="#FBBF24" />
-            </button>
           )}
-          {match.canBet === "accept" || match.canBet === "after" ? (
-            <button className="border py-2 rounded-md  w-1/3">
+          {match.canBet === "before" && (
+            <div className="border flex justify-center items-center rounded-md w-1/3 py-2">
+              <AiFillLock size={25} color="#FBBF24" />
+            </div>
+          )}
+          {/* ドローオッズ */}
+          {/* ドローオッズ */}
+          {match.canBet === "accept" && (
+            <button
+              onClick={() =>
+                placeBet(
+                  match.matchId,
+                  "oddsDraw",
+                  match.homeTeam.name,
+                  match.awayTeam.name,
+                  match.category,
+                  match.type,
+                  match.matchDate,
+                  match.matchTime,
+                  match.avenue,
+                  match.betNum,
+                  match.incrementValue
+                )
+              }
+              className={`border py-2 border-green-600 rounded-md w-1/3 ${
+                betList &&
+                betList.length > 0 &&
+                betList.some(
+                  (bet) =>
+                    bet.matchId === match.matchId && bet.oddsType === "oddsDraw"
+                )
+                  ? "bg-gray-500 border-none"
+                  : ""
+              }`}
+            >
               {match.oddsDraw}
             </button>
-          ) : (
-            <button className="border py-2 flex justify-center items-center rounded-md w-1/3">
+          )}
+          {match.canBet === "after" && (
+            <div className="border  text-center border-none bg-red-700 py-2 rounded-md w-1/3 ">
+              {match.oddsDraw}
+            </div>
+          )}
+          {match.canBet === "before" && (
+            <div className="border flex justify-center items-center rounded-md w-1/3 py-2">
               <AiFillLock size={25} color="#FBBF24" />
+            </div>
+          )}
+          {/* アウェイオッズ */}
+          {match.canBet === "accept" && (
+            <button
+              onClick={() =>
+                placeBet(
+                  match.matchId,
+                  "oddsAway",
+                  match.homeTeam.name,
+                  match.awayTeam.name,
+                  match.category,
+                  match.type,
+                  match.matchDate,
+                  match.matchTime,
+                  match.avenue,
+                  match.betNum,
+                  match.incrementValue
+                )
+              }
+              className={`border py-2 border-green-600 rounded-md w-1/3 ${
+                betList &&
+                betList.length > 0 &&
+                betList.some(
+                  (bet) =>
+                    bet.matchId === match.matchId && bet.oddsType === "oddsAway"
+                )
+                  ? "bg-red-600 border-none"
+                  : ""
+              }`}
+            >
+              {match.oddsAway}
             </button>
           )}
-          {match.canBet === "accept" || match.canBet === "after" ? (
-            <div className="py-2 bg-opacity-80 bg-red-700 text-center text-xl rounded-md w-1/3">
+          {match.canBet === "after" && (
+            <div className="border  text-center border-none bg-red-700 py-2 rounded-md w-1/3 ">
               {match.oddsAway}
             </div>
-          ) : (
-            <button className="border flex py-2 justify-center items-center rounded-md w-1/3">
+          )}
+          {match.canBet === "before" && (
+            <div className="border flex justify-center items-center rounded-md w-1/3 py-2">
               <AiFillLock size={25} color="#FBBF24" />
-            </button>
+            </div>
           )}
         </div>
       </div>

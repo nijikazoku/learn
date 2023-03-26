@@ -1,12 +1,7 @@
-import { IoMdBaseball } from "react-icons/io";
 import { TbCircleFilled } from "react-icons/tb";
 import { BiMinus } from "react-icons/bi";
 import { AiOutlineExclamationCircle, AiFillLock } from "react-icons/ai";
-import { useState } from "react";
-import { canBetNba } from "../../src/basketball/canBetNba";
 const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
-  const [matchList, setMatchList] = useState(canBetNba);
-
   return (
     <>
       <div
@@ -18,10 +13,10 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
           <div className="flex-grow ">
             <div className="flex text-base space-x-1 items-center ">
               <div className="flex space-x-1 items-center ">
-                {match.sports === "baseball" && (
+                {match.sports === "basketball" && (
                   <img
                     className="w-5"
-                    src="https://www.svgrepo.com/show/484370/soccer-ball-illustration.svg"
+                    src="https://www.svgrepo.com/show/395860/basketball.svg"
                     alt=""
                   />
                 )}
@@ -63,9 +58,12 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
         {/* チーム名＆オッズ */}
         <div className="flex flex-col text-lg space-y-2">
           {/* チーム名 */}
-          <div className=" pl-2 ">
-            <div className="flex items-center space-x-2">
-              <p className="text-blue-600 text-[0.7rem] ">HOME</p>
+          <div className=" px-2">
+            {/* ホームチーム */}
+            <div className="flex items-center justify-start space-x-2">
+              <p className="text-blue-600 w-[3rem] text-center text-[0.7rem] ">
+                HOME
+              </p>
               <p>{match.homeTeam}</p>
               {match.homeTeam.inJapan && (
                 <img
@@ -75,8 +73,11 @@ const DisplayGamesBasketball = ({ match, index, betList, placeBet }) => {
                 />
               )}
             </div>
-            <div className="flex items-center space-x-2">
-              <p className="text-red-600 text-[0.7rem] ">AWAY</p>
+            {/* アウェイチーム */}
+            <div className="flex items-center justify-start space-x-2">
+              <p className="text-red-600 w-[3rem] text-center text-[0.7rem]">
+                AWAY
+              </p>
               <p>{match.awayTeam}</p>
               {match.awayTeam.inJapan && (
                 <img

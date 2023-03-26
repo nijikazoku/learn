@@ -145,7 +145,6 @@ const wbc = () => {
       ) : (
         ""
       )}
-
       {showBet && (
         <Betting
           closeBetting={closeBetting}

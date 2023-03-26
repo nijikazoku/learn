@@ -122,12 +122,14 @@ const npb = () => {
                 betList={betList}
               />
             )}
+            {/* 今日の試合 */}
             <TodaysMatch
               games={canBetNpb}
               placeBet={placeBet}
               betList={betList}
             />
             <div className="text-xl">今後の試合</div>
+            {/* 今後の試合 */}
             <DateSelect
               games={canBetNpb}
               placeBet={placeBet}
@@ -136,6 +138,7 @@ const npb = () => {
           </div>
         </div>
       </div>
+      {/* ベット確認画面 */}
       {betList.length !== 0 ? (
         <BetConfirm
           betList={betList}

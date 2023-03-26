@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 import DisplayGamesSoccer from "./DisplayGamesSoccer";
-const TodaysMatchSoccer = ({ games }) => {
+const TodaysMatchSoccer = ({ games, placeBet, betList }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const handleClick = (date) => {
     setSelectedDate((prevDate) => (prevDate === date ? null : date));
@@ -45,6 +45,8 @@ const TodaysMatchSoccer = ({ games }) => {
                   key={`${match.homeTeam}-${match.awayTeam}`}
                   match={match}
                   index={index}
+                  placeBet={placeBet}
+                  betList={betList}
                 />
               ))
           ) : (
