@@ -5,7 +5,7 @@ const SelectSoccerLeague = ({ setSelectCountry, selectCountry }) => {
   const router = useRouter();
   return (
     <div className="flex justify-around space-x-1">
-      <Link href="soccer/overseas/england">
+      <Link href="/soccer/overseas/england">
         <img
           className={`w-8 ${
             router.pathname === "/soccer/overseas/england" ? "" : "opacity-40 "

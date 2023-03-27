@@ -169,7 +169,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                 {/* チーム名 */}
                 <div className="flex justify-center items-center text-gray-500 w-full ">
                   <div
-                    className={`w-[45%] text-right ${
+                    className={`w-[45%] text-right text-sm ${
                       bet.oddsType === "oddsHome" &&
                       "text-blue-600 font-bold text-lg"
                     }`}
@@ -178,7 +178,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                   </div>
                   <div className="w-[7%] text-center">vs</div>
                   <div
-                    className={`text-left w-[45%] ${
+                    className={`text-left w-[45%] text-sm ${
                       bet.oddsType === "oddsAway" &&
                       "text-red-600 font-bold text-lg"
                     }`}
