@@ -40,7 +40,7 @@ const GenreButtonFighting = () => {
           RIZIN
         </Link>
         <Link
-          href="/fighting/k1_Krush"
+          href="/fighting/k1_krush"
           className={`border-r py-1 text-center ${
             router.pathname === "/fighting/k1_krush" && "bg-[#0075C2]"
           }`}

@@ -3,11 +3,11 @@ const canBetBoxing = [
   {
     matchId: uuidv4(),
     sports: "fighting",
-    matchDate: "4/01",
-    matchTime: "12:00",
-    category: "Breaking Down 7",
-    homeTeam: "ぬりぼう",
-    awayTeam: "本田スイミングスクール",
+    matchDate: "4/02",
+    matchTime: "19:00",
+    category: "WBC・WBO",
+    homeTeam: "井上尚弥",
+    awayTeam: "フルトン",
     oddsHome: parseFloat(
       (Math.random() * 1.89 + 1.1).toFixed(2)
     ).toLocaleString(undefined, {
@@ -26,9 +26,9 @@ const canBetBoxing = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-    type: "第1試合",
-    class: "フェザー級",
-    canBet: "accept",
+    type: "タイトルマッチ",
+    class: "スーパーバンタム級",
+    canBet: "before",
     betNum: 0,
     incrementValue: 1,
   },

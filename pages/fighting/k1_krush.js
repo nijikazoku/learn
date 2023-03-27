@@ -5,13 +5,13 @@ import Betting from "../../components/Betting";
 import Layout from "../../components/Layout";
 import TestHeader from "../../components/TestHeader";
 import SelectSportsFighting from "../../components/displayFighting/SelectSportsFighting";
-import { canBetUfc } from "../../src/fighting/canBetUfc";
 import DateSelectFighting from "../../components/displayFighting/DateSlectFighting";
 import GenreButtonFighting from "../../components/displayFighting/GenreButtonFighting";
 import FilteredMatchFighting from "../../components/displayFighting/FilteredMatchFighting";
 import TodaysMatchFighting from "../../components/displayFighting/TodaysMatchFighting";
+import { canBetK1_Krush } from "../../src/fighting/canBetK1_Krush";
 
-const ufc = () => {
+const k1_krush = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
   const handleFilter = (condition) => {
     if (condition === filteredMatch) {
@@ -19,7 +19,7 @@ const ufc = () => {
     } else setFilteredMatch(condition);
   };
 
-  const [matchList, setMatchList] = useState(canBetUfc);
+  const [matchList, setMatchList] = useState(canBetK1_Krush);
   const [betList, setBetList] = useState([]);
 
   const placeBet = (
@@ -113,21 +113,21 @@ const ufc = () => {
             {filteredMatch && (
               <FilteredMatchFighting
                 filteredMatch={filteredMatch}
-                games={canBetUfc}
+                games={canBetK1_Krush}
                 placeBet={placeBet}
                 betList={betList}
               />
             )}
             {/* 今日の試合 */}
             <TodaysMatchFighting
-              games={canBetUfc}
+              games={canBetK1_Krush}
               placeBet={placeBet}
               betList={betList}
             />
             <div className="text-xl">今後の試合</div>
             {/* 今後の試合 */}
             <DateSelectFighting
-              games={canBetUfc}
+              games={canBetK1_Krush}
               placeBet={placeBet}
               betList={betList}
             />
@@ -158,4 +158,4 @@ const ufc = () => {
   );
 };
 
-export default ufc;
+export default k1_krush;
