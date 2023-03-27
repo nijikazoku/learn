@@ -1,25 +1,27 @@
-import { useState } from "react";
-import FilterButton from "../../components/displayBaseball/FilterButton";
-import Layout from "../../components/Layout";
-import TestHeader from "../../components/TestHeader";
-import SelectSportsBasketball from "../../components/displayBasketball/SelectSportsBasketball";
-import BasketballGenreButton from "../../components/displayBasketball/BasketballGenreButton";
-import TodaysMatchBasketball from "../../components/displayBasketball/TodaysMatchBasketball";
-import DateSelectBasketball from "../../components/displayBasketball/DateSelectBasketball";
-import FilteredMatchBasketball from "../../components/displayBasketball/FilteredMatchBasketball";
-import BetConfirm from "../../components/BetConfirm";
-import Betting from "../../components/Betting";
-import { canBetBleague } from "../../src/basketball/canBetBleague";
+import { useEffect, useState } from "react";
+import FilterButton from "../../../components/displayBaseball/FilterButton";
+import Layout from "../../../components/Layout";
+import SelectSoccerLeague from "../../../components/displaySoccer/SelectSoccerLeague";
+import SoccerGenreButton from "../../../components/displaySoccer/SoccerGenreButton";
+import DateSelectSoccer from "../../../components/displaySoccer/DateSelectSoccer";
+import FilteredMatchSoccer from "../../../components/displaySoccer/FilteredMatchSoccer";
+import TodaysMatchSoccer from "../../../components/displaySoccer/TodaysMatchSoccer";
+import SelectSportsSoccer from "../../../components/displaySoccer/SelectSportsSoccer";
+import TestHeader from "../../../components/TestHeader";
+import BetConfirm from "../../../components/BetConfirm";
+import Betting from "../../../components/Betting";
+import { canBetNetherlands } from "../../../src/soccer/overseas/canBetNetherlands";
 
-const b_league = () => {
+const netherlands = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
+
   const handleFilter = (condition) => {
     if (condition === filteredMatch) {
       setFilteredMatch("");
     } else setFilteredMatch(condition);
   };
 
-  const [matchList, setMatchList] = useState(canBetBleague);
+  const [matchList, setMatchList] = useState(canBetNetherlands);
   const [betList, setBetList] = useState([]);
 
   const placeBet = (
@@ -43,7 +45,6 @@ const b_league = () => {
         : oddsType === "oddsAway"
         ? awayTeam
         : "";
-
     if (existingIndex !== -1 && betList[existingIndex].oddsType === oddsType) {
       const updatedBetList = [...betList];
       updatedBetList.splice(existingIndex, 1);
@@ -90,14 +91,15 @@ const b_league = () => {
       }, 700);
     }
   };
-
   return (
     <Layout>
       <TestHeader />
-      <SelectSportsBasketball />
+      <SelectSportsSoccer />
       <div className="space-y-3">
-        {/* NPB MLB WBC その他 */}
-        <BasketballGenreButton />
+        {/* 国内　海外 その他 */}
+        <SoccerGenreButton />
+        {/* リーグ選択 */}
+        <SelectSoccerLeague />
 
         <div className="space-y-3">
           {/* フィルターボタン */}
@@ -110,27 +112,28 @@ const b_league = () => {
           <div className="w-[95%] mx-auto space-y-2">
             {/* フィルター試合 */}
             {filteredMatch && (
-              <FilteredMatchBasketball
+              <FilteredMatchSoccer
                 filteredMatch={filteredMatch}
-                games={canBetBleague}
-                betList={betList}
+                games={canBetNetherlands}
                 placeBet={placeBet}
+                betList={betList}
               />
             )}
-            <TodaysMatchBasketball
-              games={canBetBleague}
+            <TodaysMatchSoccer
+              games={canBetNetherlands}
               placeBet={placeBet}
               betList={betList}
             />
             <div className="text-xl">今後の試合</div>
-            <DateSelectBasketball
-              games={canBetBleague}
+            <DateSelectSoccer
+              games={canBetNetherlands}
               placeBet={placeBet}
               betList={betList}
             />
           </div>
         </div>
       </div>
+      {/* ベット確認画面 */}
       {betList.length !== 0 ? (
         <BetConfirm
           betList={betList}
@@ -154,4 +157,4 @@ const b_league = () => {
   );
 };
 
-export default b_league;
+export default netherlands;

@@ -1,0 +1,3 @@
+const canBetPortugal = [{}];
+
+export { canBetPortugal };

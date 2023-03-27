@@ -4,7 +4,8 @@ const FilterButton = ({ handleFilter, filteredMatch }) => {
       <button
         onClick={() => handleFilter("accept")}
         className={`border rounded-md p-2 ${
-          filteredMatch === "accept" && "border-green-600 bg-green-800"
+          filteredMatch === "accept" &&
+          "border-green-500 bg-green-200 dark:border-green-600 dark:bg-green-800"
         }`}
       >
         ベット受付中
@@ -12,7 +13,8 @@ const FilterButton = ({ handleFilter, filteredMatch }) => {
       <button
         onClick={() => handleFilter("before")}
         className={`border rounded-md p-2 ${
-          filteredMatch === "before" && "border-[#FBBF24] bg-[#8a6915]"
+          filteredMatch === "before" &&
+          "border-yellow-400 bg-yellow-200 dark:border-[#FBBF24] dark:bg-[#6f6f13]"
         }`}
       >
         ベット受付前
@@ -20,7 +22,8 @@ const FilterButton = ({ handleFilter, filteredMatch }) => {
       <button
         onClick={() => handleFilter("after")}
         className={`border rounded-md p-2 ${
-          filteredMatch === "after" && "border-red-400 bg-red-600"
+          filteredMatch === "after" &&
+          "bg-red-300 border-red-600 dark:border-red-400 dark:bg-red-600"
         }`}
       >
         ベット締切済

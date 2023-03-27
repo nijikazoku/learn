@@ -5,6 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import Link from "next/link";
 import SideMenuContents from "./SideMenuContents";
+import { useTheme } from "next-themes";
 
 function TestHeader({ setGenres, setFavoriteFilter }) {
   const [position, setPosition] = useState(0);
@@ -87,6 +88,10 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [headerRef, position]);
+  const { theme, setTheme } = useTheme("");
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const dark = theme === "dark";
 
   return (
     <div className="relative pt-[60px]">
@@ -97,28 +102,40 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
           visible === "initial"
             ? "top-0 fixed"
             : visible === "scrollIn"
-            ? "h-[60px] w-full fixed -top-[1px] animate-slide-in-top"
+            ? "h-[60px] w-full fixed top-0 animate-slide-in-top"
             : "fixed -top-[60px] animate-scale-out-ver-topn"
         }`}
       >
         {/* 開く閉じるボタン */}
-        <div className="flex items-center justify-start space-x-4">
-          <div
-            onClick={toggleSideMenu}
-            className="text-white flex flex-col justify-center items-center cursor-pointer"
-          >
-            {isShow ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center justify-start space-x-4">
+            <div
+              onClick={toggleSideMenu}
+              className="text-white flex flex-col justify-center items-center cursor-pointer"
+            >
+              {isShow ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
+            </div>
+            {/* BET CHANNEL */}
+            <Link href="/">
+              <p className="font-bold text-xl animate-bounce">
+                <img
+                  className="w-[12rem]"
+                  src="https://betchannel-free.com/betchannel-free.com/img/common/logo2.png?1675828435"
+                  alt=""
+                />
+              </p>
+            </Link>
           </div>
-          {/* BET CHANNEL */}
-          <Link href="/">
-            <p className="font-bold text-xl animate-bounce">
-              <img
-                className="w-[12rem]"
-                src="https://betchannel-free.com/betchannel-free.com/img/common/logo2.png?1675828435"
-                alt=""
-              />
-            </p>
-          </Link>
+          {/* ダークモード */}
+          <div onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {dark ? (
+              <button className="border-2 p-1">ライトモードにする</button>
+            ) : (
+              <button className="text-white border-2 p-1">
+                ダークモードにする
+              </button>
+            )}
+          </div>
         </div>
       </header>
       {/* サイドバー */}

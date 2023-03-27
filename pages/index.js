@@ -5,7 +5,7 @@ import TestHeader from "../components/TestHeader";
 
 const index = () => {
   return (
-    <div className="from-[#2C58CF] via-[#1a3171] to-[#081741] pb-[70px] bg-gradient-to-t">
+    <div className="dark:from-[#2C58CF] dark:via-[#1a3171] dark:to-[#081741] pb-[70px] dark:bg-gradient-to-t">
       <TestHeader />
       <Desc />
       <PageFooter />

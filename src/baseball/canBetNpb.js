@@ -29,7 +29,7 @@ const canBetNpb = [
       maximumFractionDigits: 2,
     }),
     type: "オープン戦",
-    canBet: "accept",
+    canBet: "after",
     betNum: 0,
     incrementValue: 1,
   },

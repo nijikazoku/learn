@@ -34,7 +34,7 @@ const canBetSpain = [
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }),
-    canBet: "before",
+    canBet: "accept",
     isJapan: true,
     type: "第16節",
     betNum: 0,

@@ -25,9 +25,8 @@ const DateSelectSoccer = ({ games, betList, placeBet }) => {
         <div key={date} className="">
           <div
             onClick={() => handleClick(date)}
-            className={`flex mb-1  relative justify-between py-2 ${
-              selectedDate === date &&
-              "bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900 bg-opacity-40"
+            className={`flex mb-1  relative justify-between p-2 ${
+              selectedDate === date && "dateSelect"
             } `}
           >
             <button className="flex space-x-2 items-center">
@@ -76,7 +75,7 @@ const DateSelectSoccer = ({ games, betList, placeBet }) => {
                     />
                   ))
               ) : (
-                <div className="w-[95%] mx-auto flex items-center py-1 text-slate-300">
+                <div className="w-[95%] mx-auto flex items-center py-1 dark:text-slate-300">
                   <div className="text-xl">試合は予定されていません</div>
                 </div>
               )}

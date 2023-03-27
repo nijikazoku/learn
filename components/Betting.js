@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FcPlus, FcMinus } from "react-icons/fc";
 import { BsTrash3 } from "react-icons/bs";
-import { GrFormClose } from "react-icons/gr";
 const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
   const [betNums, setBetNums] = useState(
     betList.reduce((acc, bet) => {
@@ -129,7 +128,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
     >
       {/* CLOSEボタン */}
       <div onClick={handleBet} className="flex justify-end pt-2 pr-5 space-x-3">
-        <p>CLOSE</p>
+        <p className="text-white">CLOSE</p>
         <img
           className="w-5"
           src="https://www.svgrepo.com/show/151290/close.svg"
@@ -146,7 +145,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
               className="relative border flex flex-col justify-center items-center rounded-lg  shadow"
             >
               {/* 上のボックス */}
-              <div className="flex flex-col w-full items-center py-2 rounded-t-lg  from-gray-900 to-gray-600 bg-gradient-to-r">
+              <div className="flex flex-col w-full items-center py-2 rounded-t-lg  dark:from-gray-900 dark:to-gray-600 bg-gradient-to-r from-gray-100 to-gray-300">
                 {/* カテゴリ＆日付 */}
                 <div className="flex justify-center space-x-2 relative w-full">
                   <BsTrash3
@@ -190,7 +189,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
               </div>
 
               {/* 下のボックス */}
-              <div className="flex w-full  flex-col rounded-b-lg  px-4 from-gray-900 to-gray-600 bg-gradient-to-l justify-between items-center py-2">
+              <div className="flex w-full  flex-col rounded-b-lg  px-4 dark:from-gray-900 bg-gradient-to-l from-gray-100 to-gray-300 dark:to-gray-600 justify-between items-center py-2">
                 <div className="">
                   <div className="space-x-3 w-full flex justify-center">
                     <span>当たると:{rewards}pt</span>
@@ -203,9 +202,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     <button
                       onClick={() => changeIncrementValue(bet.matchId, 1)}
                       className={`${
-                        bet.incrementValue === 1
-                          ? "text-white"
-                          : "text-gray-500"
+                        bet.incrementValue === 1 ? "" : "text-gray-400"
                       }`}
                     >
                       1
@@ -213,9 +210,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     <button
                       onClick={() => changeIncrementValue(bet.matchId, 10)}
                       className={`${
-                        bet.incrementValue === 10
-                          ? "text-white"
-                          : "text-gray-400"
+                        bet.incrementValue === 10 ? "" : "text-gray-400"
                       }`}
                     >
                       10
@@ -223,9 +218,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     <button
                       onClick={() => changeIncrementValue(bet.matchId, 100)}
                       className={`${
-                        bet.incrementValue === 100
-                          ? "text-white"
-                          : "text-gray-400"
+                        bet.incrementValue === 100 ? "" : "text-gray-400"
                       }`}
                     >
                       100
@@ -233,9 +226,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     <button
                       onClick={() => changeIncrementValue(bet.matchId, 1000)}
                       className={`${
-                        bet.incrementValue === 1000
-                          ? "text-white"
-                          : "text-gray-400"
+                        bet.incrementValue === 1000 ? "" : "text-gray-400"
                       }`}
                     >
                       1000
@@ -246,7 +237,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     {/* リセットボタン */}
                     <button
                       onClick={() => resetBetNum(bet.matchId, betList)}
-                      className="bg-red-600 rounded-lg px-2"
+                      className="bg-red-300 dark:bg-red-600 rounded-lg px-2"
                     >
                       RESET
                     </button>
@@ -263,7 +254,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                         alt=""
                       />
                     </button>
-                    <div className="text-sm text-center border shadow-lg py-1 w-[7rem]">
+                    <div className="text-sm text-center border dark:border-slate-800 dark:bg-slate-500 border-black shadow-lg py-1 w-[7rem]">
                       <span className="font-bold text-xl">{bet.betNum}</span>
                       pt
                     </div>
@@ -279,7 +270,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
                     {/* マックスボタン */}
                     <button
                       onClick={() => maxBetNum(bet.matchId, betList)}
-                      className="bg-green-700 px-2 rounded-lg"
+                      className="bg-green-300 dark:bg-green-700 px-2 rounded-lg"
                     >
                       MAX
                     </button>
@@ -292,7 +283,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
       </div>
       {/* ベット確認 */}
       <div className="space-y-2">
-        <div className="text-center rounded-lg  w-[90%] flex flex-col justify-center items-center mx-auto bg-gradient-to-l from-blue-700 via-blue-800 to-gray-900">
+        <div className="text-center rounded-lg  w-[90%] flex flex-col justify-center items-center mx-auto dark:bg-gradient-to-l dark:from-blue-700 dark:via-blue-800 dark:to-gray-900 bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-sky-100 to-blue-500">
           <div className="text-xl font-bold py-1 w-full border-b">
             ベット数：{betList.length}
           </div>
@@ -323,7 +314,7 @@ const Betting = ({ betList, setBetList, handleBet, closeBetting }) => {
             className={`mx-auto rounded-lg flex w-[90%]  py-2 justify-center items-center text-xl font-bold ${
               abelBet
                 ? "border-blue-900 bg-gradient-to-l from-yellow-400 to-yellow-200 text-red-600"
-                : "border bg-slate-700 bg-opacity-60"
+                : "border dark:bg-slate-700 dark:bg-opacity-60"
             }`}
           >
             ベットする

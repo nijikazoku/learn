@@ -6,7 +6,7 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
   return (
     <div
       key={index}
-      className="relative border border-gray-700 bg-opacity-40 mb-3 rounded-lg overflow-hidden shadow space-y-2 py-3 px-2 from-gray-900 to-gray-600 bg-gradient-to-r"
+      className="relative border-2   mb-3 rounded-lg overflow-hidden shadow space-y-2 py-3 px-2 dark:border dark:border-gray-700 dark:from-gray-900 dark:to-gray-600 dark:bg-gradient-to-r"
     >
       {/* 日付＆スタジアム&ベット状態 */}
       <div className="flex  relative  justify-between">
@@ -110,7 +110,7 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
                   (bet) =>
                     bet.matchId === match.matchId && bet.oddsType === "oddsHome"
                 )
-                  ? "bg-blue-700 border-none"
+                  ? "bg-blue-200 dark:bg-blue-700 border-none"
                   : ""
               }`}
             >
@@ -118,16 +118,15 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
             </button>
           )}
           {match.canBet === "after" && (
-            <div className="border  text-center border-none bg-red-700 py-2 rounded-md w-1/3 ">
+            <div className="border  text-center border-none bg-red-300 dark:bg-red-700 py-2 rounded-md w-1/3 ">
               {match.oddsHome}
             </div>
           )}
           {match.canBet === "before" && (
-            <div className="border flex justify-center items-center rounded-md w-1/3 py-2">
+            <div className="border-2 flex border-yellow-500 justify-center items-center rounded-md w-1/3 py-2">
               <AiFillLock size={25} color="#FBBF24" />
             </div>
           )}
-          {/* ドローオッズ */}
           {/* ドローオッズ */}
           {match.canBet === "accept" && (
             <button
@@ -153,7 +152,7 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
                   (bet) =>
                     bet.matchId === match.matchId && bet.oddsType === "oddsDraw"
                 )
-                  ? "bg-gray-500 border-none"
+                  ? "bg-gray-200 dark:bg-gray-500 border-none"
                   : ""
               }`}
             >
@@ -161,12 +160,12 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
             </button>
           )}
           {match.canBet === "after" && (
-            <div className="border  text-center border-none bg-red-700 py-2 rounded-md w-1/3 ">
+            <div className="border  text-center border-none bg-red-300 dark:bg-red-700 py-2 rounded-md w-1/3 ">
               {match.oddsDraw}
             </div>
           )}
           {match.canBet === "before" && (
-            <div className="border flex justify-center items-center rounded-md w-1/3 py-2">
+            <div className="border-2 border-yellow-500  flex justify-center items-center rounded-md w-1/3 py-2">
               <AiFillLock size={25} color="#FBBF24" />
             </div>
           )}
@@ -195,7 +194,7 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
                   (bet) =>
                     bet.matchId === match.matchId && bet.oddsType === "oddsAway"
                 )
-                  ? "bg-red-600 border-none"
+                  ? "bg-red-300 dark:bg-red-600 border-none"
                   : ""
               }`}
             >
@@ -203,12 +202,12 @@ const DisplayGamesSoccer = ({ match, index, betList, placeBet }) => {
             </button>
           )}
           {match.canBet === "after" && (
-            <div className="border  text-center border-none bg-red-700 py-2 rounded-md w-1/3 ">
+            <div className="border  text-center border-none bg-red-300 dark:bg-red-700 py-2 rounded-md w-1/3 ">
               {match.oddsAway}
             </div>
           )}
           {match.canBet === "before" && (
-            <div className="border flex justify-center items-center rounded-md w-1/3 py-2">
+            <div className="border-2 border-yellow-500  flex justify-center items-center rounded-md w-1/3 py-2">
               <AiFillLock size={25} color="#FBBF24" />
             </div>
           )}

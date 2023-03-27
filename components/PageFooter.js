@@ -13,7 +13,7 @@ const PageFooter = () => {
           {/* スポーツ */}
           <Link
             href="/sports"
-            className="flex justify-center items-center space-x-2 rounded-lg border-blue-700 border p-2 shadow-xl"
+            className="flex justify-center items-center space-x-2 rounded-lg dark:border-blue-700 border p-2 shadow-xl"
           >
             <img
               className="w-10"
@@ -27,7 +27,7 @@ const PageFooter = () => {
           {/* ゲーム */}
           <Link
             href="/casino"
-            className="flex justify-center items-center space-x-2 rounded-lg border-blue-700 border p-2 shadow-xl"
+            className="flex justify-center items-center space-x-2 rounded-lg dark:border-blue-700 border p-2 shadow-xl"
           >
             <p className="text-xl font-bold">無料ゲームで遊ぶ</p>
             <img
@@ -37,7 +37,7 @@ const PageFooter = () => {
             />
           </Link>
         </div>
-        <ul className="grid grid-cols-2 gap-1 text-center text-gray-200 py-2">
+        <ul className="grid grid-cols-2 gap-1 text-center py-2">
           <li>遊び方NAVI</li>
           <li>運営会社</li>
           <li>利用規約</li>

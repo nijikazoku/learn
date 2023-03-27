@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SelectSportsBasketball = () => {
   return (
-    <div className="flex justify-between items-center bg-gradient-to-l from-blue-700 via-blue-800 py-2 to-gray-900 px-4">
+    <div className="flex justify-between items-center py-2 border-b border-gray-600 px-4 selectSports ">
       <div className="flex space-x-2 items-center">
         <img
           className="w-5"

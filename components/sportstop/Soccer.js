@@ -4,7 +4,7 @@ const Soccer = () => {
   return (
     <FadeInEffect>
       <div className="py-2">
-        <div className="flex  text-white items-end justify-between py-1">
+        <div className="flex items-end justify-between py-1">
           <p className="flex-grow text-xl px-3 font-bold">サッカー</p>
           <div className="px-3 text-sm">View All</div>
         </div>
@@ -25,16 +25,9 @@ const Soccer = () => {
               </div>
             </div>
           </Link>
-
           <div className="h-1/2 flex space-x-1 ">
             {/* プレミアリーグ */}
-            <Link
-              href={{
-                pathname: "/soccer/overseas",
-                query: { country: "england" },
-              }}
-              class="w-1/2 relative"
-            >
+            <Link href="/soccer/overseas/england" class="w-1/2 relative">
               <img
                 src="https://i.imgur.com/R39LS9v.jpg"
                 alt=""
@@ -48,13 +41,7 @@ const Soccer = () => {
               </div>
             </Link>
             {/* ラ・リーガ */}
-            <Link
-              href={{
-                pathname: "/soccer/overseas",
-                query: { country: "spain" },
-              }}
-              class="w-1/2 relative"
-            >
+            <Link href="/soccer/overseas/spain" class="w-1/2 relative">
               <img
                 src="https://i.imgur.com/E09a9cm.jpg"
                 alt=""

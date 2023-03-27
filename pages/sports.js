@@ -9,15 +9,12 @@ const sports = () => {
     <Layout>
       <TestHeader />
       {/* <Header /> */}
-      <div className="">
+      <div className="bg-slate-300 dark:bg-slate-800">
         <SlideBanner />
         <div className="relative">
           <FeaturedMatch />
         </div>
         <Sports />
-        {/* <div className="mt-5">
-          <Desc />
-        </div> */}
       </div>
     </Layout>
   );

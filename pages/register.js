@@ -12,7 +12,9 @@ const Register = () => {
           <h1 className="w-[80%] text-4xl mx-auto">会員登録</h1>
           <div className="flex w-[80%] mx-auto py-2">
             <div> アカウントをお持ちですか？</div>
-            <button className="underline text-yellow-600">ログイン</button>
+            <Link href="/login" className="underline text-yellow-600">
+              ログイン
+            </Link>
           </div>
           <div className="w-[80%] mx-auto space-y-3">
             <input

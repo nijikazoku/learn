@@ -109,8 +109,8 @@ const others = () => {
               onClick={() => setSelectSchool("high")}
               className={`py-2 px-2 ${
                 selectSchool === "high"
-                  ? "text-gray-100 border-b-2 border-gray-100"
-                  : "text-gray-600 border-b-2 border-gray-600"
+                  ? "dark:text-gray-100 border-b-2 border-black dark:border-gray-100"
+                  : "text-gray-300 dark:text-gray-600 border-gray-300 border-b-2 dark:border-gray-600"
               }`}
             >
               高校野球
@@ -119,8 +119,8 @@ const others = () => {
               onClick={() => setSelectSchool("college")}
               className={`py-2 px-2 ${
                 selectSchool === "college"
-                  ? "text-rgray-100 border-b-2 border-gray-100"
-                  : "text-gray-600 border-b-2 border-gray-600"
+                  ? "drak:text-gray-100  border-b-2 border-black dark:border-gray-100"
+                  : "dark:text-gray-600 text-gray-300 border-b-2 dark:border-gray-600 border-gray-300"
               }`}
             >
               大学野球

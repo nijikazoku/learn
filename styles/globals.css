@@ -1,11 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
+@layer base {
+  body {
+    @apply dark:bg-slate-800 dark:text-white;
+  }
+}
+@layer components {
+  .dateSelect {
+    @apply dark:bg-gradient-to-l dark:from-blue-700 dark:via-blue-800 py-2 dark:to-gray-900 bg-gradient-to-r shadow-md from-blue-100 via-blue-200 to-blue-300 bg-opacity-40;
+  }
+  .selectSports {
+    @apply bg-gradient-to-r from-gray-100 to-gray-300 dark:from-blue-700 dark:via-blue-800  dark:to-gray-900;
+  }
+  .displayGmaes {
+    @apply;
+  }
+}
+/* body {
   color: white;
   background-color: #111827;
-}
+} */
 
 /* @layer utilities {
   .box-register::before {

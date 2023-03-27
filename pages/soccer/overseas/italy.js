@@ -1,65 +1,27 @@
 import { useEffect, useState } from "react";
-import FilterButton from "../../components/displayBaseball/FilterButton";
-import Layout from "../../components/Layout";
-import SelectSoccerLeague from "../../components/displaySoccer/SelectSoccerLeague";
-import SoccerGenreButton from "../../components/displaySoccer/SoccerGenreButton";
-import { canBetEngland } from "../../src/soccer/overseas/canBetEngland";
-import { canBetSpain } from "../../src/soccer/overseas/canBetSpain";
-import { canBetGermany } from "../../src/soccer/overseas/canBetGermany";
-import { canBetFrance } from "../../src/soccer/overseas/canBetFrance";
-import { canBetItaly } from "../../src/soccer/overseas/canBetItaly";
-import { canBetNetherlands } from "../../src/soccer/overseas/canBetNetherlands";
-import { canBetPortgal } from "../../src/soccer/overseas/canBetPortgal";
-import DateSelectSoccer from "../../components/displaySoccer/DateSelectSoccer";
-import FilteredMatchSoccer from "../../components/displaySoccer/FilteredMatchSoccer";
-import TodaysMatchSoccer from "../../components/displaySoccer/TodaysMatchSoccer";
-import SelectSportsSoccer from "../../components/displaySoccer/SelectSportsSoccer";
-import TestHeader from "../../components/TestHeader";
-import { useRouter } from "next/router";
-import BetConfirm from "../../components/BetConfirm";
-import Betting from "../../components/Betting";
+import FilterButton from "../../../components/displayBaseball/FilterButton";
+import Layout from "../../../components/Layout";
+import SelectSoccerLeague from "../../../components/displaySoccer/SelectSoccerLeague";
+import SoccerGenreButton from "../../../components/displaySoccer/SoccerGenreButton";
+import DateSelectSoccer from "../../../components/displaySoccer/DateSelectSoccer";
+import FilteredMatchSoccer from "../../../components/displaySoccer/FilteredMatchSoccer";
+import TodaysMatchSoccer from "../../../components/displaySoccer/TodaysMatchSoccer";
+import SelectSportsSoccer from "../../../components/displaySoccer/SelectSportsSoccer";
+import TestHeader from "../../../components/TestHeader";
+import BetConfirm from "../../../components/BetConfirm";
+import Betting from "../../../components/Betting";
+import { canBetItaly } from "../../../src/soccer/overseas/canBetItaly";
 
-const overseas = () => {
+const italy = () => {
   const [filteredMatch, setFilteredMatch] = useState("");
-  const [selectCountry, setSelectCountry] = useState("england");
-  const router = useRouter();
-  useEffect(() => {
-    const { country } = router.query;
-    setSelectCountry(country || "");
-  }, [router]);
+
   const handleFilter = (condition) => {
     if (condition === filteredMatch) {
       setFilteredMatch("");
     } else setFilteredMatch(condition);
   };
 
-  let games = [];
-  switch (selectCountry) {
-    case "england":
-      games = canBetEngland;
-      break;
-    case "spain":
-      games = canBetSpain;
-      break;
-    case "germany":
-      games = canBetGermany;
-      break;
-    case "italy":
-      games = canBetItaly;
-      break;
-    case "france":
-      games = canBetFrance;
-      break;
-    case "netherlands":
-      games = canBetNetherlands;
-      break;
-    case "portgal":
-      games = canBetPortgal;
-      break;
-    default:
-      break;
-  }
-  const [matchList, setMatchList] = useState(games);
+  const [matchList, setMatchList] = useState(canBetItaly);
   const [betList, setBetList] = useState([]);
 
   const placeBet = (
@@ -137,10 +99,7 @@ const overseas = () => {
         {/* 国内　海外 その他 */}
         <SoccerGenreButton />
         {/* リーグ選択 */}
-        <SelectSoccerLeague
-          selectCountry={selectCountry}
-          setSelectCountry={setSelectCountry}
-        />
+        <SelectSoccerLeague />
 
         <div className="space-y-3">
           {/* フィルターボタン */}
@@ -155,19 +114,19 @@ const overseas = () => {
             {filteredMatch && (
               <FilteredMatchSoccer
                 filteredMatch={filteredMatch}
-                games={games}
+                games={canBetItaly}
                 placeBet={placeBet}
                 betList={betList}
               />
             )}
             <TodaysMatchSoccer
-              games={games}
+              games={canBetItaly}
               placeBet={placeBet}
               betList={betList}
             />
             <div className="text-xl">今後の試合</div>
             <DateSelectSoccer
-              games={games}
+              games={canBetItaly}
               placeBet={placeBet}
               betList={betList}
             />
@@ -198,4 +157,4 @@ const overseas = () => {
   );
 };
 
-export default overseas;
+export default italy;

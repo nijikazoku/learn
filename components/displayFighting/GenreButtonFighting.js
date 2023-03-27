@@ -10,7 +10,8 @@ const GenreButtonFighting = () => {
         <Link
           href="/fighting/breakingdown"
           className={`border-r border-b py-1 text-center ${
-            router.pathname === "/fighting/breakingdown" && "bg-[#0075C2]"
+            router.pathname === "/fighting/breakingdown" &&
+            "bg-blue-100 dark:bg-[#0075C2]"
           }`}
         >
           Breaking Down
@@ -18,7 +19,8 @@ const GenreButtonFighting = () => {
         <Link
           href="/fighting/boxing"
           className={`border-b flex items-center justify-center border-r py-1 text-center ${
-            router.pathname === "/fighting/boxing" && "bg-[#0075C2]"
+            router.pathname === "/fighting/boxing" &&
+            "bg-blue-100 dark:bg-[#0075C2]"
           }`}
         >
           ボクシング
@@ -26,7 +28,8 @@ const GenreButtonFighting = () => {
         <Link
           href="/fighting/ufc"
           className={`border-b flex items-center justify-center  border-r py-1 text-center ${
-            router.pathname === "/fighting/ufc" && "bg-[#0075C2]"
+            router.pathname === "/fighting/ufc" &&
+            "bg-blue-100 dark:bg-[#0075C2]"
           }`}
         >
           UFC
@@ -34,7 +37,8 @@ const GenreButtonFighting = () => {
         <Link
           href="/fighting/rizin"
           className={`border-r py-1 text-center ${
-            router.pathname === "/fighting/rizin" && "bg-[#0075C2]"
+            router.pathname === "/fighting/rizin" &&
+            "bg-blue-100 dark:bg-[#0075C2]"
           }`}
         >
           RIZIN
@@ -42,7 +46,8 @@ const GenreButtonFighting = () => {
         <Link
           href="/fighting/k1_krush"
           className={`border-r py-1 text-center ${
-            router.pathname === "/fighting/k1_krush" && "bg-[#0075C2]"
+            router.pathname === "/fighting/k1_krush" &&
+            "bg-blue-100 dark:bg-[#0075C2]"
           }`}
         >
           K-1・Krush
@@ -50,7 +55,8 @@ const GenreButtonFighting = () => {
         <Link
           href="/fighting/others"
           className={`border-r py-1 text-center ${
-            router.pathname === "/fighting/others" && "bg-[#0075C2]"
+            router.pathname === "/fighting/others" &&
+            "bg-blue-100 dark:bg-[#0075C2]"
           }`}
         >
           その他

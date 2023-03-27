@@ -16,14 +16,14 @@ const FeaturedMatch = () => {
         spaceBetween={20}
         slidesPerView={1}
         modules={[EffectFlip, Pagination, Navigation]}
-        className="mySwiper rounded-lg w-[95%] space-x-4"
+        className="mySwiper text-white shadow-lg rounded-lg w-[95%] space-x-4"
         // style={{
         //   "--swiper-pagination-color": "#DC2626",
         // }}
       >
         {pickUpMatch.slice(0, 4).map((match, index) => {
           return (
-            <SwiperSlide key={index} className="relative  text-white">
+            <SwiperSlide key={index} className="relative dark:bg-slate-800">
               <Link
                 href={
                   match.sports === "baseball"
@@ -33,7 +33,7 @@ const FeaturedMatch = () => {
                 className=" w-full"
               >
                 <img
-                  className="h-[14rem] opacity-30  object-cover content-center"
+                  className="h-[14rem] w-full opacity-90 dark:opacity-30  object-cover content-center"
                   src={match.image}
                   alt=""
                 />
@@ -54,9 +54,9 @@ const FeaturedMatch = () => {
                   <div className="font-bold text-xl ">{match.matchTime}</div>
                 </div>
                 {/* 対戦チーム名 */}
-                <div className="absolute top-[70px] px-3 text-3xl font-bold text-white ">
+                <div className="absolute top-[70px] px-3 text-3xl font-bold ">
                   <p className="text-sm">{match.type}</p>
-                  <p>{match.homeTeam}</p>
+                  <p className="">{match.homeTeam}</p>
                   <p>{match.awayTeam}</p>
                 </div>
                 {/* ベット受付中 */}

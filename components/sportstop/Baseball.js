@@ -3,7 +3,7 @@ const Baseball = () => {
   return (
     <>
       <div className="py-2">
-        <div className="flex  text-white items-end justify-between py-1">
+        <div className="flex  items-end justify-between py-1">
           <p className="flex-grow text-xl px-3 font-bold">野球</p>
           <Link href="/baseball/npb" className="px-3 text-sm">
             View All
