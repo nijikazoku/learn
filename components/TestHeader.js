@@ -93,6 +93,12 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
   useEffect(() => setMounted(true), []);
   const dark = theme === "dark";
 
+  const [enabled, setEnabled] = useState(false);
+  const toggleMode = () => {
+    setEnabled(!enabled);
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <div className="relative pt-[60px]">
       {/* ヘッダー */}
@@ -127,14 +133,33 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
             </Link>
           </div>
           {/* ダークモード */}
-          <div onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-            {dark ? (
-              <button className="border-2 p-1">ライトモードにする</button>
+
+          <div className="flex items-center space-x-2">
+            {theme === "light" ? (
+              <img
+                src="https://www.svgrepo.com/show/407540/sun.svg"
+                alt=""
+                className="w-6"
+              />
             ) : (
-              <button className="text-white border-2 p-1">
-                ダークモードにする
-              </button>
+              <img
+                src="https://www.svgrepo.com/show/178114/moon-moon.svg"
+                alt=""
+                className="w-6"
+              />
             )}
+            <label class="inline-flex relative items-center mr-5 cursor-pointer">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={enabled}
+                readOnly
+              />
+              <div
+                onClick={toggleMode}
+                className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"
+              ></div>
+            </label>
           </div>
         </div>
       </header>
