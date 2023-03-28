@@ -48,7 +48,7 @@ const GenreButton = ({
         }`}
         onClick={() => handleClick("blackjack")}
       >
-        ブラックジャック
+        BJ
       </button>
       {/* ルーレット */}
       <button
