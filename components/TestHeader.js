@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
-
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import Link from "next/link";

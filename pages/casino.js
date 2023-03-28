@@ -127,6 +127,7 @@ const casino = () => {
               <div className="font-bold">{filteredGames.length}</div>
             </div>
           </div>
+          {/* 表示されるゲーム */}
           <div className="grid grid-cols-2 gap-4 w-[95%] mx-auto">
             {itemsToShow.map((game, index) => (
               <div key={game.eName} className="relative">

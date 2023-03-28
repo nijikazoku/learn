@@ -136,6 +136,8 @@ const mlb = () => {
           </div>
         </div>
       </div>
+
+      {/* ベット確認画面 */}
       {betList.length !== 0 ? (
         <BetConfirm
           betList={betList}

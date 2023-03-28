@@ -1,9 +1,4 @@
-const GenreButton = ({
-  handleClick,
-  setFavoriteFilter,
-  favoriteFilter,
-  selectedGenre,
-}) => {
+const GenreButton = ({ handleClick, selectedGenre }) => {
   return (
     <div className="grid grid-cols-3 gap-1 whitespace-nowrap">
       {/* スロット */}

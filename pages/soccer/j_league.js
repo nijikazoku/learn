@@ -144,7 +144,6 @@ const j_league = () => {
       ) : (
         ""
       )}
-
       {showBet && (
         <Betting
           closeBetting={closeBetting}
