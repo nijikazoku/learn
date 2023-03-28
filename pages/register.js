@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Header from "../components/Header";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import TestHeader from "../components/TestHeader";
 
@@ -12,7 +11,10 @@ const Register = () => {
           <h1 className="w-[80%] text-4xl mx-auto">会員登録</h1>
           <div className="flex w-[80%] mx-auto py-2">
             <div> アカウントをお持ちですか？</div>
-            <Link href="/login" className="underline text-yellow-600">
+            <Link
+              href="/login"
+              className="underline text-red-600 dark:text-yellow-600"
+            >
               ログイン
             </Link>
           </div>
@@ -42,11 +44,11 @@ const Register = () => {
               <div>
                 <p className="text-sm">
                   私は18歳以上であり、以下の条件を承諾します。
-                  <span className="font-bold text-lg text-yellow-300 underline">
+                  <span className="font-bold text-blue-600 text-lg dark:text-yellow-300 underline">
                     ご利用条件
                   </span>
                   と
-                  <span className="font-bold text-lg text-yellow-300 underline">
+                  <span className="font-bold text-blue-600 text-lg dark:text-yellow-300 underline">
                     利用規約
                   </span>
                 </p>
