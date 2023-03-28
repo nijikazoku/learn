@@ -7,7 +7,7 @@ import Link from "next/link";
 import SideMenuContents from "./SideMenuContents";
 import { useTheme } from "next-themes";
 
-function TestHeader({ setGenres, setFavoriteFilter }) {
+function TestHeader({ setSelectedGenre, setFavoriteFilter }) {
   const [position, setPosition] = useState(0);
   const [visible, setVisible] = useState("initial");
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -30,12 +30,6 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
       }, 600);
     }
   };
-  const handleSideCasinoClick = (genre) => {
-    // ジャンルを上書きする
-    setGenres([genre]);
-    // お気に入りフィルターを解除する
-    setFavoriteFilter(false);
-  };
 
   const toggleCasinoMenu = (genre) => {
     if (!isShow) {
@@ -54,7 +48,6 @@ function TestHeader({ setGenres, setFavoriteFilter }) {
             pathname: "/casino",
             query: { genre: genre },
           });
-          handleSideCasinoClick(genre);
         }
       }, 600);
     }

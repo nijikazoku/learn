@@ -241,9 +241,9 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
   
                  `}
               >
-                <Link href={{ pathname: "/casino", query: { genre: "slot" } }}>
+                <Link href={{ pathname: "/casino", query: { genre: "slots" } }}>
                   <div
-                    onClick={() => toggleCasinoMenu("slot")}
+                    onClick={() => toggleCasinoMenu("slots")}
                     className="px-2 pb-2 text-lg  border-b 
                    border-red-500"
                   >
@@ -252,36 +252,43 @@ const SideMenuContents = ({ toggleSideMenu, toggleCasinoMenu }) => {
                 </Link>
 
                 <Link
-                  href={{ pathname: "/casino", query: { genre: "tableGame" } }}
+                  href={{ pathname: "/casino", query: { genre: "tablegame" } }}
                 >
                   <div
-                    onClick={() => toggleCasinoMenu("tableGame")}
+                    onClick={() => toggleCasinoMenu("tablegame")}
                     className="p-2 text-lg  border-b 
                      border-red-500"
                   >
                     テーブルゲーム
                   </div>
                 </Link>
-                <Link href="/">
+                <Link
+                  href={{ pathname: "/casino", query: { genre: "blackjack" } }}
+                >
                   <div
-                    onClick={toggleSideMenu}
-                    className="p-2 text-lg  border-b border-red-500"
+                    onClick={() => toggleCasinoMenu("blackjack")}
+                    className="p-2 text-lg  border-b 
+                     border-red-500"
                   >
                     ブラックジャック
                   </div>
                 </Link>
-                <Link href="/">
+                <Link
+                  href={{ pathname: "/casino", query: { genre: "roulette" } }}
+                >
                   <div
-                    onClick={toggleSideMenu}
-                    className="p-2 text-lg  border-b border-red-500"
+                    onClick={() => toggleCasinoMenu("roulette")}
+                    className="p-2 text-lg  border-b 
+                     border-red-500"
                   >
                     ルーレット
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href={{ pathname: "/casino", query: { genre: "poker" } }}>
                   <div
-                    onClick={toggleSideMenu}
-                    className="p-2 text-lg  border-b border-red-500"
+                    onClick={() => toggleCasinoMenu("poker")}
+                    className="p-2 text-lg  border-b 
+                     border-red-500"
                   >
                     ポーカー
                   </div>

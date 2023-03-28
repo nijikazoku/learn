@@ -9,11 +9,7 @@ import { useRouter } from "next/router";
 import TestHeader from "../components/TestHeader";
 
 const casino = () => {
-  const [genres, setGenres] = useState([]);
   const [favoriteFilter, setFavoriteFilter] = useState(false);
-  const [allGamesWithFavorite, setAllGamesWithFavorite] = useState(
-    allGames.map((game) => ({ ...game, favorite: false }))
-  );
   const [favoriteMessage, setFavoriteMessage] = useState("");
   const [favoriteMessageColor, setFavoriteMessageColor] = useState("");
   const [favoriteMessageColorBorder, setFavoriteMessageColorBorder] =
@@ -32,64 +28,34 @@ const casino = () => {
   }, [router.query]);
 
   useEffect(() => {
-    if (selectedGenre === "slot") {
-      handleClick("slot");
-    }
-    if (selectedGenre === "tableGame") {
-      handleClick("tableGame");
-    }
-  }, [selectedGenre]);
-
-  useEffect(() => {
     const query = {};
-    if (genres.length > 0) {
-      query.genres = genres.join(",");
+    if (selectedGenre) {
+      query.genre = selectedGenre;
     }
     if (favoriteFilter) {
       query.favoriteFilter = true;
     }
     router.push({ pathname: "/casino", query: query });
-  }, [genres, favoriteFilter]);
-  const filteredGames = allGamesWithFavorite.filter((game) => {
-    if (favoriteFilter && !game.favorite) {
-      return false;
-    }
-    if (genres.length === 0) {
-      return true;
-    }
-    return genres.some((genre) => game.genre.includes(genre));
-  });
-  const itemsToShow = filteredGames.slice(0, showCount);
+  }, [selectedGenre, favoriteFilter]);
 
-  const handleClick = (genre) => {
-    if (genres.includes(genre)) {
-      // ジャンルが選択されている場合、選択を解除する
-      setGenres(genres.filter((g) => g !== genre));
-    } else {
-      // ジャンルが選択されていない場合、選択する
-      setGenres([genre]);
-    }
-    // お気に入りフィルターを解除する
-    setFavoriteFilter(false);
-  };
-
+  const [favoriteList, setFavoriteList] = useState([]);
   const handleFavorite = (eName) => {
-    setAllGamesWithFavorite((prevGames) =>
-      prevGames.map((game) =>
-        game.eName === eName ? { ...game, favorite: !game.favorite } : game
-      )
+    setFavoriteList((prevFavorites) =>
+      prevFavorites.includes(eName)
+        ? prevFavorites.filter((favorite) => favorite !== eName)
+        : [...prevFavorites, eName]
     );
-
-    if (allGamesWithFavorite.find((game) => game.eName === eName).favorite) {
+    if (favoriteList.includes(eName)) {
+      setFavoriteList(favoriteList.filter((name) => name !== eName));
       setFavoriteMessage("お気に入りから削除しました");
       setFavoriteMessageColor("bg-red-600");
       setFavoriteMessageColorBorder("border-red-800");
     } else {
+      setFavoriteList([...favoriteList, eName]);
       setFavoriteMessage("お気に入りに追加しました");
       setFavoriteMessageColor("bg-blue-500");
       setFavoriteMessageColorBorder("border-blue-700");
     }
-
     if (favoriteMessageTimerId) {
       clearTimeout(favoriteMessageTimerId);
     }
@@ -98,6 +64,33 @@ const casino = () => {
         setFavoriteMessage("");
       }, 1800)
     );
+
+    if (favoriteFilter) {
+      const query = { favoriteFilter: true };
+      router.push({ pathname: "/casino", query });
+    }
+  };
+
+  const filteredGames = allGames.filter((game) => {
+    if (selectedGenre === "favorite") {
+      return favoriteList.includes(game.eName);
+    }
+    if (selectedGenre === "") {
+      return true;
+    }
+    return game.genre.includes(selectedGenre);
+  });
+
+  const itemsToShow = filteredGames.slice(0, showCount);
+
+  const handleClick = (genre) => {
+    if (selectedGenre === genre) {
+      // ジャンルが選択されている場合、選択を解除する
+      setSelectedGenre("");
+    } else {
+      // ジャンルが選択されていない場合、選択する
+      setSelectedGenre(genre);
+    }
   };
 
   const handleShowMore = () => {
@@ -112,7 +105,6 @@ const casino = () => {
   return (
     <Layout>
       <TestHeader
-        setGenres={setGenres}
         setFavoriteFilter={setFavoriteFilter}
         setSelectedGenre={setSelectedGenre}
       />
@@ -122,7 +114,6 @@ const casino = () => {
           <div className="p-2">
             <p className="text-lg">ジャンル</p>
             <GenreButton
-              genres={genres}
               handleClick={handleClick}
               setFavoriteFilter={setFavoriteFilter}
               favoriteFilter={favoriteFilter}
@@ -150,7 +141,7 @@ const casino = () => {
                   className="absolute top-1 right-0"
                   onClick={() => handleFavorite(game.eName)}
                 >
-                  {game.favorite ? (
+                  {favoriteList.includes(game.eName) ? (
                     <AiFillStar size={30} style={{ color: "#FACC15" }} />
                   ) : (
                     <AiOutlineStar size={30} style={{ color: "#FACC15" }} />
